@@ -47,7 +47,7 @@ public class EnemyCollision : MonoBehaviour {
 				{
 					if(!DisabledCannons.Any(dis=>dis.GetComponent<WeaponScript>() == cannon))
 					{
-					cannon.Attack(EnemyColor, bullet.Magnitude+1);
+					cannon.Attack(EnemyColor, bullet.Magnitude+1, 0.4f);
 					}
 				}
 			}

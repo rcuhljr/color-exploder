@@ -48,7 +48,7 @@ public class WeaponScript : MonoBehaviour {
 	/// <summary>
 	/// Create a new projectile if possible
 	/// </summary>
-	public void Attack(Shot.Colors color, int magnitude)
+	public void Attack(Shot.Colors color, int magnitude, float speedMultiplier)
 	{
 		if (CanAttack)
 		{
@@ -74,6 +74,7 @@ public class WeaponScript : MonoBehaviour {
 				shot.ShotColor = (int)color;
 				shot.direction = this.transform.up;
 				shot.Magnitude = magnitude;
+        shot.speed.Scale(new Vector2(speedMultiplier, speedMultiplier));
 			}
 
       var sprite = shotTransform.gameObject.GetComponent<SpriteRenderer>();
