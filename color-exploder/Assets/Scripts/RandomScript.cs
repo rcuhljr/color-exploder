@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class RandomScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +14,6 @@ public class NewBehaviourScript : MonoBehaviour {
 	}
 
 	void OnMouseDown () {
-		Application.LoadLevel ("Random");
+		Application.LoadLevel ("RandomPlay");
 	}
 }

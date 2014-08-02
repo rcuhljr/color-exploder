@@ -258,6 +258,7 @@ GameObject:
   - 4: {fileID: 1196546811}
   - 212: {fileID: 1196546812}
   - 61: {fileID: 1196546813}
+  - 114: {fileID: 1196546814}
   m_Layer: 0
   m_Name: RandomGame
   m_TagString: Untagged
@@ -310,6 +311,17 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .949999988, y: .25}
   m_Center: {x: -0, y: 0}
+--- !u!114 &1196546814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1196546810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed627fb5a846c74e884fb7eef5e3ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1348657645
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +383,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.99133682
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -391,7 +403,7 @@ Transform:
   m_GameObject: {fileID: 1348657645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -12}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
