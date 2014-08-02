@@ -57,7 +57,7 @@ public class SpawnEnemiesScript : MonoBehaviour
   public void SetSpawnScript (List<SpawnInfo> staticSpawns)
   {
     timer.Stop ();
-    this.staticSpawns = staticSpawns;
+    this.staticSpawns = new List<SpawnInfo>(staticSpawns);
     timer.Interval = staticSpawns [0].delay;
     timer.Start ();
   }
