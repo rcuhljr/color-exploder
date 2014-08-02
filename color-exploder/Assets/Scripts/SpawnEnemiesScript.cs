@@ -87,7 +87,7 @@ public class SpawnEnemiesScript : MonoBehaviour
                                 var spawn = staticSpawns.First ();
                                 staticSpawns.RemoveAt (0);
 
-                                SpawnEnemy (new Vector3 (spawn.x, spawn.y, 1), spawn.color, false);
+                                SpawnEnemy (new Vector3 (spawn.x, spawn.y, 1), spawn.color, spawn.shielded);
                                 while (staticSpawns.Count > 0 && staticSpawns.First ().delay == 0)
                                         ;
 
@@ -106,27 +106,27 @@ public class SpawnEnemiesScript : MonoBehaviour
 
   public void SpawnEnemy (Vector3 position, Shot.Colors color, bool isShielded)
   {
-						var enemy = Instantiate (enemyPrefab) as Transform;
-            if (isShielded) {
-              enemy.GetComponent<SpriteRenderer> ().sprite = 
-                Resources.Load<Sprite> ("Textures/EnemyShip-Shielded");
-                }
+    var enemy = Instantiate (enemyPrefab) as Transform;
 
-      enemy.position = position;
-			foreach(var renderer in
-						(enemy as Transform).GetComponentsInChildren<SpriteRenderer> ())
-			{
-			    renderer.color = ConvertToColor (color);
-			}
-			foreach(var collider in
-			        (enemy as Transform).GetComponentsInChildren<EnemyCollision> ())
-			{
-			    collider.EnemyColor = color;
-          collider.isShielded = isShielded;
-				  collider.Enemy = (enemy as Transform).gameObject;
+    enemy.position = position;
+    foreach (var renderer in
+						(enemy as Transform).GetComponentsInChildren<SpriteRenderer> ()) {
+      renderer.color = ConvertToColor (color);
+    }
+    foreach (var collider in
+			        (enemy as Transform).GetComponentsInChildren<EnemyCollision> ()) {
+      collider.EnemyColor = color;
+      collider.isShielded = isShielded;
+      collider.Enemy = (enemy as Transform).gameObject;
 						
-                }
-        }
+    }
+
+    if (isShielded) {
+      var hull = (enemy as Transform).FindChild ("Hull");
+      hull.GetComponent<SpriteRenderer> ().sprite =
+        Resources.Load<Sprite> ("Textures/EnemyShip-Shielded");
+    }
+  }
 
         public Color ConvertToColor (Shot.Colors gameColor)
         {

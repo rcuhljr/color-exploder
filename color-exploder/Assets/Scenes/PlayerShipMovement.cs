@@ -67,7 +67,7 @@ public class PlayerShipMovement : MonoBehaviour {
 
 		if (v != 0f) {
 						if (v * rigidbody2D.velocity.y < maxSpeed) 	
-							if((rigidbody2D.position.y < MaxY && h > 0) || (rigidbody2D.position.y > -MinY && h < 0))
+							if((rigidbody2D.position.y < MaxY && v > 0) || (rigidbody2D.position.y > MinY && v < 0))
 								rigidbody2D.AddForce (Vector2.up * v * moveForce); 		 		
 						if (Mathf.Abs (rigidbody2D.velocity.y) > maxSpeed)
 								rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, Mathf.Sign (rigidbody2D.velocity.y) * maxSpeed);
