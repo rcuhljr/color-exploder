@@ -27,7 +27,7 @@ public class PlayerShipMovement : MonoBehaviour {
 			WeaponScript weapon = GetComponent<WeaponScript>();
 			if (weapon != null)
 			{
-				weapon.Attack();
+				weapon.Attack(Shot.Colors.player, 1);
 			}
 		}
 		

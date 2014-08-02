@@ -28,6 +28,11 @@ public class EnemyCollision : MonoBehaviour {
 			if (bullet.ShotColor == (int)EnemyColor || (!isShielded && bullet.ShotColor == (int)Shot.Colors.player)) {
 				Destroy (Enemy);
 				GuiScript.AddScore (bullet.Score);
+				foreach(var cannon in 
+				Enemy.GetComponentsInChildren<WeaponScript>())
+				{
+					cannon.Attack(EnemyColor, bullet.Score*2);
+				}
 			}
 
             Destroy (bullet.gameObject);

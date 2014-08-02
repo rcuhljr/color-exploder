@@ -43,7 +43,7 @@ public class WeaponScript : MonoBehaviour {
 	/// <summary>
 	/// Create a new projectile if possible
 	/// </summary>
-	public void Attack()
+	public void Attack(Shot.Colors color, int score)
 	{
 		if (CanAttack)
 		{
@@ -60,8 +60,9 @@ public class WeaponScript : MonoBehaviour {
 			Shot shot = shotTransform.gameObject.GetComponent<Shot>();
 			if (shot != null)
 			{
-				shot.ShotColor = (int)Shot.Colors.player;
+				shot.ShotColor = (int)color;
 				shot.direction = this.transform.up;
+				shot.Score = score;
 			}
 		}
 	}
