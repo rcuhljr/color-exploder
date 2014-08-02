@@ -24,7 +24,7 @@ public class Shot : MonoBehaviour {
 	void Start () {
 		movement = new Vector2(
 			speed.x * direction.x,
-			speed.y * direction.y);
+			speed.y * direction.y - 1.2F);
 
 		Destroy(gameObject, 4);
 	}
