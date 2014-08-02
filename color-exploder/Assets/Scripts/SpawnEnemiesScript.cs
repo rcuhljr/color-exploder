@@ -136,9 +136,11 @@ public class SpawnEnemiesScript : MonoBehaviour
     public void SpawnAsteroid(Vector3 position) {
       var enemy = Instantiate (asteroidPrefab) as Transform;
       enemy.position = position;
-    }
-
-	  public void SpawnEnemy (Vector3 position, Shot.Colors color, bool isShielded)
+		var collider = enemy.GetComponentsInChildren<AsteroidCollision>().First();
+		collider.sound = sound;
+	}
+	
+	public void SpawnEnemy (Vector3 position, Shot.Colors color, bool isShielded)
 	  {
 						var enemy = Instantiate (enemyPrefab) as Transform;
       enemy.position = position;
@@ -174,9 +176,9 @@ public class SpawnEnemiesScript : MonoBehaviour
 			        (enemy as Transform).GetComponentsInChildren<EnemyCollision> ()) {
       collider.EnemyColor = color;
           collider.isShielded = isShielded;
-				  collider.Enemy = (enemy as Transform).gameObject;
-				  collider.DisabledCannons = disabledCannons;
-collider.sound = sound;
+		  collider.Enemy = (enemy as Transform).gameObject;
+		  collider.DisabledCannons = disabledCannons;
+			collider.sound = sound;
     }
 
     if (isShielded) {
