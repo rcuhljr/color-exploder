@@ -29,9 +29,11 @@ public class SpawnEnemiesScript : MonoBehaviour
 
     private float enemyCooldown;
 
+	private Timer timer;
+
     void Start()
     {
-		var timer = new Timer(500);
+		timer = new Timer(500);
         timer.Elapsed += timer_Elapsed;
 		timer.Start();
     }
@@ -40,6 +42,10 @@ public class SpawnEnemiesScript : MonoBehaviour
     {
 		Spawn();
     }
+
+	public void SetSpawnRate(int newRate){
+		timer.Interval = newRate;
+	}
 
     private void timer_Elapsed(object sender, EventArgs a)
     {
