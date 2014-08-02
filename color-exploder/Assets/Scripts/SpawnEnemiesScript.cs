@@ -23,6 +23,8 @@ public class SpawnEnemiesScript : MonoBehaviour
         /// </summary>
         public Transform enemyPrefab;
 
+    public Transform asteroidPrefab;
+
 		public SoundScript sound;
 
         /// <summary>
@@ -102,8 +104,12 @@ public class SpawnEnemiesScript : MonoBehaviour
                                 // Create a new enemy
                                 var spawn = staticSpawns.First ();
                                 staticSpawns.RemoveAt (0);
-
-                                SpawnEnemy (new Vector3 (spawn.x, spawn.y, 1), spawn.color, spawn.shielded);
+                                if(spawn.color == Shot.Colors.white) {
+                                  SpawnAsteroid(new Vector2(spawn.x, spawn.y));
+                                }
+                                else {
+                                  SpawnEnemy (new Vector3 (spawn.x, spawn.y, 1), spawn.color, spawn.shielded);
+                                }
                                 while (staticSpawns.Count > 0 && staticSpawns.First ().delay == 0)
                                         ;
 
@@ -113,12 +119,24 @@ public class SpawnEnemiesScript : MonoBehaviour
                                         timer.Stop ();
                                 }
                         } else {
-                                var position = new Vector3 ((float)((randomzier.NextDouble () - 0.5) * 12), 5, 1);
+                          var position = new Vector3 ((float)((randomzier.NextDouble () - 0.5) * 12), 5, 1);
+                                if(randomzier.Next () % 50 == 0)
+                                {
+                                  SpawnAsteroid(position);
+                                }
+                                else {
+
+                                
                                 var color = (Shot.Colors)(randomzier.Next () % 3);
                                 SpawnEnemy (position, color, (randomzier.Next() % 10) == 1);
+                                }
                         }
                 }
         }
+    public void SpawnAsteroid(Vector3 position) {
+      var enemy = Instantiate (asteroidPrefab) as Transform;
+      enemy.position = position;
+    }
 
 	  public void SpawnEnemy (Vector3 position, Shot.Colors color, bool isShielded)
 	  {
@@ -136,7 +154,7 @@ public class SpawnEnemiesScript : MonoBehaviour
 
 			if(!renderer.enabled )
 			{
-				if(randomzier.Next()%4 == 0)
+				if(randomzier.Next()%3 == 0)
 				{
 					renderer.enabled = true;
 			}

@@ -15,7 +15,8 @@ public class StageTimer : MonoBehaviour
             new SpawnInfo(5,5,Colors.blue, false, 500),
             
             new SpawnInfo(0,5,Colors.green, false, 700),
-            new SpawnInfo(0,5,Colors.green, true, 1000)}),
+            new SpawnInfo(0,5,Colors.green, true, 1000),
+            new SpawnInfo(2,5,Colors.white, false, 800)}),
     new Stage (250, 10, null)};
   public int stageIndex = 0;
   private Timer stageTimer;

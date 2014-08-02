@@ -35,7 +35,7 @@ public class EnemyCollision : MonoBehaviour {
 		
 		Shot bullet = otherCollider.gameObject.GetComponent<Shot>();
 		if (bullet != null) {
-			if (bullet.ShotColor == (int)EnemyColor || (!isShielded && bullet.ShotColor == (int)Shot.Colors.player)) {
+      if (bullet.ShotColor == (int)EnemyColor || (!isShielded && bullet.ShotColor == (int)Shot.Colors.player) || bullet.ShotColor == (int)Shot.Colors.white) {
 				if(sound != null)
 				{
 					sound.Play(SoundScript.SoundList.Explosions);

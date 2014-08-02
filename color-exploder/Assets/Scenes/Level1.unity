@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageControl: {fileID: 1277999994}
-  sound: {fileID: 2015853415}
+  sound: {fileID: 0}
 --- !u!1 &227971204
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 400010, guid: 26b61bf35d3172c4e957c2db14d91808, type: 2}
-  sound: {fileID: 2015853415}
+  asteroidPrefab: {fileID: 400000, guid: 1d7813ebff5974e4eba0130671fbc0b4, type: 2}
+  sound: {fileID: 0}
 --- !u!114 &1277999994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,11 +762,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81f8616a4e4f8c478eeb553450c0b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombSound: {fileID: 8300000, guid: ef2cbc820c4b1e342a7cc1413ba4cb0d, type: 3}
-  explosionSound: {fileID: 8300000, guid: 10be0456a12fe9146852ec008dc2cb12, type: 3}
-  gameOverSound: {fileID: 8300000, guid: caf6b36cf85ce304e83228cf2d7fea84, type: 3}
+  bombSound: {fileID: 0}
+  explosionSound: {fileID: 0}
+  gameOverSound: {fileID: 0}
   laserSound: {fileID: 8300000, guid: 9180421527ad30046a53902770bb9cf6, type: 3}
-  transitionSound: {fileID: 8300000, guid: bfcdaaaacc21d754e8328c4641baf17f, type: 3}
+  transitionSound: {fileID: 0}
 --- !u!82 &2015853416
 AudioSource:
   m_ObjectHideFlags: 0
