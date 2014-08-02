@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 1633774911}
-  bgScript: {fileID: 0}
+  bgScript: {fileID: 1889397439}
   stageIndex: 0
 --- !u!114 &1633774911
 MonoBehaviour:
@@ -521,6 +521,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: c1d34158b109ede4db40426ed51eb3fb, type: 2}
+      propertyPath: bgScript
+      value: 
+      objectReference: {fileID: 1889397439}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1d34158b109ede4db40426ed51eb3fb, type: 2}
   m_RootGameObject: {fileID: 1633774908}
@@ -567,7 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 1633774911}
-  bgScript: {fileID: 0}
+  bgScript: {fileID: 1889397439}
   stageIndex: 0
 --- !u!1 &1817640332
 GameObject:
@@ -1088,6 +1092,10 @@ Prefab:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 1633774911}
+    - target: {fileID: 11400000, guid: f801bd5aa7a2e324596e272450f61333, type: 2}
+      propertyPath: bgScript
+      value: 
+      objectReference: {fileID: 1889397439}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f801bd5aa7a2e324596e272450f61333, type: 2}
   m_RootGameObject: {fileID: 1721728386}
