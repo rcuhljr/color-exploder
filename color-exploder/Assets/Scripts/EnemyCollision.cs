@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Math = System.Math;
+using Colors = ColorUtils.Colors;
 
 public class EnemyCollision : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class EnemyCollision : MonoBehaviour {
 		set;
 	}
 
-	public Shot.Colors EnemyColor;
+	public Colors EnemyColor;
   public bool isShielded = false;
 
 	public GameObject Enemy;
@@ -35,7 +36,7 @@ public class EnemyCollision : MonoBehaviour {
 		
 		Shot bullet = otherCollider.gameObject.GetComponent<Shot>();
 		if (bullet != null) {
-      if (bullet.ShotColor == (int)EnemyColor || (!isShielded && bullet.ShotColor == (int)Shot.Colors.player) || bullet.ShotColor == (int)Shot.Colors.white) {
+      if (bullet.ShotColor == (int)EnemyColor || (!isShielded && bullet.ShotColor == (int)ColorUtils.Colors.player) || bullet.ShotColor == (int)ColorUtils.Colors.white) {
 				if(sound != null)
 				{
 					sound.Play(SoundScript.SoundList.Explosions);

@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Colors = ColorUtils.Colors;
 
 public class Shot : MonoBehaviour {
 
-	public enum Colors {red, blue, green, cyan, yellow, magenta, white, player };
-			
+	
 	/// <summary>
 	/// Object speed
 	/// </summary>

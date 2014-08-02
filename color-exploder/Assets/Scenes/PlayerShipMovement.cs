@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Colors = ColorUtils.Colors;
 
 public class PlayerShipMovement : MonoBehaviour {
 
@@ -27,7 +28,7 @@ public class PlayerShipMovement : MonoBehaviour {
 			WeaponScript weapon = GetComponent<WeaponScript>();
 			if (weapon != null)
 			{
-				weapon.Attack(Shot.Colors.player, 1, 1f);
+				weapon.Attack(Colors.player, 1, 1f);
 			}
 		}
 		

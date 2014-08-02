@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Colors = ColorUtils.Colors;
 
 public class ShrapnelScript : MonoBehaviour {
 
@@ -26,7 +27,7 @@ public class ShrapnelScript : MonoBehaviour {
   /// <summary>
   /// Create a new projectile if possible
   /// </summary>
-  public void Attack(Shot.Colors color, int magnitude, float speedMultiplier, Vector2 direction)
+  public void Attack(Colors color, int magnitude, float speedMultiplier, Vector2 direction)
   {
           
     // Create laser sound
@@ -66,16 +67,16 @@ public class ShrapnelScript : MonoBehaviour {
     }
   }
   
-  public Color ConvertToColor (Shot.Colors gameColor)
+  public Color ConvertToColor (Colors gameColor)
   {
     switch (gameColor) {
-    case Shot.Colors.blue:
+    case Colors.blue:
       return Color.blue;
-    case Shot.Colors.green:
+    case Colors.green:
       return Color.green;
-    case Shot.Colors.red:
+    case Colors.red:
       return Color.red;
-    case Shot.Colors.player:
+    case Colors.player:
       return Color.black;
     default:
       return Color.gray;

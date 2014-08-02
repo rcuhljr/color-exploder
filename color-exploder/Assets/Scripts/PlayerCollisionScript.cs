@@ -23,7 +23,7 @@ public class PlayerCollisionScript : MonoBehaviour
         
     Shot bullet = otherCollider.gameObject.GetComponent<Shot> ();
     if (bullet != null) {
-      if (bullet.ShotColor != (int)Shot.Colors.player) {
+      if (bullet.ShotColor != (int)ColorUtils.Colors.player) {
         Destroy (gameObject);
       }
     }

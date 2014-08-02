@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using Colors = ColorUtils.Colors;
 
 public class AsteroidCollision : MonoBehaviour {
   
@@ -39,7 +40,7 @@ public class AsteroidCollision : MonoBehaviour {
         {
           var randomDirection = new Vector2((float)(randomizer.NextDouble() - 0.5), (float)(randomizer.NextDouble() - 0.5f));
 
-          weapon.Attack(Shot.Colors.white, bullet.Magnitude+1, 8f, randomDirection);
+          weapon.Attack(Colors.white, bullet.Magnitude+1, 8f, randomDirection);
         }
       }
 
