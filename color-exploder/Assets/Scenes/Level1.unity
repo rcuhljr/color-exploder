@@ -254,7 +254,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 299889729}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_FixedAngle: 1
   m_IsKinematic: 0
@@ -285,9 +285,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f807b6bf5b21b845875d816543d6080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 365
-  maxSpeed: 5
-  dragRate: .0250000004
+  moveForce: 275
+  maxSpeed: 4
+  dragRate: .0125000002
 --- !u!114 &299889736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,6 +384,22 @@ Prefab:
     - target: {fileID: 6100000, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
       propertyPath: m_Size.y
       value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
+      propertyPath: moveForce
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
+      propertyPath: maxSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
+      propertyPath: dragRate
+      value: .0125000002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}

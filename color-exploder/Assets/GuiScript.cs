@@ -23,8 +23,15 @@ public class GuiScript : MonoBehaviour
   // Update is called once per frame
   void Update ()
   {
-    if (gameOver)
+    if(gameOver) {
+      if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
+      {
+        _score = 0;
+        Application.LoadLevel(Application.loadedLevel);
+      }
       return;
+    }
+      
 
     var player = GameObject.Find ("Player");
 
@@ -49,7 +56,7 @@ public class GuiScript : MonoBehaviour
   void OnGUI ()
   {
     if (gameOver) {
-      GUI.Box (new Rect (100, Screen.height - 300, 300, 200), "Game Over");
+      GUI.Box (new Rect (100, Screen.height - 300, 300, 200), "Game Over - Click to Retry");
       
       GUI.Label (new Rect (130, Screen.height - 275, 150, 40), "Final Score: " + _score);
     } else {

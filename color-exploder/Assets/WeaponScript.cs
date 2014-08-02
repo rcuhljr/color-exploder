@@ -64,7 +64,7 @@ public class WeaponScript : MonoBehaviour {
 			var shotTransform = Instantiate(shotPrefab) as Transform;
 			
 			// Assign position
-			shotTransform.position = new Vector3( transform.position.x, transform.position.y + transform.localScale.y/2 , transform.position.z
+			shotTransform.position = new Vector3( transform.position.x, transform.position.y /*+ transform.localScale.y/2*/ , transform.position.z+1
 			                                     );
 			
 			// The is enemy property

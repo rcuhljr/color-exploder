@@ -3,9 +3,9 @@ using System.Collections;
 
 public class PlayerShipMovement : MonoBehaviour {
 
-	public float moveForce = 365f;			
-	public float maxSpeed = 5f;		
-	public float dragRate = .025f;
+	public float moveForce = 275f;			
+	public float maxSpeed = 4f;		
+	public float dragRate = .0125f;
 
 	private const float MaxX = 6.5f;
 	private const float MinX = -6.5f;
