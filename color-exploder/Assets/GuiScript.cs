@@ -11,6 +11,9 @@ public class GuiScript : MonoBehaviour
 
   private bool gameOver = false;
 
+	
+	public SoundScript sound;
+
   // Use this for initialization
   void Start ()
   {
@@ -26,6 +29,10 @@ public class GuiScript : MonoBehaviour
     var player = GameObject.Find ("Player");
 
     if (player == null) {
+		if(sound != null)
+		{
+			sound.Play(SoundScript.SoundList.GameOvers);
+		}
       StopGame ();
       gameOver = true;
     }
