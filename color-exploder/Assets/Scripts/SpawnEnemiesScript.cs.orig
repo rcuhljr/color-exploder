@@ -107,21 +107,15 @@ public class SpawnEnemiesScript : MonoBehaviour
 
   public void SpawnEnemy (Vector3 position, Shot.Colors color)
   {
-						var enemy = Instantiate (enemyPrefab) as Transform;
+    var enemy = Instantiate (enemyPrefab) as Transform;
 
     enemy.position = position;
-			foreach(var renderer in
-						(enemy as Transform).GetComponentsInChildren<SpriteRenderer> ())
-			{
-			    renderer.color = ConvertToColor (color);
-			}
-			foreach(var collider in
-			        (enemy as Transform).GetComponentsInChildren<EnemyCollision> ())
-			{
-			    collider.EnemyColor = color;
-				collider.Enemy = (enemy as Transform).gameObject;
-						
+    enemy.GetComponent<SpriteRenderer> ().color = ConvertToColor (color);    
+    var enemyCollision = enemy.GetComponent<EnemyCollision> ();
+    if (enemyCollision != null) {
+      enemyCollision.EnemyColor = color;
     }
+<<<<<<< HEAD
   }
 
   public Color ConvertToColor (Shot.Colors gameColor)
@@ -135,6 +129,40 @@ public class SpawnEnemiesScript : MonoBehaviour
       return Color.red;
     default:
       return Color.white;
+=======
+
+    //--------------------------------
+    // 3 - Shooting from another script
+    //--------------------------------
+
+    /// <summary>
+    /// Create a new enemy
+    /// </summary>
+    public void Spawn()
+    {
+		if (readyToSpawn) {
+			readyToSpawn=false;
+						// Create a new enemy
+						var enemy = Instantiate (enemyPrefab);
+
+						// Assign position
+						//TODO: These probably shouldn't be constants...
+			(enemy as Transform).position = new Vector3( (float)((randomzier.NextDouble()-0.5)*12), 5, 1);
+						var color = randomzier.Next () % 3;
+			foreach(var renderer in
+						(enemy as Transform).GetComponentsInChildren<SpriteRenderer> ())
+			{
+				renderer.color = ConvertToColor ((Shot.Colors)(color));
+			}
+			foreach(var collider in
+			        (enemy as Transform).GetComponentsInChildren<EnemyCollision> ())
+			{
+				collider.EnemyColor = (Shot.Colors)color;
+				collider.Enemy = (enemy as Transform).gameObject;
+			}
+						
+				}
+>>>>>>> collisions for enemies
     }
   }
 }
