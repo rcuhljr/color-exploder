@@ -125,8 +125,9 @@ public class SpawnEnemiesScript : MonoBehaviour
 						var enemy = Instantiate (enemyPrefab) as Transform;
       enemy.position = position;
       List<Transform> disabledCannons = new List<Transform> ();
-						(enemy as Transform).GetComponentsInChildren<SpriteRenderer> ())
+
 		for(int i=0; i<enemy.childCount; i++)
+		{
 			var child = enemy.GetChild(i);
 
 
