@@ -1,8 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class EnemyCollision : MonoBehaviour {
+
+	public List<Transform> DisabledCannons {
+		get;
+		set;
+	}
 
 	public Shot.Colors EnemyColor;
   public bool isShielded = false;
@@ -38,7 +44,10 @@ public class EnemyCollision : MonoBehaviour {
 				foreach(var cannon in 
 				Enemy.GetComponentsInChildren<WeaponScript>())
 				{
+					if(!DisabledCannons.Any(dis=>dis.GetComponent<WeaponScript>() == cannon))
+					{
 					cannon.Attack(EnemyColor, bullet.Magnitude+1);
+					}
 				}
 			}
 

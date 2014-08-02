@@ -44,6 +44,14 @@ public class SpawnEnemiesScript : MonoBehaviour
                 timer = new Timer (500);
                 timer.Elapsed += timer_Elapsed;
                 timer.Start ();
+
+		for (int i=0; i<enemyPrefab.childCount; i++) {
+			var child = enemyPrefab.GetChild(i);
+			if(child.name == "Cannon")
+			{
+				child.GetComponent<SpriteRenderer>().enabled = false;
+			}
+				}
         }
 
         void Update ()
@@ -112,21 +120,44 @@ public class SpawnEnemiesScript : MonoBehaviour
                 }
         }
 
-  public void SpawnEnemy (Vector3 position, Shot.Colors color, bool isShielded)
-  {
-    var enemy = Instantiate (enemyPrefab) as Transform;
+	  public void SpawnEnemy (Vector3 position, Shot.Colors color, bool isShielded)
+	  {
+						var enemy = Instantiate (enemyPrefab) as Transform;
+      enemy.position = position;
+      List<Transform> disabledCannons = new List<Transform> ();
+						(enemy as Transform).GetComponentsInChildren<SpriteRenderer> ())
+		for(int i=0; i<enemy.childCount; i++)
+			var child = enemy.GetChild(i);
 
-    enemy.position = position;
-    foreach (var renderer in
-						(enemy as Transform).GetComponentsInChildren<SpriteRenderer> ()) {
-      renderer.color = ConvertToColor (color);
-    }
+
+			var renderer = child.GetComponent<SpriteRenderer> ();
+			    renderer.color = ConvertToColor (color);
+
+			if(!renderer.enabled )
+			{
+				if(randomzier.Next()%4 == 0)
+				{
+					renderer.enabled = true;
+			}
+				else
+				{
+					disabledCannons.Add(child);
+				}
+			}		        
+		}
+		if (disabledCannons.Count>3) 
+		{
+			var luckyCannon = randomzier.Next()%3;
+			disabledCannons[luckyCannon].GetComponent<SpriteRenderer>().enabled = true;
+			disabledCannons.RemoveAt(luckyCannon);
+		}
     foreach (var collider in
 			        (enemy as Transform).GetComponentsInChildren<EnemyCollision> ()) {
       collider.EnemyColor = color;
-      collider.isShielded = isShielded;
-      collider.Enemy = (enemy as Transform).gameObject;
-		collider.sound = sound;
+          collider.isShielded = isShielded;
+				  collider.Enemy = (enemy as Transform).gameObject;
+				  collider.DisabledCannons = disabledCannons;
+collider.sound = sound;
     }
 
     if (isShielded) {
