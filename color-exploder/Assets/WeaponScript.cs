@@ -45,7 +45,7 @@ public class WeaponScript : MonoBehaviour {
 	/// <summary>
 	/// Create a new projectile if possible
 	/// </summary>
-	public void Attack(Shot.Colors color, int score)
+	public void Attack(Shot.Colors color, int magnitude)
 	{
 		if (CanAttack)
 		{
@@ -70,10 +70,38 @@ public class WeaponScript : MonoBehaviour {
 			{
 				shot.ShotColor = (int)color;
 				shot.direction = this.transform.up;
-				shot.Score = score;
+				shot.Magnitude = magnitude;
 			}
+
+      var sprite = shotTransform.gameObject.GetComponent<SpriteRenderer>();
+      if(sprite != null)
+      {
+        sprite.color = ConvertToColor(color);
+
+        if(magnitude > 1)
+        {
+          shotTransform.localScale =
+            Vector3.Scale(shotTransform.localScale, new Vector3( 1 + (magnitude-1)*0.50f, 1 + (magnitude-1)*0.50f));
+        }
+      }
 		}
 	}
+
+  public Color ConvertToColor (Shot.Colors gameColor)
+  {
+    switch (gameColor) {
+    case Shot.Colors.blue:
+      return Color.blue;
+    case Shot.Colors.green:
+      return Color.green;
+    case Shot.Colors.red:
+      return Color.red;
+    case Shot.Colors.player:
+      return Color.black;
+    default:
+      return Color.white;
+    }
+  }
 	
 	/// <summary>
 	/// Is the weapon ready to create a new projectile?

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class EnemyCollision : MonoBehaviour {
 
@@ -27,11 +28,11 @@ public class EnemyCollision : MonoBehaviour {
 		if (bullet != null) {
 			if (bullet.ShotColor == (int)EnemyColor || (!isShielded && bullet.ShotColor == (int)Shot.Colors.player)) {
 				Destroy (Enemy);
-				GuiScript.AddScore (bullet.Score);
+				GuiScript.AddScore ( (int) (Math.Pow(2, bullet.Magnitude-1)));
 				foreach(var cannon in 
 				Enemy.GetComponentsInChildren<WeaponScript>())
 				{
-					cannon.Attack(EnemyColor, bullet.Score*2);
+					cannon.Attack(EnemyColor, bullet.Magnitude+1);
 				}
 			}
 

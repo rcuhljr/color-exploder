@@ -71,6 +71,7 @@ MonoBehaviour:
   speed: {x: 10, y: 10}
   direction: {x: -1, y: 0}
   ShotColor: 7
+  Magnitude: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
