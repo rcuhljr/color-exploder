@@ -82,6 +82,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 538574354}
+  - 114: {fileID: 538574355}
   m_Layer: 0
   m_Name: GUI-Script
   m_TagString: Untagged
@@ -101,6 +102,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 798990442}
   m_RootOrder: 0
+--- !u!114 &538574355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 538574353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16c75ccf666289478fb265652357a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageControl: {fileID: 1721728388}
+  sound: {fileID: 1926729368}
 --- !u!1001 &598271300
 Prefab:
   m_ObjectHideFlags: 0
