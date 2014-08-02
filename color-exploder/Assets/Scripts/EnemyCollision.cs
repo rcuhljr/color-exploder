@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyCollision : MonoBehaviour {
 
 	public Shot.Colors EnemyColor;
+  public bool isShielded = false;
 
 	public GameObject Enemy;
 
@@ -24,7 +25,7 @@ public class EnemyCollision : MonoBehaviour {
 		
 		Shot bullet = otherCollider.gameObject.GetComponent<Shot>();
 		if (bullet != null) {
-			if (bullet.ShotColor == (int)EnemyColor || bullet.ShotColor == (int)Shot.Colors.player) {
+			if (bullet.ShotColor == (int)EnemyColor || (!isShielded && bullet.ShotColor == (int)Shot.Colors.player)) {
 				Destroy (Enemy);
 				GuiScript.AddScore (bullet.Score);
 			}
