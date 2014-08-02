@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a81f8616a4e4f8c478eeb553450c0b49
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - laserSound: {fileID: 8300000, guid: 9180421527ad30046a53902770bb9cf6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

@@ -11,6 +11,8 @@ public class WeaponScript : MonoBehaviour {
 	/// Projectile prefab for shooting
 	/// </summary>
 	public Transform shotPrefab;
+
+	public SoundScript sound;
 	
 	/// <summary>
 	/// Cooldown in seconds between two shots
@@ -48,6 +50,12 @@ public class WeaponScript : MonoBehaviour {
 		if (CanAttack)
 		{
 			shootCooldown = shootingRate;
+
+			// Create laser sound
+			if(sound != null)
+			{
+				sound.Play(SoundScript.SoundList.Lasers);
+			}
 			
 			// Create a new shot
 			var shotTransform = Instantiate(shotPrefab) as Transform;
