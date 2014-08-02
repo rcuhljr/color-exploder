@@ -99,7 +99,7 @@ public class SpawnEnemiesScript : MonoBehaviour
                         } else {
                                 var position = new Vector3 ((float)((randomzier.NextDouble () - 0.5) * 12), 5, 1);
                                 var color = (Shot.Colors)(randomzier.Next () % 3);
-                                SpawnEnemy (position, color, false);
+                                SpawnEnemy (position, color, (randomzier.Next() % 10) == 1);
                         }
                 }
         }
