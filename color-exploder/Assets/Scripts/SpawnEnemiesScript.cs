@@ -108,7 +108,7 @@ public class SpawnEnemiesScript : MonoBehaviour
                                   SpawnAsteroid(new Vector2(spawn.x, spawn.y));
                                 }
                                 else {
-                                  SpawnEnemy (new Vector3 (spawn.x, spawn.y, 1), spawn.color, spawn.shielded);
+                                  SpawnEnemy (new Vector3 (spawn.x, spawn.y, 1), spawn.color, spawn.shielded, spawn.rotates);
                                 }
                                 while (staticSpawns.Count > 0 && staticSpawns.First ().delay == 0)
                                         ;
@@ -128,7 +128,8 @@ public class SpawnEnemiesScript : MonoBehaviour
 
                                 
                                 var color = (Shot.Colors)(randomzier.Next () % 3);
-                                SpawnEnemy (position, color, (randomzier.Next() % 10) == 1);
+                                SpawnEnemy (position, color, (randomzier.Next() % 10) == 1,
+                                    (randomzier.Next () % 5) == 1);
                                 }
                         }
                 }
@@ -140,11 +141,16 @@ public class SpawnEnemiesScript : MonoBehaviour
 		collider.sound = sound;
 	}
 	
-	public void SpawnEnemy (Vector3 position, Shot.Colors color, bool isShielded)
+	public void SpawnEnemy (Vector3 position, Shot.Colors color, bool isShielded, bool rotates)
 	  {
 						var enemy = Instantiate (enemyPrefab) as Transform;
       enemy.position = position;
-      List<Transform> disabledCannons = new List<Transform> ();
+            List<Transform> disabledCannons = new List<Transform> ();
+
+    var enemyMovement = enemy.GetComponent<StraightEnemyScript> ();
+    if (enemyMovement != null) {
+      enemyMovement.rotates = rotates;
+    }
 
 		for(int i=0; i<enemy.childCount; i++)
 		{

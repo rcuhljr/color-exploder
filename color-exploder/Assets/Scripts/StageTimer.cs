@@ -11,12 +11,12 @@ public class StageTimer : MonoBehaviour
   private Stage[] stages = {
     new Stage (0, 10, 
                new List<SpawnInfo>{
-            new SpawnInfo(-5,5,Colors.red, false, 100),
-            new SpawnInfo(5,5,Colors.blue, false, 500),
+            new SpawnInfo(-5,5,Colors.red, false, false, 100),
+            new SpawnInfo(5,5,Colors.blue, false, false, 500),
             
-            new SpawnInfo(0,5,Colors.green, false, 700),
-            new SpawnInfo(0,5,Colors.green, true, 1000),
-            new SpawnInfo(2,5,Colors.white, false, 800)}),
+            new SpawnInfo(0,5,Colors.green, false, true, 700),
+            new SpawnInfo(0,5,Colors.green, true, false, 1000),
+            new SpawnInfo(2,5,Colors.white, false, false, 800)}),
     new Stage (250, 10, null)};
   public int stageIndex = 0;
   private Timer stageTimer;
@@ -98,15 +98,17 @@ public class StageTimer : MonoBehaviour
     public float y;
     public Colors color;
     public bool shielded;
+    public bool rotates;
     public int delay;
 
 
-    public SpawnInfo (float x, float y, Colors color, bool shielded, int delay)
+    public SpawnInfo (float x, float y, Colors color, bool shielded, bool rotates, int delay)
     {
       this.x = x;
       this.y = y;
       this.color = color;
       this.delay = delay;
+      this.rotates = rotates;
       this.shielded = shielded;
     }
   }
