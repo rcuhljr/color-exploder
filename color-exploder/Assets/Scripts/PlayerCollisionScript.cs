@@ -17,7 +17,13 @@ public class PlayerCollisionScript : MonoBehaviour {
     {
         // TODO: Do we want to pare down what is allowed to collide?  This makes the player explode always.
         
-        //One shot kills the player.
-        Destroy(gameObject);
+        
+		Shot bullet = otherCollider.gameObject.GetComponent<Shot>();
+		if (bullet != null) {
+						if (bullet.ShotColor != (int)Shot.Colors.player) {
+								Destroy (gameObject);
+						}
+				}
+        
     }
 }
