@@ -3,8 +3,8 @@ using System.Collections;
 
 public class GuiScript : MonoBehaviour {
 
-    private int _score = 0;
-    private string _currentText = "Score: 0";
+    private static int _score = 0;
+    private static string _currentText = "Score: 0";
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +25,7 @@ public class GuiScript : MonoBehaviour {
         GUI.Label(new Rect(255, Screen.height-30, 100, 20), _currentText);
     }
 
-    public void AddScore(int add)
+    public static void AddScore(int add)
     {
         _score += add;
         _currentText = "Score: " + _score;
