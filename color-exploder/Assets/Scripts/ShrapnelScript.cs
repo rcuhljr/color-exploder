@@ -51,7 +51,6 @@ public class ShrapnelScript : MonoBehaviour {
       shot.Magnitude = magnitude;
       shot.speed.Normalize();
       shot.speed = shot.speed * speedMultiplier;
-      //shot.speed.Scale(new Vector2(speedMultiplier, speedMultiplier));
     }
     
     var sprite = shotTransform.gameObject.GetComponent<SpriteRenderer>();
