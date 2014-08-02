@@ -12,6 +12,9 @@ public class WeaponScript : MonoBehaviour {
 	/// </summary>
 	public Transform shotPrefab;
 
+	/// <summary>
+	/// Sound prefab for lasers
+	/// </summary>
 	public SoundScript sound;
 	
 	/// <summary>

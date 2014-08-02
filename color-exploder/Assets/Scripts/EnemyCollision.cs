@@ -9,6 +9,8 @@ public class EnemyCollision : MonoBehaviour {
 
 	public GameObject Enemy;
 
+	public SoundScript sound;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -27,6 +29,10 @@ public class EnemyCollision : MonoBehaviour {
 		Shot bullet = otherCollider.gameObject.GetComponent<Shot>();
 		if (bullet != null) {
 			if (bullet.ShotColor == (int)EnemyColor || (!isShielded && bullet.ShotColor == (int)Shot.Colors.player)) {
+				if(sound != null)
+				{
+					sound.Play(SoundScript.SoundList.Explosions);
+				}
 				Destroy (Enemy);
 				GuiScript.AddScore ( (int) (Math.Pow(2, bullet.Magnitude-1)));
 				foreach(var cannon in 

@@ -23,6 +23,8 @@ public class SpawnEnemiesScript : MonoBehaviour
         /// </summary>
         public Transform enemyPrefab;
 
+		public SoundScript sound;
+
         /// <summary>
         /// Cooldown in seconds between two enemies
         /// </summary>
@@ -124,7 +126,7 @@ public class SpawnEnemiesScript : MonoBehaviour
       collider.EnemyColor = color;
       collider.isShielded = isShielded;
       collider.Enemy = (enemy as Transform).gameObject;
-						
+		collider.sound = sound;
     }
 
     if (isShielded) {
