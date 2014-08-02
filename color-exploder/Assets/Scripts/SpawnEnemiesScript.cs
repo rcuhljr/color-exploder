@@ -82,42 +82,37 @@ public class SpawnEnemiesScript : MonoBehaviour
                 if (readyToSpawn) {
                         readyToSpawn = false;
 
-    if (staticSpawns != null) {
-                        // Create a new enemy
-                        var enemy = Instantiate (enemyPrefab) as Transform;
-        var spawn = staticSpawns.First ();
-        staticSpawns.RemoveAt (0);
+                        if (staticSpawns != null) {
+                                // Create a new enemy
+                                var spawn = staticSpawns.First ();
+                                staticSpawns.RemoveAt (0);
 
-        SpawnEnemy (new Vector3 (spawn.x, spawn.y, 1), spawn.color);
+                                SpawnEnemy (new Vector3 (spawn.x, spawn.y, 1), spawn.color, false);
 
-      } while(staticSpawns.Count > 0 && staticSpawns.First ().delay == 0);
+                        }
+                        while (staticSpawns.Count > 0 && staticSpawns.First ().delay == 0)
+                                ;
 
-      if (staticSpawns.Count > 0) {
-        timer.Interval = staticSpawns.First ().delay;
-      }      else {
-        timer.Stop();
-      }
-
-    } else {
-      var position = new Vector3 ((float)((randomzier.NextDouble () - 0.5) * 12), 5, 1);
-      var color = (Shot.Colors)(randomzier.Next () % 3);
-      SpawnEnemy (position, color);
-    }
-            
-                        var enemyCollision = enemy.GetComponent<EnemyCollision> ();
-                        if (enemyCollision != null) {
-                                enemyCollision.EnemyColor = (Shot.Colors)color;
-                                //TODO: Set this flag.
-                                var isShielded = false;
-                                enemyCollision.isShielded = isShielded;
-                                if(isShielded)
-                                  enemy.GetComponent<SpriteRenderer> ().sprite = 
-                                    Resources.Load<Sprite>("Textures/EnemyShip-Shielded");
+                        if (staticSpawns.Count > 0) {
+                                timer.Interval = staticSpawns.First ().delay;
+                        } else {
+                                timer.Stop ();
                         }
 
-  public void SpawnEnemy (Vector3 position, Shot.Colors color)
+                } else {
+                        var position = new Vector3 ((float)((randomzier.NextDouble () - 0.5) * 12), 5, 1);
+                        var color = (Shot.Colors)(randomzier.Next () % 3);
+                        SpawnEnemy (position, color, false);
+                }
+        }
+
+  public void SpawnEnemy (Vector3 position, Shot.Colors color, bool isShielded)
   {
 						var enemy = Instantiate (enemyPrefab) as Transform;
+            if (isShielded) {
+              enemy.GetComponent<SpriteRenderer> ().sprite = 
+                Resources.Load<Sprite> ("Textures/EnemyShip-Shielded");
+                }
 
     enemy.position = position;
 			foreach(var renderer in
@@ -129,7 +124,8 @@ public class SpawnEnemiesScript : MonoBehaviour
 			        (enemy as Transform).GetComponentsInChildren<EnemyCollision> ())
 			{
 			    collider.EnemyColor = color;
-				collider.Enemy = (enemy as Transform).gameObject;
+          collider.isShielded = isShielded;
+				  collider.Enemy = (enemy as Transform).gameObject;
 						
                 }
         }
