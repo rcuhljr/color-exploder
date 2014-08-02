@@ -5,6 +5,8 @@ public class EnemyCollision : MonoBehaviour {
 
 	public Shot.Colors EnemyColor;
 
+	public GameObject Enemy;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -23,7 +25,7 @@ public class EnemyCollision : MonoBehaviour {
 		Shot bullet = otherCollider.gameObject.GetComponent<Shot>();
 		if (bullet != null) {
 			if (bullet.ShotColor == (int)EnemyColor || bullet.ShotColor == (int)Shot.Colors.player) {
-				Destroy (gameObject);
+				Destroy (Enemy);
 				GuiScript.AddScore (bullet.Score);
 			}
 

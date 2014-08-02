@@ -24,6 +24,9 @@ public class StraightEnemyScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		rigidbody2D.velocity = movement;
+		foreach (Rigidbody2D body in
+		gameObject.GetComponentsInChildren<Rigidbody2D> ()) {
+						body.velocity = movement;
+				}
 	}
 }

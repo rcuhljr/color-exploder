@@ -107,13 +107,21 @@ public class SpawnEnemiesScript : MonoBehaviour
 
   public void SpawnEnemy (Vector3 position, Shot.Colors color)
   {
-    var enemy = Instantiate (enemyPrefab) as Transform;
+						var enemy = Instantiate (enemyPrefab);
 
     enemy.position = position;
-    enemy.GetComponent<SpriteRenderer> ().color = ConvertToColor (color);    
-    var enemyCollision = enemy.GetComponent<EnemyCollision> ();
-    if (enemyCollision != null) {
-      enemyCollision.EnemyColor = color;
+                        enemy.position = new Vector3( (float)((randomzier.NextDouble()-0.5)*12), 5, 1);
+			foreach(var renderer in
+						(enemy as Transform).GetComponentsInChildren<SpriteRenderer> ())
+			{
+						enemy.GetComponent<SpriteRenderer> ().color = ConvertToColor ((Shot.Colors)(color));
+			}
+			foreach(var collider in
+			        (enemy as Transform).GetComponentsInChildren<EnemyCollision> ())
+			{
+							enemyCollision.EnemyColor = (Shot.Colors)color;
+				collider.Enemy = (enemy as Transform).gameObject;
+						
     }
   }
 
