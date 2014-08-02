@@ -14,6 +14,6 @@ public class NewBehaviourScript : MonoBehaviour {
 	}
 
 	void OnMouseDown () {
-
+		Application.LoadLevel ("Random");
 	}
 }
