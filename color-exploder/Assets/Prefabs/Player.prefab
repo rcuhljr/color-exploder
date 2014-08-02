@@ -82,7 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 365
   maxSpeed: 5
-  dragRate: .100000001
+  dragRate: .0250000004
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

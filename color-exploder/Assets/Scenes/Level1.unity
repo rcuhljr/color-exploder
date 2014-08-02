@@ -285,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 365
   maxSpeed: 5
-  dragRate: .100000001
+  dragRate: .0250000004
 --- !u!114 &299889736
 MonoBehaviour:
   m_ObjectHideFlags: 0
