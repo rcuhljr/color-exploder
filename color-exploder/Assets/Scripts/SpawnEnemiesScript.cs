@@ -57,21 +57,14 @@ public class SpawnEnemiesScript : MonoBehaviour
     {
 		if (readyToSpawn) {
 			readyToSpawn=false;
-						// Create a new shot
+						// Create a new enemy
 						var enemy = Instantiate (enemyPrefab) as Transform;
 
 						// Assign position
-			            enemy.position = Camera.main.ViewportToWorldPoint(new Vector3 (((randomzier.Next () % 100) / 100), 1));
-
+						//TODO: These probably shouldn't be constants...
+                        enemy.position = new Vector3( (float)((randomzier.NextDouble()-0.5)*12), 5, 1);
 
 						enemy.GetComponent<SpriteRenderer> ().color = ConvertToColor ((Shot.Colors)(randomzier.Next () % 3));
-
-						// Make the weapon shot always towards it
-						//MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
-						//if (move != null)
-						//{
-						//    move.direction = this.transform.right; // towards in 2D space is the right of the sprite
-						//}
 				}
     }
 
