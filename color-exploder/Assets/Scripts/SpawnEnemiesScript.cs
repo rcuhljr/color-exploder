@@ -49,11 +49,17 @@ public class SpawnEnemiesScript : MonoBehaviour
                 Spawn ();
         }
 
-        public void SetSpawnRate (int newRate)
-        {
+  public void Stop ()
+  {
     staticSpawns = null;
     timer.Stop ();
-                timer.Interval = newRate;
+  }
+
+  public void SetSpawnRate (int newRate)
+  {
+    staticSpawns = null;
+    timer.Stop ();
+    timer.Interval = newRate;
     timer.Start ();
   }
 

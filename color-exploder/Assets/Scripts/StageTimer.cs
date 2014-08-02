@@ -20,6 +20,7 @@ public class StageTimer : MonoBehaviour
   public int stageIndex = 0;
   private Timer stageTimer;
   private bool changeStage = false;
+  private bool gameStopped = false;
   // Use this for initialization
   void Start ()
   {
@@ -46,10 +47,18 @@ public class StageTimer : MonoBehaviour
       spawner.SetSpawnRate (stage.spawnDelay);
     }
   }
+
+  public void StopGame(){
+    gameStopped = true;
+  }
   
   // Update is called once per frame
   void Update ()
   {
+    if (gameStopped) {
+      stageTimer.Stop ();
+      spawner.Stop();
+    }
     if (changeStage) {
       changeStage = false;
       stageIndex = (stageIndex + 1) % stages.Length;
