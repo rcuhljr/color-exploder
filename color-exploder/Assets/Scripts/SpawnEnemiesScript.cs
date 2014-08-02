@@ -79,7 +79,7 @@ public class SpawnEnemiesScript : MonoBehaviour
         /// </summary>
         public void Spawn ()
         {
-                if (readyToSpawn) {
+          if (readyToSpawn) {
                         readyToSpawn = false;
 
                         if (staticSpawns != null) {
@@ -88,21 +88,19 @@ public class SpawnEnemiesScript : MonoBehaviour
                                 staticSpawns.RemoveAt (0);
 
                                 SpawnEnemy (new Vector3 (spawn.x, spawn.y, 1), spawn.color, false);
+                                while (staticSpawns.Count > 0 && staticSpawns.First ().delay == 0)
+                                        ;
 
-                        }
-                        while (staticSpawns.Count > 0 && staticSpawns.First ().delay == 0)
-                                ;
-
-                        if (staticSpawns.Count > 0) {
-                                timer.Interval = staticSpawns.First ().delay;
+                                if (staticSpawns.Count > 0) {
+                                        timer.Interval = staticSpawns.First ().delay;
+                                } else {
+                                        timer.Stop ();
+                                }
                         } else {
-                                timer.Stop ();
+                                var position = new Vector3 ((float)((randomzier.NextDouble () - 0.5) * 12), 5, 1);
+                                var color = (Shot.Colors)(randomzier.Next () % 3);
+                                SpawnEnemy (position, color, false);
                         }
-
-                } else {
-                        var position = new Vector3 ((float)((randomzier.NextDouble () - 0.5) * 12), 5, 1);
-                        var color = (Shot.Colors)(randomzier.Next () % 3);
-                        SpawnEnemy (position, color, false);
                 }
         }
 
@@ -114,7 +112,7 @@ public class SpawnEnemiesScript : MonoBehaviour
                 Resources.Load<Sprite> ("Textures/EnemyShip-Shielded");
                 }
 
-    enemy.position = position;
+      enemy.position = position;
 			foreach(var renderer in
 						(enemy as Transform).GetComponentsInChildren<SpriteRenderer> ())
 			{
