@@ -42,9 +42,9 @@ public class GuiScript : MonoBehaviour
   void OnGUI ()
   {
     if (gameOver) {
-      GUI.Box (new Rect (250, Screen.height - 300, 300, 200), "Game Over");
+      GUI.Box (new Rect (100, Screen.height - 300, 300, 200), "Game Over");
       
-      GUI.Label (new Rect (280, Screen.height - 275, 150, 40), "Final Score: " + _score);
+      GUI.Label (new Rect (130, Screen.height - 275, 150, 40), "Final Score: " + _score);
     } else {
       GUI.Box (new Rect (250, Screen.height - 50, 100, 40), string.Empty);
 
