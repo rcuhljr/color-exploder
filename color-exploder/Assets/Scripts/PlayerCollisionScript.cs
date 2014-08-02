@@ -25,5 +25,10 @@ public class PlayerCollisionScript : MonoBehaviour {
 						}
 				}
         
+		EnemyCollision enemy = otherCollider.gameObject.GetComponent<EnemyCollision> ();
+			if (enemy != null) {
+				Destroy(gameObject);
+				Destroy (enemy.gameObject);
+			}
     }
 }

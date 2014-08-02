@@ -63,8 +63,13 @@ public class SpawnEnemiesScript : MonoBehaviour
 						// Assign position
 						//TODO: These probably shouldn't be constants...
                         enemy.position = new Vector3( (float)((randomzier.NextDouble()-0.5)*12), 5, 1);
-
-						enemy.GetComponent<SpriteRenderer> ().color = ConvertToColor ((Shot.Colors)(randomzier.Next () % 3));
+						var color = randomzier.Next () % 3;
+						enemy.GetComponent<SpriteRenderer> ().color = ConvertToColor ((Shot.Colors)(color));
+						
+						var enemyCollision = enemy.GetComponent<EnemyCollision>();
+						if(enemyCollision != null) {
+							enemyCollision.EnemyColor = (Shot.Colors)color;
+						}
 				}
     }
 

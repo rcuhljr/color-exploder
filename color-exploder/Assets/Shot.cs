@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Shot : MonoBehaviour {
 
-	public enum Colors {red, blue, green, player };
+	public enum Colors {red, blue, green, cyan, yellow, magenta, white, player };
 			
 	/// <summary>
 	/// Object speed
@@ -24,7 +24,7 @@ public class Shot : MonoBehaviour {
 			speed.x * direction.x,
 			speed.y * direction.y);
 
-		Destroy(gameObject, 3);
+		Destroy(gameObject, 4);
 	}
 	
 	// Update is called once per frame
