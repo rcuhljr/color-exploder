@@ -92,8 +92,5 @@ public class PlayerShipMovement : MonoBehaviour {
 			else
 				rigidbody2D.position = new Vector2(rigidbody2D.position.x, MinY);
 				}
-
-		
-		Debug.Log ("X: " + rigidbody2D.position.x + ", Y: " + rigidbody2D.position.y);
 	}
 }
