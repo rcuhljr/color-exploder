@@ -1,96 +1,134 @@
 ﻿using UnityEngine;
 using System;
 using System.Timers;
+using SpawnInfo = StageTimer.SpawnInfo;
 
 /// <summary>
 /// Launch projectile
 /// </summary>
+using System.Collections.Generic;
+using System.Linq;
+
 public class SpawnEnemiesScript : MonoBehaviour
 {
-    //--------------------------------
-    // 1 - Designer variables
-    //--------------------------------
+  //--------------------------------
+  // 1 - Designer variables
+  //--------------------------------
 
-    /// <summary>
-    /// Projectile prefab for shooting
-    /// </summary>
-    public Transform enemyPrefab;
+  /// <summary>
+  /// Projectile prefab for shooting
+  /// </summary>
+  public Transform enemyPrefab;
 
-    /// <summary>
-    /// Cooldown in seconds between two enemies
-    /// </summary>
-	private bool readyToSpawn = false;
+  /// <summary>
+  /// Cooldown in seconds between two enemies
+  /// </summary>
+  private bool readyToSpawn = false;
+  public System.Random randomzier = new System.Random ();
 
-	public System.Random randomzier = new System.Random();
+  //--------------------------------
+  // 2 - Cooldown
+  //--------------------------------
 
-    //--------------------------------
-    // 2 - Cooldown
-    //--------------------------------
+  private float enemyCooldown;
+  private Timer timer;
+  private List<SpawnInfo> staticSpawns;
 
-    private float enemyCooldown;
+  void Start ()
+  {
+    timer = new Timer (500);
+    timer.Elapsed += timer_Elapsed;
+    timer.Start ();
+  }
 
-	private Timer timer;
+  void Update ()
+  {
+    Spawn ();
+  }
 
-    void Start()
-    {
-		timer = new Timer(500);
-        timer.Elapsed += timer_Elapsed;
-		timer.Start();
+  public void SetSpawnRate (int newRate)
+  {
+    staticSpawns = null;
+    timer.Stop ();
+    timer.Interval = newRate;
+    timer.Start ();
+  }
+
+  public void SetSpawnScript (List<SpawnInfo> staticSpawns)
+  {
+    timer.Stop ();
+    this.staticSpawns = staticSpawns;
+    timer.Interval = staticSpawns [0].delay;
+    timer.Start ();
+  }
+
+  private void timer_Elapsed (object sender, EventArgs a)
+  {
+    readyToSpawn = true;
+  }
+
+  //--------------------------------
+  // 3 - Shooting from another script
+  //--------------------------------
+
+  /// <summary>
+  /// Create a new enemy
+  /// </summary>
+  public void Spawn ()
+  {
+    if (!readyToSpawn) {
+      return;
+    }
+    readyToSpawn = false;
+
+    if (staticSpawns != null) {
+      // Create a new enemy
+      do {
+        var spawn = staticSpawns.First ();
+        staticSpawns.RemoveAt (0);
+
+        SpawnEnemy (new Vector3 (spawn.x, spawn.y, 1), spawn.color);
+
+      } while(staticSpawns.Count > 0 && staticSpawns.First ().delay == 0);
+
+      if (staticSpawns.Count > 0) {
+        timer.Interval = staticSpawns.First ().delay;
+      }      else {
+        timer.Stop();
+      }
+
+    } else {
+      var position = new Vector3 ((float)((randomzier.NextDouble () - 0.5) * 12), 5, 1);
+      var color = (Shot.Colors)(randomzier.Next () % 3);
+      SpawnEnemy (position, color);
     }
 
-    void Update()
-    {
-		Spawn();
+  }
+
+  public void SpawnEnemy (Vector3 position, Shot.Colors color)
+  {
+    var enemy = Instantiate (enemyPrefab) as Transform;
+
+    enemy.position = position;
+    enemy.GetComponent<SpriteRenderer> ().color = ConvertToColor (color);    
+    var enemyCollision = enemy.GetComponent<EnemyCollision> ();
+    if (enemyCollision != null) {
+      enemyCollision.EnemyColor = color;
     }
+  }
 
-	public void SetSpawnRate(int newRate){
-		timer.Interval = newRate;
-	}
-
-    private void timer_Elapsed(object sender, EventArgs a)
-    {
-		readyToSpawn = true;
+  public Color ConvertToColor (Shot.Colors gameColor)
+  {
+    switch (gameColor) {
+    case Shot.Colors.blue:
+      return Color.blue;
+    case Shot.Colors.green:
+      return Color.green;
+    case Shot.Colors.red:
+      return Color.red;
+    default:
+      return Color.white;
     }
-
-    //--------------------------------
-    // 3 - Shooting from another script
-    //--------------------------------
-
-    /// <summary>
-    /// Create a new enemy
-    /// </summary>
-    public void Spawn()
-    {
-		if (readyToSpawn) {
-			readyToSpawn=false;
-						// Create a new enemy
-						var enemy = Instantiate (enemyPrefab) as Transform;
-
-						// Assign position
-						//TODO: These probably shouldn't be constants...
-                        enemy.position = new Vector3( (float)((randomzier.NextDouble()-0.5)*12), 5, 1);
-						var color = randomzier.Next () % 3;
-						enemy.GetComponent<SpriteRenderer> ().color = ConvertToColor ((Shot.Colors)(color));
-						
-						var enemyCollision = enemy.GetComponent<EnemyCollision>();
-						if(enemyCollision != null) {
-							enemyCollision.EnemyColor = (Shot.Colors)color;
-						}
-				}
-    }
-
-	public Color ConvertToColor(Shot.Colors gameColor)
-	{
-				switch (gameColor) {
-				case Shot.Colors.blue:
-						return Color.blue;
-				case Shot.Colors.green:
-						return Color.green;
-				case Shot.Colors.red:
-						return Color.red;
-				default:
-						return Color.white;
-		}
-	}
+  }
 }
 
