@@ -375,7 +375,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: fb87e552fe9454b4dbef0829541eb8e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .310000002
+  m_Volume: .409999996
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 400010, guid: 26b61bf35d3172c4e957c2db14d91808, type: 2}
   asteroidPrefab: {fileID: 400000, guid: 1d7813ebff5974e4eba0130671fbc0b4, type: 2}
-  sound: {fileID: 0}
+  sound: {fileID: 1926729368}
 --- !u!1001 &1657356481
 Prefab:
   m_ObjectHideFlags: 0
@@ -525,6 +525,10 @@ Prefab:
       propertyPath: bgScript
       value: 
       objectReference: {fileID: 1889397439}
+    - target: {fileID: 11400000, guid: c1d34158b109ede4db40426ed51eb3fb, type: 2}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 1926729368}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1d34158b109ede4db40426ed51eb3fb, type: 2}
   m_RootGameObject: {fileID: 1633774908}
@@ -726,6 +730,22 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 31621d42902784c4f9742f45a70a3191, type: 2}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ef2cbc820c4b1e342a7cc1413ba4cb0d, type: 3}
+    - target: {fileID: 11400000, guid: 31621d42902784c4f9742f45a70a3191, type: 2}
+      propertyPath: explosionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 10be0456a12fe9146852ec008dc2cb12, type: 3}
+    - target: {fileID: 11400000, guid: 31621d42902784c4f9742f45a70a3191, type: 2}
+      propertyPath: gameOverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: caf6b36cf85ce304e83228cf2d7fea84, type: 3}
+    - target: {fileID: 11400000, guid: 31621d42902784c4f9742f45a70a3191, type: 2}
+      propertyPath: transitionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bfcdaaaacc21d754e8328c4641baf17f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31621d42902784c4f9742f45a70a3191, type: 2}
   m_RootGameObject: {fileID: 1926729363}
@@ -1016,11 +1036,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81f8616a4e4f8c478eeb553450c0b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombSound: {fileID: 0}
-  explosionSound: {fileID: 0}
-  gameOverSound: {fileID: 0}
+  bombSound: {fileID: 8300000, guid: ef2cbc820c4b1e342a7cc1413ba4cb0d, type: 3}
+  explosionSound: {fileID: 8300000, guid: 10be0456a12fe9146852ec008dc2cb12, type: 3}
+  gameOverSound: {fileID: 8300000, guid: caf6b36cf85ce304e83228cf2d7fea84, type: 3}
   laserSound: {fileID: 8300000, guid: 9180421527ad30046a53902770bb9cf6, type: 3}
-  transitionSound: {fileID: 0}
+  transitionSound: {fileID: 8300000, guid: bfcdaaaacc21d754e8328c4641baf17f, type: 3}
 --- !u!1 &1968260911
 GameObject:
   m_ObjectHideFlags: 0
