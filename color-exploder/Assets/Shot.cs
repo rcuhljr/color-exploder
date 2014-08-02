@@ -16,6 +16,8 @@ public class Shot : MonoBehaviour {
 	public Vector2 direction = new Vector2(-1, 0);
 
 	public int ShotColor = (int)Colors.player;
+
+	public int Score = 1;
 	
 	private Vector2 movement;
 

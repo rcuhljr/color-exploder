@@ -24,6 +24,7 @@ public class EnemyCollision : MonoBehaviour {
 		if (bullet != null) {
 			if (bullet.ShotColor == (int)EnemyColor || bullet.ShotColor == (int)Shot.Colors.player) {
 				Destroy (gameObject);
+				GuiScript.AddScore (bullet.Score);
 			}
 
             Destroy (bullet.gameObject);
