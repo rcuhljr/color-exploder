@@ -11,10 +11,14 @@ public class StageTimer : MonoBehaviour
 
   public SpawnEnemiesScript spawner;
   public BackgroundScript bgScript;
+  public SoundScript sounds;
   private Stage[] stages;
   public int stageIndex = 0;
   private Timer eventTimer = new Timer ();
   private bool fireEvent = false;
+  private Timer bgTimer = new Timer(1500);
+  private bool fireBg = false;
+  private Colors bgColor;
   private bool gameStopped = false;
   List<GameEvent> currentStage;
   List<float> slots = new List<float>{-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6};
@@ -27,6 +31,13 @@ public class StageTimer : MonoBehaviour
       GenerateStage (50, 300, true, true, false, true, true) };
     fireEvent = true;
     setupStage (stages [0]);
+
+    bgTimer.Elapsed += background_Elapsed;
+  }
+
+  void background_Elapsed (object sender, ElapsedEventArgs e)
+  {
+    fireBg = true;
   }
 
   private void timer_Elapsed (object sender, System.EventArgs a)
@@ -110,10 +121,17 @@ public class StageTimer : MonoBehaviour
     if (gameStopped) {
       return;
     }
+
+    if (fireBg) {
+      bgScript.ChangeColor (bgColor);
+      fireBg = false;
+    }
       
     if (!fireEvent) {
       return;
     }
+
+ 
 
     fireEvent = false;
     consumeEvent ();
@@ -139,8 +157,13 @@ public class StageTimer : MonoBehaviour
       eventTimer.Interval = currEvent.delay;
       }
     } else if (currEvent is BackgroundShift) {
+      if(sounds != null)
+      {
+        sounds.Play(SoundScript.SoundList.Transitions);
+      }
       var bg = (BackgroundShift)currEvent;
-      bgScript.ChangeColor (bg.color);
+      bgColor = bg.color;
+      bgTimer.Start();
       eventTimer.Interval = currEvent.delay;
     }
 

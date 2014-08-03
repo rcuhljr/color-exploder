@@ -360,6 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 1277999993}
   bgScript: {fileID: 227971207}
+  sounds: {fileID: 2015853415}
   stageIndex: 0
 --- !u!4 &1010018537
 Transform:
@@ -791,6 +792,7 @@ GameObject:
   - 82: {fileID: 2015853416}
   - 82: {fileID: 2015853417}
   - 82: {fileID: 2015853418}
+  - 82: {fileID: 2015853419}
   m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
@@ -825,7 +827,7 @@ MonoBehaviour:
   explosionSound: {fileID: 0}
   gameOverSound: {fileID: 0}
   laserSound: {fileID: 8300000, guid: 9180421527ad30046a53902770bb9cf6, type: 3}
-  transitionSound: {fileID: 0}
+  transitionSound: {fileID: 8300000, guid: 210b216050ddab04ab0165ba843ca13a, type: 3}
 --- !u!82 &2015853416
 AudioSource:
   m_ObjectHideFlags: 0
@@ -951,6 +953,64 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: caf6b36cf85ce304e83228cf2d7fea84, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &2015853419
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2015853413}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 210b216050ddab04ab0165ba843ca13a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
