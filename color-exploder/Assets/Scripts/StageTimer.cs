@@ -15,6 +15,7 @@ public class StageTimer : MonoBehaviour
   public SoundScript sounds;
   private Stage[] stages;
   public int stageIndex = 0;
+  public string StageResourceToLoad = "level-base-1";
   private Timer eventTimer = new Timer ();
   private bool fireEvent = false;
   private Timer bgTimer = new Timer (1750);
@@ -33,9 +34,14 @@ public class StageTimer : MonoBehaviour
     eventTimer.Elapsed += timer_Elapsed;
     bossTimer.Elapsed += boss_Elapsed;
     stages = new Stage[]{GenerateStage (20, 1000, false, false, false, false, true),
-      GenerateStage (50, 800, true, true, false, true, true) };
+      GenerateStage (50, 800, true, true, false, true, true),
+      GenerateStage (70, 700, true, true, false, true, true),
+      GenerateStage (100, 500, true, true, false, true, true)};
     fireEvent = true;
-    //stages = IOUtils.Load ("level-base-1");
+    if(!string.IsNullOrEmpty(StageResourceToLoad)) {
+
+      stages = IOUtils.Load(StageResourceToLoad);
+    }
     setupStage (stages [0]);
 
     bgTimer.Elapsed += background_Elapsed;

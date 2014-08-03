@@ -491,6 +491,7 @@ MonoBehaviour:
   bgScript: {fileID: 1889397439}
   asteroidPrefab: {fileID: 400000, guid: 1d7813ebff5974e4eba0130671fbc0b4, type: 2}
   sound: {fileID: 1926729368}
+  bossPrefab1: {fileID: 0}
 --- !u!1001 &1657356481
 Prefab:
   m_ObjectHideFlags: 0
@@ -596,6 +597,7 @@ MonoBehaviour:
   bgScript: {fileID: 1889397439}
   sounds: {fileID: 1926729368}
   stageIndex: 0
+  StageResourceToLoad: 
 --- !u!1 &1817640332
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f807b6bf5b21b845875d816543d6080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 100
+  moveForce: 200
   maxSpeed: 3
   dragRate: 0
 --- !u!114 &1817640335
@@ -1243,6 +1245,10 @@ Prefab:
       propertyPath: sounds
       value: 
       objectReference: {fileID: 1926729368}
+    - target: {fileID: 11400000, guid: f801bd5aa7a2e324596e272450f61333, type: 2}
+      propertyPath: StageResourceToLoad
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f801bd5aa7a2e324596e272450f61333, type: 2}
   m_RootGameObject: {fileID: 1721728386}

@@ -1,23 +1,276 @@
-500
-Spawn red 0
-Spawn blue 1
-Spawn green 2
-Spawn red 3 shield
-Spawn blue 4 shield
-Spawn green 5 shield
-Spawn red 6 rotator
-Spawn blue 7 rotator
-Spawn green 8 rotator
-Spawn asteroid 9
-Spawn asteroid 10
-Spawn asteroid 11
 1000
+Spawn green 8  
+Spawn green 11  
+Spawn red 5  
+1000
+Spawn green 8  
+Spawn green 9  
+Spawn blue 6  
+Spawn red 1 rotator 
+1000
+Spawn blue 7  
+Spawn green 3  
+Spawn blue 8  
+1000
+Spawn red 1  
+Spawn blue 5  
+Spawn red 4  
+1000
+Spawn blue 11  
+Spawn green 9  
+1000
+Spawn blue 9  
+Spawn green 1 rotator 
+Spawn green 7  
+1000
+Spawn blue 5  
+Spawn blue 7  
+1000
+Spawn red 9  
+Spawn green 2 rotator 
+1000
+Spawn green 10  
+Spawn green 5 rotator 
+Spawn blue 8  
+Spawn blue 6  
+1000
+Spawn red 3  
+Spawn red 5  
+Spawn green 2  
+1000
+Spawn blue 3  
+Spawn red 2  
+1000
+Spawn blue 2  
+Spawn green 11 rotator 
+Spawn red 9 rotator 
+1000
+Spawn blue 8  
+Spawn blue 6 rotator 
+1000
+Spawn blue 12 rotator 
+Spawn green 5  
+Spawn blue 8 rotator 
+1000
+Spawn red 8 rotator 
+Spawn red 0  
+Spawn blue 9  
+Spawn green 7  
+1000
+Spawn green 11  
+Spawn red 0  
+Spawn red 7 rotator 
+Spawn green 8  
+1000
+Spawn red 6  
+Spawn red 10  
+1000
+Spawn green 7  
+Spawn blue 9 rotator 
+Spawn blue 0  
+1000
+Spawn blue 12  
+Spawn green 5  
+1000
+Spawn blue 11  
+Spawn blue 9  
+800
+Spawn green 3  
+Spawn blue 0  
+Spawn red 9  
+Spawn red 10  
+800
+Spawn red 4  shielded
+Spawn blue 7  
+Spawn green 11 rotator 
+800
+Spawn green 1 rotator 
+Spawn green 3  
+Spawn green 9  
+800
+Spawn red 5  
+Spawn blue 11 rotator 
+Spawn red 7  
+Spawn green 8  
+800
+Spawn green 2  
+Spawn green 8  
+Spawn blue 1  
+800
+Spawn red 8 rotator 
+Spawn blue 10  shielded
+Spawn blue 1 rotator 
+800
+Spawn red 11  
+Spawn red 3 rotator 
+800
+Spawn blue 8  
+Spawn blue 0  
+800
+Spawn blue 9  
+Spawn blue 11  
+Spawn green 4  
+Spawn red 8  
+800
+Spawn blue 1  
+Spawn green 8  
+Spawn green 2  
+Spawn green 0 rotator 
+800
+Spawn blue 11  
+Spawn blue 12  
+800
+Spawn red 11  
+Spawn blue 1  
+Spawn green 9  
+800
+Spawn green 10  
+Spawn blue 3  
+Spawn blue 9  
+800
+Spawn blue 9  
+Spawn red 12  
+Spawn green 8  
+Spawn green 3  
+800
+Spawn green 6  
+Spawn green 11  shielded
+Spawn blue 4  
+800
+Spawn red 4  
+Spawn blue 6 rotator 
+Spawn red 7  
+Spawn green 5 rotator 
+800
 Shift red
 800
-Spawn red 0
-Spawn blue 1
-Spawn green 2
-1000
-Spawn red 9
-Spawn blue 10
-Spawn green 11
+Spawn blue 3 rotator 
+Spawn magenta 7 rotator 
+Spawn asteroid 9  
+Spawn magenta 4  
+800
+Spawn magenta 2  
+Spawn magenta 7  
+Spawn magenta 8  
+Spawn blue 12  
+800
+Spawn yellow 2  shielded
+Spawn magenta 10  
+800
+Spawn yellow 1 rotator 
+Spawn yellow 10  
+800
+Spawn magenta 4  
+Spawn magenta 8  
+800
+Spawn magenta 5  
+Spawn yellow 3  
+800
+Spawn green 9 rotator 
+Spawn magenta 10  
+Spawn magenta 8  
+800
+Spawn green 0 rotator 
+Spawn blue 3  
+800
+Spawn green 7  
+Spawn green 8 rotator 
+Spawn magenta 12  
+800
+Spawn magenta 12 rotator 
+Spawn magenta 5  
+Spawn blue 8  shielded
+800
+Spawn green 12 rotator 
+Spawn magenta 5  
+Spawn green 10  
+Spawn magenta 9  
+800
+Spawn magenta 6  
+Spawn yellow 3  
+800
+Spawn yellow 7 rotator 
+Spawn blue 0 rotator 
+Spawn yellow 8  
+Spawn blue 6  shielded
+800
+Spawn yellow 2 rotator 
+Spawn magenta 6  
+Spawn blue 8  
+Spawn yellow 9  shielded
+800
+Spawn yellow 3  
+Spawn magenta 9 rotator 
+800
+Spawn blue 4 rotator 
+Spawn magenta 2 rotator 
+Spawn blue 11  
+Spawn blue 10  
+800
+Shift green
+800
+Spawn yellow 6  
+Spawn blue 1 rotator 
+Spawn cyan 5  
+800
+Spawn red 2  
+Spawn cyan 0  
+Spawn red 4  
+Spawn yellow 6  
+800
+Spawn cyan 7  
+Spawn red 2  
+Spawn blue 0  
+800
+Spawn blue 7  
+Spawn yellow 1  
+800
+Spawn red 1  
+Spawn cyan 2 rotator 
+Spawn blue 3  
+800
+Spawn blue 0  
+Spawn yellow 7  
+Spawn blue 8  
+800
+Spawn red 9  
+Spawn yellow 12  
+800
+Spawn yellow 11  
+Spawn blue 1 rotator 
+Spawn red 6  
+Spawn blue 3  shielded
+800
+Spawn blue 10 rotator 
+Spawn cyan 8  
+Spawn blue 12  shielded
+800
+Spawn cyan 9  
+Spawn asteroid 6  
+Spawn blue 0  shielded
+800
+Spawn blue 3 rotator 
+Spawn red 7  
+Spawn red 0  
+Spawn asteroid 10  
+800
+Spawn blue 9 rotator 
+Spawn blue 12  
+Spawn red 7  shielded
+800
+Spawn red 2  
+Spawn red 9  
+Spawn yellow 1  
+800
+Spawn red 2  
+Spawn red 9  
+Spawn yellow 7  
+Spawn cyan 5  
+800
+Spawn blue 5  
+Spawn red 4 rotator 
+Spawn yellow 0  
+800
+Spawn asteroid 10  
+Spawn red 1  
+Spawn yellow 8  

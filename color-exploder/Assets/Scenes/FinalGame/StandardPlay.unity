@@ -166,6 +166,10 @@ Prefab:
       propertyPath: sounds
       value: 
       objectReference: {fileID: 1000955580}
+    - target: {fileID: 11400000, guid: f801bd5aa7a2e324596e272450f61333, type: 2}
+      propertyPath: StageResourceToLoad
+      value: LevelBlue
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f801bd5aa7a2e324596e272450f61333, type: 2}
   m_RootGameObject: {fileID: 1214294314}
@@ -904,6 +908,7 @@ MonoBehaviour:
   bgScript: {fileID: 1931070120}
   sounds: {fileID: 1000955580}
   stageIndex: 0
+  StageResourceToLoad: LevelBlue
 --- !u!1 &1223215669
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,6 +941,7 @@ MonoBehaviour:
   bgScript: {fileID: 1931070120}
   asteroidPrefab: {fileID: 400000, guid: 1d7813ebff5974e4eba0130671fbc0b4, type: 2}
   sound: {fileID: 1000955580}
+  bossPrefab1: {fileID: 400018, guid: 9f21a1b842755174c92de3e0dfd5664f, type: 2}
 --- !u!4 &1223215671
 Transform:
   m_ObjectHideFlags: 0
@@ -1087,6 +1093,10 @@ Prefab:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c1d34158b109ede4db40426ed51eb3fb, type: 2}
+      propertyPath: bossPrefab1
+      value: 
+      objectReference: {fileID: 400018, guid: 9f21a1b842755174c92de3e0dfd5664f, type: 2}
     m_RemovedComponents:
     - {fileID: 11400002, guid: c1d34158b109ede4db40426ed51eb3fb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c1d34158b109ede4db40426ed51eb3fb, type: 2}
