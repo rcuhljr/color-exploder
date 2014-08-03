@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16c75ccf666289478fb265652357a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageControl: {fileID: 1277999994}
-  sound: {fileID: 0}
+  stageControl: {fileID: 1010018536}
+  sound: {fileID: 2015853415}
 --- !u!1 &227971204
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +631,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1277999992}
   - 114: {fileID: 1277999993}
-  - 114: {fileID: 1277999994}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -666,20 +665,6 @@ MonoBehaviour:
   bgScript: {fileID: 227971207}
   asteroidPrefab: {fileID: 400000, guid: 1d7813ebff5974e4eba0130671fbc0b4, type: 2}
   sound: {fileID: 2015853415}
---- !u!114 &1277999994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1277999991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8e9c41121d8464b9f29732d3250039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawner: {fileID: 1277999993}
-  bgScript: {fileID: 227971207}
-  stageIndex: 0
 --- !u!1 &1706027591
 GameObject:
   m_ObjectHideFlags: 0

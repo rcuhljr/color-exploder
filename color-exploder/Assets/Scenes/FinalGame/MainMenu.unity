@@ -149,7 +149,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.60000002, y: .600000024}
   m_Center: {x: 0, y: 0}
 --- !u!1 &42021339
 GameObject:
@@ -337,7 +337,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .300000012, y: .300000012}
   m_Center: {x: 0, y: 0}
 --- !u!1 &256637103
 GameObject:
@@ -575,7 +575,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .300000012, y: .300000012}
   m_Center: {x: 0, y: 0}
 --- !u!1 &559798911
 GameObject:
@@ -738,7 +738,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .300000012, y: .300000012}
   m_Center: {x: 0, y: 0}
 --- !u!1 &742777094
 GameObject:
@@ -864,7 +864,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .300000012, y: .300000012}
   m_Center: {x: 0, y: 0}
 --- !u!1 &1196546810
 GameObject:
@@ -1014,7 +1014,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .300000012, y: .300000012}
   m_Center: {x: 0, y: 0}
 --- !u!1 &1348657645
 GameObject:
@@ -1109,7 +1109,7 @@ AudioSource:
   m_GameObject: {fileID: 1348657645}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: fe261a58d4796d54286c61ca7efe960d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6c92c99ae639f3747a63eeff77b34397, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .180000007
   m_Pitch: 1
@@ -1406,7 +1406,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: .300000012, y: .300000012}
   m_Center: {x: 0, y: 0}
 --- !u!1 &1713655051
 GameObject:
