@@ -83,6 +83,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 18214891}
   - 212: {fileID: 18214892}
+  - 114: {fileID: 18214893}
+  - 61: {fileID: 18214894}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -124,6 +126,31 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ee4855e94303557419d10e5f0dd32d97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &18214893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18214890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842e7097186d13240b8ba9e9a5c2df91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlay: {fileID: 742777096}
+  foreGround: {fileID: 559798912}
+  isMain: 0
+--- !u!61 &18214894
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18214890}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &42021339
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +272,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 117663407}
   - 212: {fileID: 117663408}
+  - 114: {fileID: 117663409}
+  - 61: {fileID: 117663410}
   m_Layer: 0
   m_Name: SoundEffectsOn
   m_TagString: Untagged
@@ -286,6 +315,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ba4d8803a3a0a95458e43f9b033388ea, type: 3}
   m_Color: {r: .219607845, g: .219607845, b: .219607845, a: .458823532}
+--- !u!114 &117663409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117663406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64385696d1146a4fb2abc5d82fc6a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionName: SoundEffects
+  isOnOption: 1
+--- !u!61 &117663410
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117663406}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &256637103
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +510,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 499109745}
   - 212: {fileID: 499109746}
+  - 114: {fileID: 499109747}
+  - 61: {fileID: 499109748}
   m_Layer: 0
   m_Name: MusicOn
   m_TagString: Untagged
@@ -498,6 +553,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ba4d8803a3a0a95458e43f9b033388ea, type: 3}
   m_Color: {r: .219607845, g: .219607845, b: .219607845, a: .458823532}
+--- !u!114 &499109747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499109744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64385696d1146a4fb2abc5d82fc6a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionName: Music
+  isOnOption: 1
+--- !u!61 &499109748
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 499109744}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &559798911
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,6 +673,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 628660142}
   - 212: {fileID: 628660143}
+  - 114: {fileID: 628660144}
+  - 61: {fileID: 628660145}
   m_Layer: 0
   m_Name: MusicOff
   m_TagString: Untagged
@@ -635,6 +716,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f462a8ca7886caa45bc87e8904dbe52e, type: 3}
   m_Color: {r: .219607845, g: .219607845, b: .219607845, a: .458823532}
+--- !u!114 &628660144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 628660141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64385696d1146a4fb2abc5d82fc6a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionName: Music
+  isOnOption: 0
+--- !u!61 &628660145
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 628660141}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &742777094
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +799,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 983813455}
   - 212: {fileID: 983813454}
+  - 114: {fileID: 983813456}
+  - 61: {fileID: 983813457}
   m_Layer: 0
   m_Name: ColorBlindOff
   m_TagString: Untagged
@@ -735,6 +842,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 559798912}
   m_RootOrder: 8
+--- !u!114 &983813456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 983813453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64385696d1146a4fb2abc5d82fc6a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionName: ColorBlindMode
+  isOnOption: 0
+--- !u!61 &983813457
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 983813453}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1196546810
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +949,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1306645225}
   - 212: {fileID: 1306645226}
+  - 114: {fileID: 1306645227}
+  - 61: {fileID: 1306645228}
   m_Layer: 0
   m_Name: ColorBlindOn
   m_TagString: Untagged
@@ -859,6 +992,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ba4d8803a3a0a95458e43f9b033388ea, type: 3}
   m_Color: {r: .219607845, g: .219607845, b: .219607845, a: .458823532}
+--- !u!114 &1306645227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1306645224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64385696d1146a4fb2abc5d82fc6a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionName: ColorBlindMode
+  isOnOption: 1
+--- !u!61 &1306645228
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1306645224}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1348657645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1169,7 @@ GameObject:
   - 4: {fileID: 1423285612}
   - 212: {fileID: 1423285613}
   - 61: {fileID: 1423285614}
+  - 114: {fileID: 1423285615}
   m_Layer: 0
   m_Name: Options
   m_TagString: Untagged
@@ -1064,6 +1222,20 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .930000007, y: .280000001}
   m_Center: {x: -4.76837158e-07, y: 4.76837158e-07}
+--- !u!114 &1423285615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1423285611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842e7097186d13240b8ba9e9a5c2df91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlay: {fileID: 742777096}
+  foreGround: {fileID: 559798912}
+  isMain: 1
 --- !u!1 &1559550696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,6 +1341,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1629924021}
   - 212: {fileID: 1629924022}
+  - 114: {fileID: 1629924023}
+  - 61: {fileID: 1629924024}
   m_Layer: 0
   m_Name: SoundEffectsOff
   m_TagString: Untagged
@@ -1210,6 +1384,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f462a8ca7886caa45bc87e8904dbe52e, type: 3}
   m_Color: {r: .219607845, g: .219607845, b: .219607845, a: .458823532}
+--- !u!114 &1629924023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1629924020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64385696d1146a4fb2abc5d82fc6a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionName: SoundEffects
+  isOnOption: 0
+--- !u!61 &1629924024
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1629924020}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1713655051
 GameObject:
   m_ObjectHideFlags: 0
