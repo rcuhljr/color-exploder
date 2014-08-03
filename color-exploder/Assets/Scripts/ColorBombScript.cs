@@ -4,11 +4,12 @@ using System.Timers;
 
 public class ColorBombScript : MonoBehaviour {
 
-  public int BombsLeft = 1;
+  public int BombsLeft = 0;
   public BackgroundScript bgScript;
   public SoundScript sound;
   private Timer delayTimer;
   private bool dropBomb = false;
+  private int prevScore = 0;
 
   public void Start () {
     delayTimer = new Timer (750);
@@ -33,6 +34,11 @@ public class ColorBombScript : MonoBehaviour {
   }
 
   public void Update() {
+    if (prevScore / 100 != GuiScript.GetScore ()/100) {
+      prevScore = GuiScript.GetScore();
+      BombsLeft += 1;
+      GuiScript.UpdateBomb(BombsLeft);
+    }
     if (dropBomb) {
       dropBomb = false;
       bgScript.ChangeColor (ColorUtils.Colors.player);

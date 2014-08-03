@@ -87,4 +87,8 @@ public class GuiScript : MonoBehaviour
     _score += add;
     _currentText = "Score: " + _score;
   }
+
+  public static int GetScore(){
+    return _score;
+  }
 }
