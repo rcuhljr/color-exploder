@@ -516,7 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 51b4419f8da354f43b4c1ae0d549e0fc, type: 2}
   sound: {fileID: 0}
-  shootingRate: .25
+  shootingRate: .75
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 400000, guid: 51b4419f8da354f43b4c1ae0d549e0fc, type: 2}
   sound: {fileID: 0}
-  shootingRate: .25
+  shootingRate: .75
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

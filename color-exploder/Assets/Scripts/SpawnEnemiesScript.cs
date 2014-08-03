@@ -67,10 +67,12 @@ public class SpawnEnemiesScript : MonoBehaviour
 			if(enemy.GetChild(i).GetComponent<EnemyCollision>() != null)
 			{
 				enemy.GetChild(i).GetComponent<SpriteRenderer>().color = ColorUtils.ConvertToColor(enemy.GetChild(i).GetComponent<EnemyCollision>().EnemyColor);
+				enemy.GetChild(i).GetComponent<EnemyCollision>().sound = sound;
 			}
 			if(enemy.GetChild(i).GetComponent<WeaponScript>() != null)
 			{
 				enemy.GetChild(i).GetComponent<SpriteRenderer>().color = ColorUtils.ConvertToColor(ColorUtils.Colors.boss);
+				enemy.GetChild(i).GetComponent<WeaponScript>().sound = sound;
 			}
 		}
 

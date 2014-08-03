@@ -36,7 +36,7 @@ public class Boss1Script : MonoBehaviour {
 			xdirection = !xdirection;
 		}
 
-		xShift += (xdirection ? .03f : -.03f);
-		transform.position = new Vector3(transform.position.x + (xdirection ? .03f : -.03f), transform.position.y, transform.position.z);
+		xShift += (xdirection ? .02f : -.02f);
+		transform.position = new Vector3(transform.position.x + (xdirection ? .02f : -.02f), transform.position.y, transform.position.z);
 	}
 }
