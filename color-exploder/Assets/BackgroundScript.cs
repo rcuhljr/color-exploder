@@ -22,7 +22,7 @@ public class BackgroundScript : MonoBehaviour {
     Debug.Log ("switching to " + color.ToString ());
     switch (color) {
     case Colors.red:
-			if(!Options.Entries["ColorBindMode"])
+			if(!Options.Entries["ColorBlindMode"])
 			{
       			spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/red-background");
 			}
