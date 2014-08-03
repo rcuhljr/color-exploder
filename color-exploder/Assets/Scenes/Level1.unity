@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BombsLeft: 1
   bgScript: {fileID: 227971207}
+  sound: {fileID: 0}
 --- !u!1 &559017495
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +683,8 @@ MonoBehaviour:
   asteroidPrefab: {fileID: 400000, guid: 1d7813ebff5974e4eba0130671fbc0b4, type: 2}
   sound: {fileID: 2015853415}
   bossPrefab1: {fileID: 400018, guid: 9f21a1b842755174c92de3e0dfd5664f, type: 2}
+  bossPrefab2: {fileID: 400034, guid: 25efced4b7d3a4941869821fb94ccdf0, type: 2}
+  bossPrefab3: {fileID: 0}
 --- !u!1 &1706027591
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,8 @@ public class SpawnEnemiesScript : MonoBehaviour
   public SoundScript sound;
   public System.Random randomzier = new System.Random ();
   public Transform bossPrefab1;
+	public Transform bossPrefab2;
+	public Transform bossPrefab3;
 
   void Start ()
   {
@@ -59,7 +61,24 @@ public class SpawnEnemiesScript : MonoBehaviour
 
   public void SpawnBoss (Boss boss)
   {
-    var enemy = Instantiate (bossPrefab1) as Transform;
+
+		Transform enemy;
+
+		switch(boss.bossId)
+		{
+		case 1:
+			enemy = Instantiate (bossPrefab1) as Transform;
+			break;
+		case 2:
+			enemy = Instantiate (bossPrefab2) as Transform;
+             break;
+	     case 3:
+	     enemy = Instantiate (bossPrefab3) as Transform;
+	     break;
+		default:
+	     enemy = Instantiate (bossPrefab1) as Transform;
+	     break;
+     	}
     enemy.position = boss.position;
 	
 		for (int i = 0; i<enemy.childCount; i++) 

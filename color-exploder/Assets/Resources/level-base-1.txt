@@ -25,3 +25,4 @@ Spawn green ttttffff 11
 Shift player
 1500
 Boss 1
+Boss 2
