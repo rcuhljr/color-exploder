@@ -10,7 +10,7 @@ public class Boss1Script : MonoBehaviour {
 	public Transform sensor1;
 	public Transform sensor2;
 
-	private const float shiftBounds = 2;
+	private const float shiftBounds = 3;
 	private float xShift = 0;
 	private bool xdirection = true;
 
@@ -29,12 +29,12 @@ public class Boss1Script : MonoBehaviour {
 		cannon1.GetComponent<WeaponScript> ().Attack (ColorUtils.Colors.boss, 2, 1);
 		cannon2.GetComponent<WeaponScript> ().Attack (ColorUtils.Colors.boss, 2, 1);
 
-		if(xShift >= shiftBounds * (xdirection ? .5f : -.5f))
+		if(Math.Abs(xShift) >= shiftBounds)
 	    {
 			xdirection = !xdirection;
 		}
 
-		xShift += (xdirection ? .5f : -.5f);
-		transform.position = new Vector3(transform.position.x + (xdirection ? .5f : -.5f), transform.position.y, transform.position.z);
+		xShift += (xdirection ? .03f : -.03f);
+		transform.position = new Vector3(transform.position.x + (xdirection ? .03f : -.03f), transform.position.y, transform.position.z);
 	}
 }
