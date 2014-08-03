@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BombsLeft: 1
-  bgScript: {fileID: 0}
+  bgScript: {fileID: 227971207}
 --- !u!1 &559017495
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +376,7 @@ MonoBehaviour:
   bgScript: {fileID: 227971207}
   sounds: {fileID: 2015853415}
   stageIndex: 0
+  StageResourceToLoad: level-base-1
 --- !u!4 &1010018537
 Transform:
   m_ObjectHideFlags: 0

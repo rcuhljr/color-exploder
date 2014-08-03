@@ -10,6 +10,7 @@ public class ColorBombScript : MonoBehaviour {
     if (BombsLeft > 0) {
       BombsLeft -= 1;
       bgScript.ChangeColor(ColorUtils.Colors.player);
+      GuiScript.UpdateBomb(BombsLeft);
     }
   }
 }

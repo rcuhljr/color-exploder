@@ -7,6 +7,7 @@ public class GuiScript : MonoBehaviour
 
   private static int _score = 0;
   private static string _currentText = "Score: 0";
+  private static string _bombText = "White-Out: 1";
 
   public StageTimer stageControl;
 
@@ -63,10 +64,17 @@ public class GuiScript : MonoBehaviour
     } else {
       GUI.Box (new Rect (250, Screen.height - 50, 100, 40), string.Empty);
 
+      GUI.Label (new Rect (255, Screen.height - 45, 100, 20), _bombText);
+
       GUI.Label (new Rect (255, Screen.height - 30, 100, 20), _currentText);
     }
   }
 
+  public static void UpdateBomb (int bomb)
+  {
+    _bombText = "White-Out: " + bomb;
+  }
+  
   public static void AddScore (int add)
   {
     _score += add;
