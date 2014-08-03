@@ -17,7 +17,7 @@ public class StageTimer : MonoBehaviour
   public int stageIndex = 0;
   private Timer eventTimer = new Timer ();
   private bool fireEvent = false;
-  private Timer bgTimer = new Timer(1500);
+  private Timer bgTimer = new Timer(1750);
   private bool fireBg = false;
   private Colors bgColor;
   private bool gameStopped = false;
@@ -109,6 +109,11 @@ public class StageTimer : MonoBehaviour
     currentStage = new List<GameEvent> (stage.gameEvents);
     eventTimer.Interval = 1000;
     eventTimer.Start ();
+
+    if(sounds != null)
+    {
+      sounds.PlayMusic(SoundScript.BackgroundSound.RandomSong);
+    }
   }
 
   public void StopGame ()
@@ -160,6 +165,7 @@ public class StageTimer : MonoBehaviour
     } else if (currEvent is BackgroundShift) {
       if(sounds != null)
       {
+        Debug.Log ("playing transition");
         sounds.Play(SoundScript.SoundList.Transitions);
       }
       var bg = (BackgroundShift)currEvent;

@@ -582,7 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 1633774911}
   bgScript: {fileID: 1889397439}
-  sounds: {fileID: 0}
+  sounds: {fileID: 1926729368}
   stageIndex: 0
 --- !u!1 &1817640332
 GameObject:
@@ -1104,7 +1104,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 848e3bacf3c3d794ab609e3ae082cb3a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .25
+  m_Volume: .469999999
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1227,6 +1227,10 @@ Prefab:
       propertyPath: bgScript
       value: 
       objectReference: {fileID: 1889397439}
+    - target: {fileID: 11400000, guid: f801bd5aa7a2e324596e272450f61333, type: 2}
+      propertyPath: sounds
+      value: 
+      objectReference: {fileID: 1926729368}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f801bd5aa7a2e324596e272450f61333, type: 2}
   m_RootGameObject: {fileID: 1721728386}
