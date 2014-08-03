@@ -33,10 +33,13 @@ public class SpawnEnemiesScript : MonoBehaviour
   {
   }
 
-  public void SpawnRandomEnemy ()
+  public void SpawnRandomEnemy (bool bossOut = false)
   {
     //Drop the enemy into one of thirteen "slots"
-    var position = new Vector3 ((float)((randomzier.Next (0, 13)) - 6), 5, 1);
+    var position = randomzier.Next (0, 13);
+    while (Boss1Script.BlockedColumns.Contains(position)) {
+      position = randomzier.Next (0, 13);
+    };
     var color = (Colors)(randomzier.Next () % 3);
     var cannons = new List<bool>();
 
@@ -51,7 +54,7 @@ public class SpawnEnemiesScript : MonoBehaviour
       var luckyCannon = randomzier.Next () % 8;
       cannons [luckyCannon] = true;
     }
-    SpawnEnemy (position, color, cannons.ToArray(), (randomzier.Next () % 10) == 1, false);   
+    SpawnEnemy (new Vector3(Constants.slots[position],5,1), color, cannons.ToArray(), (randomzier.Next () % 10) == 1, false);   
   }
 
   public void SpawnBoss (Boss boss)

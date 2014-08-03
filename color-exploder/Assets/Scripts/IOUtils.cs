@@ -43,7 +43,7 @@ public static class IOUtils
         Vector3 position =new Vector3(Constants.slots[int.Parse (line.Split (' ') [3])],5,1);
         currSpawnSet.spawns.Add (new Spawn (position, color, outCannons, line.Contains ("shield"), line.Contains ("rotat")));
       } else if (line.Contains ("Boss")){
-        events.Add((GameEvent)new Boss(new Vector3(Constants.slots[4],3 ,1), int.Parse(line.Split(' ')[1]),currDelay));
+        events.Add((GameEvent)new Boss(new Vector3(Constants.slots[6],3 ,1), int.Parse(line.Split(' ')[1]),currDelay));
       }
     }
     if (currSpawnSet.spawns.Count > 0) {
