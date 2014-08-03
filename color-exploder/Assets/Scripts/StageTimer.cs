@@ -22,7 +22,7 @@ public class StageTimer : MonoBehaviour
   private Colors bgColor;
   private bool gameStopped = false;
   List<GameEvent> currentStage;
-  List<float> slots = new List<float>{-6.2f, -5.2f,-4.2f,-3.2f,-2.2f,-1.2f,-0.2f,0.8f,1.8f,2.8f,3.8f,4.8f,5.8f};
+
 
   // Use this for initialization
   void Start ()
@@ -31,6 +31,7 @@ public class StageTimer : MonoBehaviour
     stages = new Stage[]{GenerateStage (20, 1000, false, false, false, false, true),
       GenerateStage (50, 800, true, true, false, true, true) };
     fireEvent = true;
+    stages = IOUtils.Load ("level-base-1");
     setupStage (stages [0]);
 
     bgTimer.Elapsed += background_Elapsed;
@@ -67,7 +68,7 @@ public class StageTimer : MonoBehaviour
 
       var spawns = new List<Spawn>();
 
-      foreach(var slot in RandomSample(slots, randGen, randGen.Next(2,5))){
+      foreach(var slot in RandomSample(Constants.slots, randGen, randGen.Next(2,5))){
         var chance = randGen.NextDouble ();
         var position = new Vector3 (slot, 5, 1);
         var color = ColorUtils.GetRandomColorForBackground (currentColor, randGen);

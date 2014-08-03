@@ -4,36 +4,46 @@ using System.Text;
 using System.IO;
 using System;
 using AssemblyCSharp;
+using System.Collections.Generic;
+using Colors = ColorUtils.Colors;
 
 public static class IOUtils
 {
 
-  private static Stage Load (string fileName)
+  public static Stage[] Load (string fileName)
   {
-    try {
-      string line;
-      StreamReader theReader = new StreamReader (fileName, Encoding.Default);
+    List<GameEvent> events = new List<GameEvent> ();
+    var asset = Resources.Load (fileName) as TextAsset;
+    int currDelay = 0;
+    SpawnSet currSpawnSet = new SpawnSet(new List<Spawn> (), 0);
+    foreach (var line in asset.text.Split('\n')) {
+      int tryparse;
+      if (int.TryParse (line, out tryparse)) {
+        currDelay = tryparse;
+        if (currSpawnSet.spawns.Count > 0) {
+          events.Add ((GameEvent)currSpawnSet);
+        }
+        currSpawnSet = new SpawnSet (new List<Spawn> (), currDelay);
 
-      using (theReader) {
-        do {
-          line = theReader.ReadLine ();
-          
-          if (line != null) {
-            string[] entries = line.Split (',');
-            if (entries.Length > 0){
-            }
-//              DoStuff (entries);
-          }
-        } while (line != null);
-        
-        // Done reading, close the reader and return true to broadcast success
-        theReader.Close ();
-        return new Stage(null);
+        continue;
       }
+      if (line.Contains ("Shift")) {
+
+        events.Add ((GameEvent)new BackgroundShift ((Colors)Enum.Parse(typeof(Colors), line.Split (' ') [1]), currDelay));
+      } else if (line.Contains ("Spawn")) {
+
+        Colors color = Colors.player;
+        if (!line.Contains ("asteroid")) {
+          color = (Colors)Enum.Parse (typeof(Colors), line.Split (' ') [1]);
+        }
+        Vector3 position =new Vector3(Constants.slots[int.Parse (line.Split (' ') [2])],5,1);
+        currSpawnSet.spawns.Add (new Spawn (position, color, line.Contains ("shield"), line.Contains ("rotat")));
+      }        
     }
-    catch (Exception e) {
-      Debug.Log(e.Message);
-      return null;
+    if (currSpawnSet.spawns.Count > 0) {
+
+      events.Add ((GameEvent)currSpawnSet);
     }
+    return new[]{new Stage (events)};
   }
 }
