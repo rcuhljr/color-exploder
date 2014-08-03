@@ -91,9 +91,9 @@ public class SpawnEnemiesScript : MonoBehaviour
 				}
 			}		        
 		}
-		if (disabledCannons.Count>3) 
+		if (disabledCannons.Count>7) 
 		{
-			var luckyCannon = randomzier.Next()%3;
+			var luckyCannon = randomzier.Next()%7;
 			disabledCannons[luckyCannon].GetComponent<SpriteRenderer>().enabled = true;
 			disabledCannons.RemoveAt(luckyCannon);
 		}
