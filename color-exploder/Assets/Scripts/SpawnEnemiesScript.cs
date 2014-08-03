@@ -38,7 +38,20 @@ public class SpawnEnemiesScript : MonoBehaviour
     //Drop the enemy into one of thirteen "slots"
     var position = new Vector3 ((float)((randomzier.Next (0, 13)) - 6), 5, 1);
     var color = (Colors)(randomzier.Next () % 3);
-    SpawnEnemy (position, color, (randomzier.Next () % 10) == 1, false);   
+    var cannons = new List<bool>();
+
+    for(int i=0; i<8; i++) {
+      if((randomzier.Next() % 3) == 0)
+        cannons.Add(true);
+      else
+        cannons.Add(false);
+    }
+
+    if (cannons.All(f=>!f)) {
+      var luckyCannon = randomzier.Next () % 8;
+      cannons [luckyCannon] = true;
+    }
+    SpawnEnemy (position, color, cannons.ToArray(), (randomzier.Next () % 10) == 1, false);   
   }
 
   public void SpawnBoss (Boss boss)
@@ -58,7 +71,7 @@ public class SpawnEnemiesScript : MonoBehaviour
     collider.sound = sound;
   }
   
-  public void SpawnEnemy (Vector3 position, Colors color, bool isShielded, bool rotates)
+  public void SpawnEnemy (Vector3 position, Colors color, bool[] cannons, bool isShielded, bool rotates)
   {
     if (color == bgScript.color) {
       //Debug.Log("attempt to spawn blocked color:"+color+":"+bgScript.color);
@@ -77,23 +90,31 @@ public class SpawnEnemiesScript : MonoBehaviour
 
     for (int i=0; i<enemy.childCount; i++) {
       var child = enemy.GetChild (i);
+      
+      
+      var renderer = child.GetComponent<SpriteRenderer> ();
+      renderer.color = ColorUtils.ConvertToColor (color);
+    }
+
+    int cannonIndex = 0; //this is terrible.
+
+    for (int i=0; i<enemy.childCount; i++) {
+      var child = enemy.GetChild (i);
 
 
       var renderer = child.GetComponent<SpriteRenderer> ();
       renderer.color = ColorUtils.ConvertToColor (color);
 
       if (!renderer.enabled) {
-        if (randomzier.Next () % 3 == 0) {
+        if (cannons[cannonIndex]) {
           renderer.enabled = true;
+
         } else {
           disabledCannons.Add (child);
         }
+
+        cannonIndex++;
       }           
-    }
-    if (disabledCannons.Count > 7) {
-      var luckyCannon = randomzier.Next () % 7;
-      disabledCannons [luckyCannon].GetComponent<SpriteRenderer> ().enabled = true;
-      disabledCannons.RemoveAt (luckyCannon);
     }
     foreach (var collider in
               (enemy as Transform).GetComponentsInChildren<EnemyCollision> ()) {

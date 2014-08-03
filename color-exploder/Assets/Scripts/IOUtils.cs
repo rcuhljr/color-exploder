@@ -35,8 +35,13 @@ public static class IOUtils
         if (!line.Contains ("asteroid")) {
           color = (Colors)Enum.Parse (typeof(Colors), line.Split (' ') [1]);
         }
-        Vector3 position =new Vector3(Constants.slots[int.Parse (line.Split (' ') [2])],5,1);
-        currSpawnSet.spawns.Add (new Spawn (position, color, line.Contains ("shield"), line.Contains ("rotat")));
+
+
+        var cannons = line.Split(' ')[2];
+        bool[] outCannons = GetCannons(cannons);
+
+        Vector3 position =new Vector3(Constants.slots[int.Parse (line.Split (' ') [3])],5,1);
+        currSpawnSet.spawns.Add (new Spawn (position, color, outCannons, line.Contains ("shield"), line.Contains ("rotat")));
       } else if (line.Contains ("Boss")){
         events.Add((GameEvent)new Boss(new Vector3(Constants.slots[4],3 ,1), int.Parse(line.Split(' ')[1]),currDelay));
       }
@@ -61,13 +66,13 @@ public static class IOUtils
           foreach(var spawn in set.spawns) {
 
             if(spawn.color != Colors.player) {
-              const string format = "Spawn {0} {1} {2} {3}";
-            builder.AppendLine(string.Format(format, spawn.color, Constants.slots.FindIndex(d=>d==spawn.position.x),
+            const string format = "Spawn {0} {1} {2} {3} {4}";
+            builder.AppendLine(string.Format(format, spawn.color, GetCannonString(spawn.cannons), Constants.slots.FindIndex(d=>d==spawn.position.x),
                                              spawn.rotated ? "rotator":"", spawn.shielded ? "shielded":""));
             }
             else {
-              const string format = "Spawn {0} {1} {2} {3}";
-              builder.AppendLine(string.Format(format, "asteroid", Constants.slots.FindIndex(d=>d==spawn.position.x),
+            const string format = "Spawn {0} {1} {2} {3} {4}";
+              builder.AppendLine(string.Format(format, "asteroid", "ffffffff", Constants.slots.FindIndex(d=>d==spawn.position.x),
                                                spawn.rotated ? "rotator":"", spawn.shielded ? "shielded":""));
             }
           }
@@ -75,6 +80,31 @@ public static class IOUtils
           builder.AppendLine("Shift " + ((BackgroundShift)evt).color);
         }
       }
+
+    return builder.ToString();
+  }
+
+  private static bool[] GetCannons(string input) {
+    //Cannons are of format e.g. ttttffff, each indicates an active or inactive cannon position.
+    bool[] output = new bool[8];
+    try {
+    for(int i=0; i<8; i++) {
+      if(input [i] == 't' || input[i] == 'T')
+        output [i] = true;
+      } }
+    catch { /* Empty catch because I'm evil */ } 
+    return output;
+  }
+
+  private static string GetCannonString(bool[] cannons) {
+
+    StringBuilder builder = new StringBuilder ();
+    foreach(var cannon in cannons) {
+      if(cannon)
+        builder.Append("t");
+      else
+        builder.Append("f");
+    }
 
     return builder.ToString();
   }

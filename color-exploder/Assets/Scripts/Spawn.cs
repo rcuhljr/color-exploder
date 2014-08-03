@@ -18,13 +18,15 @@ namespace AssemblyCSharp
     
     public Vector3 position;
     public ColorUtils.Colors color;
+    public bool[] cannons;
     public bool shielded;
     public bool rotated;
     
-    public Spawn (Vector3 pos, ColorUtils.Colors color, bool shielded, bool rotated)
+    public Spawn (Vector3 pos, ColorUtils.Colors color, bool[] cannons, bool shielded, bool rotated)
     {
       this.position = pos;
-      this.color = color;      
+      this.color = color; 
+      this.cannons = cannons;
       this.shielded = shielded;
       this.rotated = rotated;
     }

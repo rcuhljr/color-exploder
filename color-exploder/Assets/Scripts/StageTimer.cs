@@ -38,6 +38,8 @@ public class StageTimer : MonoBehaviour
       GenerateStage (70, 700, true, true, false, true, true),
       GenerateStage (100, 500, true, true, false, true, true)};
     fireEvent = true;
+
+    var outString = IOUtils.Dump(stages);
     if(!string.IsNullOrEmpty(StageResourceToLoad)) {
 
       stages = IOUtils.Load(StageResourceToLoad);
@@ -87,25 +89,37 @@ public class StageTimer : MonoBehaviour
         var chance = randGen.NextDouble ();
         var position = new Vector3 (slot, 5, 1);
         var color = ColorUtils.GetRandomColorForBackground (currentColor, randGen);
-        spawns.Add (BuildSingleSpawn (position, shields, asteroids, rotators, color, chance));
+        var cannons = new bool[8];
+        for(int j=0; j<8; j++) {
+          if((randGen.Next() % 3) == 0)
+            cannons[j] = true;
+          else
+            cannons[j] = false;
+        }
+        
+        if (cannons.All(f=>!f)) {
+          var luckyCannon = randGen.Next () % 8;
+              cannons [luckyCannon] = true;
+        }
+        spawns.Add (BuildSingleSpawn (position, cannons, shields,  asteroids, rotators, color, chance));
       }
       stage.Add ((GameEvent)new SpawnSet (spawns, timeStep));
     }
     return new Stage (stage);
   }
 
-  static Spawn BuildSingleSpawn (Vector3 position, bool shields, bool asteroids, bool rotators, Colors color, double chance)
+  static Spawn BuildSingleSpawn (Vector3 position, bool[]cannons, bool shields, bool asteroids, bool rotators, Colors color, double chance)
   {
     if (shields && chance <= 0.1) {
-      return new Spawn (position, color, true, false);
+      return new Spawn (position, color, cannons, true, false);
     }
     if (asteroids && chance <= 0.12 && chance >= 0.1) {
-      return new Spawn (position, Colors.player, false, false);
+      return new Spawn (position, Colors.player, cannons, false, false);
     }
     if (rotators && chance <= 0.32 && chance >= 0.12) {
-      return new Spawn (position, color, false, true);
+      return new Spawn (position, color, cannons, false, true);
     }
-    return new Spawn (position, color, false, false);
+    return new Spawn (position, color, cannons, false, false);
   }
 
   List<float> RandomSample (List<float> slots, Random randGen, int i)
@@ -192,7 +206,7 @@ public class StageTimer : MonoBehaviour
       foreach (var spawn in ((SpawnSet)currEvent).spawns) {
  
         if (spawn.color != Colors.player) {
-          spawner.SpawnEnemy (spawn.position, spawn.color, spawn.shielded, spawn.rotated);
+          spawner.SpawnEnemy (spawn.position, spawn.color, spawn.cannons, spawn.shielded, spawn.rotated);
         } else {
           spawner.SpawnAsteroid (spawn.position);
         }

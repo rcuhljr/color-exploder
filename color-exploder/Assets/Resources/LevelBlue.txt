@@ -1,276 +1,943 @@
 1000
-Spawn green 8  
-Spawn green 11  
-Spawn red 5  
+Spawn blue tfftffff 3  
+Spawn red fffttfff 1 rotator 
+Spawn green ftttftff 9  
+Spawn blue ttfftfff 5  
 1000
-Spawn green 8  
-Spawn green 9  
-Spawn blue 6  
-Spawn red 1 rotator 
+Spawn red fftfftff 4 rotator 
+Spawn green tfttfftf 9  
+Spawn blue fftfftff 5  
 1000
-Spawn blue 7  
-Spawn green 3  
-Spawn blue 8  
+Spawn red ffftffft 1 rotator 
+Spawn green ffftffff 12  
 1000
-Spawn red 1  
-Spawn blue 5  
-Spawn red 4  
+Spawn red ftffftff 0 rotator 
+Spawn green tfffffff 10  
 1000
-Spawn blue 11  
-Spawn green 9  
+Spawn blue fftfttft 7 rotator 
+Spawn red tffttftf 5  
 1000
-Spawn blue 9  
-Spawn green 1 rotator 
-Spawn green 7  
+Spawn green ffttffff 2  
+Spawn red ftfffttf 0  
+Spawn blue ttfttfff 1  
 1000
-Spawn blue 5  
-Spawn blue 7  
+Spawn blue ffffftff 1  
+Spawn blue ftfftfff 7  
 1000
-Spawn red 9  
-Spawn green 2 rotator 
+Spawn green ftfttfff 11  
+Spawn green tfftffft 6 rotator 
+Spawn blue ffftfftt 3  
+Spawn blue ftttffff 5  
 1000
-Spawn green 10  
-Spawn green 5 rotator 
-Spawn blue 8  
-Spawn blue 6  
+Spawn green tfffffff 1  
+Spawn blue fftfffff 9  
+Spawn red fffffftf 12 rotator 
 1000
-Spawn red 3  
-Spawn red 5  
-Spawn green 2  
+Spawn blue tfffttff 9  
+Spawn red ffttffft 10  
+Spawn green ftffftff 6 rotator 
+Spawn green fttftfff 11  
 1000
-Spawn blue 3  
-Spawn red 2  
+Spawn green fftffftt 3  
+Spawn red tftftfft 9  
+Spawn blue ffffftff 1  
 1000
-Spawn blue 2  
-Spawn green 11 rotator 
-Spawn red 9 rotator 
+Spawn green tfftftff 1  
+Spawn red tfftfttt 3  
+Spawn green ftttttft 6  
 1000
-Spawn blue 8  
-Spawn blue 6 rotator 
+Spawn red fttfffff 2  
+Spawn red fttffftf 12  
 1000
-Spawn blue 12 rotator 
-Spawn green 5  
-Spawn blue 8 rotator 
+Spawn green tttfffft 4  
+Spawn green tfffffft 5 rotator 
 1000
-Spawn red 8 rotator 
-Spawn red 0  
-Spawn blue 9  
-Spawn green 7  
+Spawn blue ftttfttf 0  
+Spawn red ftftftff 6  
+Spawn green ftfftttf 7  
 1000
-Spawn green 11  
-Spawn red 0  
-Spawn red 7 rotator 
-Spawn green 8  
+Spawn blue ftfffttf 4  
+Spawn blue tfffffft 6 rotator 
 1000
-Spawn red 6  
-Spawn red 10  
+Spawn red tftftttf 7  
+Spawn red ftffffff 5  
+Spawn blue ftffffff 4  
+Spawn blue ffttftft 8  
 1000
-Spawn green 7  
-Spawn blue 9 rotator 
-Spawn blue 0  
+Spawn blue tffffftt 0  
+Spawn red ffftftft 11  
+Spawn blue ttftttft 5  
 1000
-Spawn blue 12  
-Spawn green 5  
+Spawn green fttftttf 0 rotator 
+Spawn red ffftffff 11  
+Spawn blue ffftffff 2  
 1000
-Spawn blue 11  
-Spawn blue 9  
+Spawn red fffftfff 9  
+Spawn blue ffftffff 7 rotator 
+Spawn green fftftfff 5  
 800
-Spawn green 3  
-Spawn blue 0  
-Spawn red 9  
-Spawn red 10  
+Spawn red ttfftfff 11 rotator 
+Spawn green tttffftt 4  
+Spawn blue ftffffff 5 rotator 
 800
-Spawn red 4  shielded
-Spawn blue 7  
-Spawn green 11 rotator 
+Spawn red ftffffff 3  
+Spawn blue tfffttft 5  
+Spawn red ftfffftf 8  shielded
 800
-Spawn green 1 rotator 
-Spawn green 3  
-Spawn green 9  
+Spawn red fttftfff 0  
+Spawn blue fftftftf 7  
+Spawn green fffftftf 1 rotator 
 800
-Spawn red 5  
-Spawn blue 11 rotator 
-Spawn red 7  
-Spawn green 8  
+Spawn red ftttftff 2  
+Spawn green fftfffft 1  
+Spawn blue ffftffft 4  
 800
-Spawn green 2  
-Spawn green 8  
-Spawn blue 1  
+Spawn blue ftffffft 7  shielded
+Spawn blue tfftftff 8  
+Spawn green ffffftft 0 rotator 
 800
-Spawn red 8 rotator 
-Spawn blue 10  shielded
-Spawn blue 1 rotator 
+Spawn red ffftttff 11 rotator 
+Spawn green ffftfttt 9  
 800
-Spawn red 11  
-Spawn red 3 rotator 
+Spawn red fffffftf 12 rotator 
+Spawn red ffftffff 2  shielded
 800
-Spawn blue 8  
-Spawn blue 0  
+Spawn red fttfffff 12  
+Spawn blue ftftttff 4  
 800
-Spawn blue 9  
-Spawn blue 11  
-Spawn green 4  
-Spawn red 8  
+Spawn red ftffftff 9  
+Spawn blue tffffftf 3 rotator 
+Spawn red tftfffft 6  shielded
 800
-Spawn blue 1  
-Spawn green 8  
-Spawn green 2  
-Spawn green 0 rotator 
+Spawn blue fftfftff 4  
+Spawn green ffftffft 1 rotator 
+Spawn red ftftffft 9  shielded
+Spawn blue fftffftf 5  
 800
-Spawn blue 11  
-Spawn blue 12  
+Spawn green tftffftf 8  
+Spawn green tftftfff 11  
+Spawn green fffftfff 1  
+Spawn red fftfttft 2  
 800
-Spawn red 11  
-Spawn blue 1  
-Spawn green 9  
+Spawn blue ftftftff 1  
+Spawn red ftffffff 7  
 800
-Spawn green 10  
-Spawn blue 3  
-Spawn blue 9  
+Spawn red tffftftt 6  
+Spawn red fftftfff 7  
+Spawn blue fttftttt 10  shielded
+Spawn green tftfffff 12  
 800
-Spawn blue 9  
-Spawn red 12  
-Spawn green 8  
-Spawn green 3  
+Spawn red ffftftft 1  
+Spawn red fftfffff 3  shielded
+Spawn asteroid ffffffff 8  
 800
-Spawn green 6  
-Spawn green 11  shielded
-Spawn blue 4  
+Spawn green ffffffft 12  
+Spawn green fffffftf 1  shielded
 800
-Spawn red 4  
-Spawn blue 6 rotator 
-Spawn red 7  
-Spawn green 5 rotator 
-800
-Shift red
-800
-Spawn blue 3 rotator 
-Spawn magenta 7 rotator 
-Spawn asteroid 9  
-Spawn magenta 4  
-800
-Spawn magenta 2  
-Spawn magenta 7  
-Spawn magenta 8  
-Spawn blue 12  
-800
-Spawn yellow 2  shielded
-Spawn magenta 10  
-800
-Spawn yellow 1 rotator 
-Spawn yellow 10  
-800
-Spawn magenta 4  
-Spawn magenta 8  
-800
-Spawn magenta 5  
-Spawn yellow 3  
-800
-Spawn green 9 rotator 
-Spawn magenta 10  
-Spawn magenta 8  
-800
-Spawn green 0 rotator 
-Spawn blue 3  
-800
-Spawn green 7  
-Spawn green 8 rotator 
-Spawn magenta 12  
-800
-Spawn magenta 12 rotator 
-Spawn magenta 5  
-Spawn blue 8  shielded
-800
-Spawn green 12 rotator 
-Spawn magenta 5  
-Spawn green 10  
-Spawn magenta 9  
-800
-Spawn magenta 6  
-Spawn yellow 3  
-800
-Spawn yellow 7 rotator 
-Spawn blue 0 rotator 
-Spawn yellow 8  
-Spawn blue 6  shielded
-800
-Spawn yellow 2 rotator 
-Spawn magenta 6  
-Spawn blue 8  
-Spawn yellow 9  shielded
-800
-Spawn yellow 3  
-Spawn magenta 9 rotator 
-800
-Spawn blue 4 rotator 
-Spawn magenta 2 rotator 
-Spawn blue 11  
-Spawn blue 10  
+Spawn blue tttfffff 11  
+Spawn red ffffffft 1  
+Spawn green ftfttfff 4  
 800
 Shift green
 800
-Spawn yellow 6  
-Spawn blue 1 rotator 
-Spawn cyan 5  
+Spawn red ffffffft 1  
+Spawn yellow ffffftft 8  
+Spawn blue ffffftft 10 rotator 
 800
-Spawn red 2  
-Spawn cyan 0  
-Spawn red 4  
-Spawn yellow 6  
+Spawn yellow fftfftff 11  
+Spawn red fffttfff 4  
 800
-Spawn cyan 7  
-Spawn red 2  
-Spawn blue 0  
+Spawn red fffffftt 8  
+Spawn cyan ffftffft 10 rotator 
+Spawn red fffftfft 0  
 800
-Spawn blue 7  
-Spawn yellow 1  
+Spawn red ttfftftt 3  shielded
+Spawn red ftfttttf 5 rotator 
+Spawn yellow tfftfftf 7  shielded
+Spawn yellow ffftffff 10 rotator 
 800
-Spawn red 1  
-Spawn cyan 2 rotator 
-Spawn blue 3  
+Spawn red fffffttt 4  
+Spawn cyan tfttffff 3  
 800
-Spawn blue 0  
-Spawn yellow 7  
-Spawn blue 8  
+Spawn yellow fffffttt 0  
+Spawn yellow tfftttft 11  
 800
-Spawn red 9  
-Spawn yellow 12  
+Spawn blue ftftffff 8  
+Spawn yellow ftfffftf 12 rotator 
 800
-Spawn yellow 11  
-Spawn blue 1 rotator 
-Spawn red 6  
-Spawn blue 3  shielded
+Spawn cyan ffttfttt 6 rotator 
+Spawn yellow fffffttt 1  
+Spawn yellow ffffffft 4  
 800
-Spawn blue 10 rotator 
-Spawn cyan 8  
-Spawn blue 12  shielded
+Spawn blue ftfftftf 2  
+Spawn cyan ftfffftf 7  
+Spawn red ffftffft 0  
+Spawn cyan ttffffft 4  
 800
-Spawn cyan 9  
-Spawn asteroid 6  
-Spawn blue 0  shielded
+Spawn red ttfffftf 11  
+Spawn cyan ttfffttf 8  
+Spawn blue fftftttt 6 rotator 
 800
-Spawn blue 3 rotator 
-Spawn red 7  
-Spawn red 0  
-Spawn asteroid 10  
+Spawn cyan ftfttttf 10 rotator 
+Spawn cyan ttftffff 7  
 800
-Spawn blue 9 rotator 
-Spawn blue 12  
-Spawn red 7  shielded
+Spawn blue tfffffft 5  
+Spawn cyan ffttffft 12 rotator 
+Spawn blue tttftfff 9  
 800
-Spawn red 2  
-Spawn red 9  
-Spawn yellow 1  
+Spawn red tfftfftt 2  
+Spawn red fftttttf 3  
+Spawn red tttfffft 9  
+Spawn blue ffftftff 5  
 800
-Spawn red 2  
-Spawn red 9  
-Spawn yellow 7  
-Spawn cyan 5  
+Spawn blue ffftfttt 2  
+Spawn red ffffttft 12  
+Spawn blue tttffttf 7  
+Spawn yellow tfttftff 9  
 800
-Spawn blue 5  
-Spawn red 4 rotator 
-Spawn yellow 0  
+Spawn cyan ffffftff 0  
+Spawn yellow tffftfff 10  
 800
-Spawn asteroid 10  
-Spawn red 1  
-Spawn yellow 8  
+Spawn yellow ffffftff 0  
+Spawn cyan tftfffff 8  
+Spawn red fffftfft 3  
+800
+Shift red
+800
+Spawn green ffffftff 6  
+Spawn blue tfffffff 12  
+800
+Spawn magenta ffffffft 3  shielded
+Spawn magenta fftfttft 2  
+800
+Spawn green tffttfft 11  
+Spawn blue ttftfftf 9  
+800
+Spawn blue ftffffff 11  
+Spawn green tfftffff 2  
+800
+Spawn magenta fftftfff 12  
+Spawn magenta ffftttff 9 rotator 
+Spawn yellow fttfffff 7  
+Spawn green tftttftt 10  
+800
+Spawn magenta ffftffff 11 rotator 
+Spawn green fftffftf 1  shielded
+Spawn green ffftfttt 5 rotator 
+800
+Spawn blue tftftttt 4  
+Spawn magenta fftffttt 1 rotator 
+Spawn green fftfffff 2  
+Spawn magenta fffttfff 0  shielded
+800
+Spawn asteroid ffffffff 10  
+Spawn yellow tfftftff 0  
+800
+Spawn yellow fffftfff 12  
+Spawn magenta fffftftf 5 rotator 
+800
+Spawn green ftffffft 7  shielded
+Spawn yellow fftfttff 5  
+Spawn green tfftfftt 6 rotator 
+800
+Spawn green ftfffftf 11 rotator 
+Spawn blue fttfftff 9  
+Spawn blue tftffftt 6 rotator 
+Spawn magenta ffftffft 0  
+800
+Spawn magenta fffffftf 11  
+Spawn yellow ftffffff 12  
+Spawn green fffftfff 5  
+800
+Spawn yellow ftffffft 1  
+Spawn green ffftttff 3 rotator 
+Spawn blue ttftffft 12  
+Spawn yellow ffttftff 8  
+800
+Spawn yellow ffffttff 7  
+Spawn blue tttfftff 5  
+Spawn blue fffffftt 3  shielded
+Spawn blue ttttffft 1 rotator 
+800
+Spawn blue ftttftff 5  
+Spawn magenta ttffttff 10  
+800
+Spawn green ffffftff 3  
+Spawn green fffffftf 0  
+700
+Spawn green tfffffff 0 rotator 
+Spawn red tfftffff 8  
+Spawn blue ffffftft 11  
+700
+Spawn green ffffffft 11 rotator 
+Spawn blue ftfftfff 12  
+Spawn red ftftffff 7  
+700
+Spawn green ffftffff 0  
+Spawn blue fftffttt 6 rotator 
+Spawn asteroid ffffffff 1  
+700
+Spawn blue ffftffff 12 rotator 
+Spawn red ftffffft 7  
+Spawn blue fttffftf 8  
+700
+Spawn red ffffftft 3  
+Spawn red ffftftff 4  
+700
+Spawn green ttttffff 7  
+Spawn blue tffffftf 0  
+Spawn red tfftffff 5  
+Spawn green fftftfft 11  shielded
+700
+Spawn green fffftttf 12  
+Spawn red ttfttftf 2  
+Spawn green tfftttft 9  
+Spawn green tftftttf 11  
+700
+Spawn blue fftfffff 2 rotator 
+Spawn red fftffftf 11  
+Spawn green tffttfft 7 rotator 
+700
+Spawn red tftfffft 9 rotator 
+Spawn red fftfffff 1 rotator 
+700
+Spawn blue tfttffft 6  
+Spawn red ffftfttf 5  
+700
+Spawn blue tftftfff 1  shielded
+Spawn red tttftftf 9  
+Spawn green fffftfff 7 rotator 
+Spawn green fffftfff 5 rotator 
+700
+Spawn red fftftfff 1  
+Spawn blue fftffftf 4  
+700
+Spawn green fffffftf 10  
+Spawn red fftfffff 12  
+Spawn green ftftffft 2  
+700
+Spawn blue fftfftff 5  
+Spawn blue ftfttftf 10  
+700
+Spawn green ffffftff 2  
+Spawn blue tfftffff 0 rotator 
+Spawn asteroid ffffffff 12  
+Spawn blue fftttfff 6  
+700
+Spawn green tftfffft 3  
+Spawn red tfftfftf 2  
+Spawn red ffftttff 0 rotator 
+700
+Spawn blue ttfffftf 0  
+Spawn red tfffftff 1  
+Spawn green ftffffff 4  
+Spawn green fftffftt 6  
+700
+Spawn green ftffffff 4  
+Spawn blue ffttffft 11  
+Spawn red ffftffft 7  
+Spawn blue tfftfftf 12  
+700
+Spawn red ftttfttf 11  
+Spawn blue ffttffff 10  
+Spawn red fftttfft 12  
+Spawn red tfffftff 2 rotator 
+700
+Spawn green tfftftff 3  
+Spawn red fftfffff 8  
+700
+Spawn green fffftftt 12  
+Spawn green tffffttf 2  
+Spawn red ffftffff 4 rotator 
+700
+Spawn green fftfftft 10 rotator 
+Spawn green fffttftt 12  
+700
+Spawn green ffttfftt 4  
+Spawn green ttffffft 8  
+Spawn red tftttfff 10  
+700
+Shift green
+700
+Spawn blue fffttfft 4  shielded
+Spawn blue ttfftftf 11  
+700
+Spawn yellow fffttfff 7  
+Spawn blue fffffttf 1 rotator 
+700
+Spawn blue ftftfftf 2 rotator 
+Spawn red fffttftf 10 rotator 
+Spawn cyan ttftffft 8  
+Spawn yellow tfffffft 9  
+700
+Spawn blue ftfftfff 10  
+Spawn yellow tfffffff 12  
+Spawn red fftftfff 5  
+Spawn yellow ffttffff 9 rotator 
+700
+Spawn red ffffffft 1 rotator 
+Spawn blue tfttfftt 11  
+Spawn red fffftfff 3 rotator 
+700
+Spawn cyan ffftffff 10  
+Spawn red ftffftft 6 rotator 
+Spawn yellow ttfftttt 7  
+Spawn yellow fffftfff 12  
+700
+Spawn cyan tfffttft 5  
+Spawn yellow fftttftf 6  
+Spawn cyan ffftfttf 10  
+Spawn red fftfffff 3  shielded
+700
+Spawn cyan fffffftf 5  shielded
+Spawn red fftfffff 2 rotator 
+Spawn red tfftffft 7  
+700
+Spawn red ftftftft 4  
+Spawn cyan ttftffff 7  
+700
+Spawn red tfttffff 3  
+Spawn red ttttfftf 9  
+Spawn blue fttftfft 6  
+700
+Spawn yellow tftfffft 0  
+Spawn red fffffftt 7  
+Spawn red ftfftfft 9  
+700
+Spawn yellow ftfttttf 11  
+Spawn red tfttffff 6 rotator 
+Spawn red tttffttt 0  shielded
+Spawn blue ffffttff 4  
+700
+Spawn blue fffftfft 12  
+Spawn red ffttffff 8  shielded
+Spawn blue ttfftfff 5  
+Spawn cyan ftfffftf 3  
+700
+Spawn red tfftfftf 10  
+Spawn blue ffffftff 8  
+Spawn red ttffffft 9  
+Spawn blue fffffftf 4  
+700
+Spawn yellow ftftffff 12  
+Spawn red fffftftf 1  
+Spawn red fffftfft 6  
+Spawn cyan ftfftfff 7 rotator 
+700
+Spawn blue tttfftff 3  
+Spawn yellow ttttfttf 9  
+Spawn blue fttfttff 12  shielded
+Spawn cyan ffffffft 11  shielded
+700
+Spawn blue ftttfftt 3  
+Spawn cyan tffftfff 7  
+Spawn red fffttftf 9  shielded
+700
+Spawn blue tfffffff 7 rotator 
+Spawn blue ttffttff 12  
+700
+Spawn blue tttffftf 1  
+Spawn blue ftftttff 9  
+Spawn cyan ftffttft 4  
+700
+Spawn blue ftffffff 8  
+Spawn red ftftftff 12  
+Spawn blue ttfttftf 3  
+700
+Spawn red tfffffff 0 rotator 
+Spawn red fftffttf 9 rotator 
+700
+Spawn cyan fttfffff 0  
+Spawn blue ffftfftf 5  
+Spawn yellow ftfffftt 12  
+Spawn cyan ttfffttf 6  
+700
+Shift blue
+700
+Spawn magenta tffftfff 5  
+Spawn green fftftfft 12  shielded
+Spawn magenta tftfftff 4  shielded
+Spawn red ffftffff 1  
+700
+Spawn green ftfttftf 4  
+Spawn cyan fttftfff 5  
+Spawn red tfffffff 0  shielded
+700
+Spawn magenta ffftffft 6  
+Spawn cyan tffftftf 7 rotator 
+Spawn green ttfftftf 12 rotator 
+Spawn red ffttftff 11  
+700
+Spawn cyan tfffffft 10 rotator 
+Spawn cyan ttfffftt 3 rotator 
+Spawn magenta fffffttt 9  
+Spawn red ftffttff 0 rotator 
+700
+Spawn red fffttftf 7 rotator 
+Spawn magenta tffffttf 12  
+Spawn cyan fffftfft 11  
+Spawn green fffffftf 4 rotator 
+700
+Spawn red fttftftt 12  
+Spawn green ffffftft 7  
+Spawn magenta fffffftf 4 rotator 
+Spawn cyan fftfffff 3 rotator 
+700
+Spawn asteroid ffffffff 3  
+Spawn asteroid ffffffff 2  
+Spawn cyan tffttttt 8  shielded
+700
+Spawn cyan ftftftff 12  
+Spawn magenta fftffttf 9  
+700
+Spawn red ftffftff 0  
+Spawn magenta ttfftttt 5 rotator 
+Spawn cyan ftfffftf 11 rotator 
+700
+Spawn red fftffftf 2  
+Spawn green ftftffff 11  
+700
+Spawn magenta tfffffft 11  
+Spawn red fffftftf 10  
+Spawn green tftfftft 7  
+700
+Spawn magenta tfffffft 5  
+Spawn cyan tttfffff 4  shielded
+Spawn cyan fftfftff 0  
+Spawn magenta tffffftf 12  
+700
+Spawn green ftffffff 5  
+Spawn magenta fffffftf 7  
+700
+Spawn green fffftfff 8  
+Spawn green fftffftf 11  
+Spawn red ffftttff 0 rotator 
+Spawn magenta tffttfft 10  
+700
+Spawn red tfftfftt 12  
+Spawn magenta tffftttf 6  
+Spawn magenta ffftffft 7  
+700
+Spawn red fftfttff 11  
+Spawn cyan fffftfff 9  shielded
+Spawn magenta fffftftf 10  shielded
+Spawn magenta fttftfff 8  shielded
+700
+Spawn green ftffftff 6 rotator 
+Spawn cyan tffttftf 7  
+Spawn cyan fftffftf 0  
+Spawn red ftfffftf 1  
+700
+Spawn red tfttfftf 6  
+Spawn cyan ftfffttf 8  
+700
+Spawn magenta ftffffft 7  
+Spawn cyan ffftfttf 10  
+700
+Spawn cyan ffttftft 11  
+Spawn magenta ffffffft 7  shielded
+700
+Spawn magenta ftffffft 7  shielded
+Spawn green fftfffff 4 rotator 
+Spawn red ttffftft 9 rotator 
+700
+Spawn cyan ttftttff 3  shielded
+Spawn green fffftfff 8  shielded
+Spawn green tfftftff 1  
+700
+Spawn cyan fffffftf 6  
+Spawn cyan ffftfftf 12  
+700
+Spawn green tfffffff 0 rotator 
+Spawn red tfftffff 8  
+Spawn blue ffffftft 11  
+700
+Spawn green ffffffft 11 rotator 
+Spawn blue ftfftfff 12  
+Spawn red ftftffff 7  
+700
+Spawn green ffftffff 0  
+Spawn blue fftffttt 6 rotator 
+Spawn asteroid ffffffff 1  
+700
+Spawn blue ffftffff 12 rotator 
+Spawn red ftffffft 7  
+Spawn blue fttffftf 8  
+700
+Spawn red ffffftft 3  
+Spawn red ffftftff 4  
+700
+Spawn green ttttffff 7  
+Spawn blue tffffftf 0  
+Spawn red tfftffff 5  
+Spawn green fftftfft 11  shielded
+700
+Spawn green fffftttf 12  
+Spawn red ttfttftf 2  
+Spawn green tfftttft 9  
+Spawn green tftftttf 11  
+700
+Spawn blue fftfffff 2 rotator 
+Spawn red fftffftf 11  
+Spawn green tffttfft 7 rotator 
+700
+Spawn red tftfffft 9 rotator 
+Spawn red fftfffff 1 rotator 
+700
+Spawn blue tfttffft 6  
+Spawn red ffftfttf 5  
+700
+Spawn blue tftftfff 1  shielded
+Spawn red tttftftf 9  
+Spawn green fffftfff 7 rotator 
+Spawn green fffftfff 5 rotator 
+700
+Spawn red fftftfff 1  
+Spawn blue fftffftf 4  
+700
+Spawn green fffffftf 10  
+Spawn red fftfffff 12  
+Spawn green ftftffft 2  
+700
+Spawn blue fftfftff 5  
+Spawn blue ftfttftf 10  
+700
+Spawn green ffffftff 2  
+Spawn blue tfftffff 0 rotator 
+Spawn asteroid ffffffff 12  
+Spawn blue fftttfff 6  
+700
+Spawn green tftfffft 3  
+Spawn red tfftfftf 2  
+Spawn red ffftttff 0 rotator 
+700
+Spawn blue ttfffftf 0  
+Spawn red tfffftff 1  
+Spawn green ftffffff 4  
+Spawn green fftffftt 6  
+700
+Spawn green ftffffff 4  
+Spawn blue ffttffft 11  
+Spawn red ffftffft 7  
+Spawn blue tfftfftf 12  
+700
+Spawn red ftttfttf 11  
+Spawn blue ffttffff 10  
+Spawn red fftttfft 12  
+Spawn red tfffftff 2 rotator 
+700
+Spawn green tfftftff 3  
+Spawn red fftfffff 8  
+700
+Spawn green fffftftt 12  
+Spawn green tffffttf 2  
+Spawn red ffftffff 4 rotator 
+700
+Spawn green fftfftft 10 rotator 
+Spawn green fffttftt 12  
+700
+Spawn green ffttfftt 4  
+Spawn green ttffffft 8  
+Spawn red tftttfff 10  
+700
+Spawn green fffttfft 1  shielded
+Spawn green ttfftftf 4  
+Spawn green ftfffftt 11 rotator 
+700
+Spawn green fffffttf 0 rotator 
+Spawn red tffftftf 11  
+700
+Spawn red ffffttft 7  shielded
+Spawn blue fttftfff 0  
+Spawn blue ftffffff 9  
+700
+Spawn green fftfftff 11  
+Spawn green ftffffff 10  
+Spawn green tfftftff 12 rotator 
+Spawn red fffttfff 5  
+700
+Spawn red ffffffft 6 rotator 
+Spawn blue tfttfftt 1  
+Spawn red fffftfff 11 rotator 
+Spawn blue ffttffff 3  
+700
+Spawn asteroid ffffffff 9  
+Spawn green tfttfftt 11  
+700
+Spawn green ffftffff 9  
+Spawn blue ftfffttf 10 rotator 
+Spawn blue tfftttft 2  
+Spawn blue tffftftt 7  
+700
+Spawn red ftffffff 1  
+Spawn green ftffffff 6 rotator 
+700
+Spawn red fftftfft 2  
+Spawn blue fttfttff 4  
+Spawn red tftftfft 6 rotator 
+Spawn red tffffftt 3  
+700
+Spawn green tffffftt 5  
+Spawn green tfftfftf 3  
+Spawn green ftfftfff 6  
+700
+Shift blue
+700
+Spawn green ffftftff 10  shielded
+Spawn green ffttffft 6  
+Spawn red tfftffff 5  
+700
+Spawn magenta ftfttttf 0  
+Spawn green tfttffff 4 rotator 
+700
+Spawn red fftttftf 4  
+Spawn magenta fttffftf 0  
+700
+Spawn red fftffttt 5 rotator 
+Spawn green ttfffftf 3  
+Spawn red fftffftt 6  
+Spawn green fffftfff 8  
+700
+Spawn green tfftfftf 9  
+Spawn red ffffftff 10  
+Spawn green ttffffft 8  
+Spawn red fffffftf 4  
+700
+Spawn magenta ftftffff 12  
+Spawn green fffftftf 1  
+Spawn green fffftfft 6  
+Spawn cyan ftfftfff 7 rotator 
+700
+Spawn red tttfftff 3  
+Spawn magenta ttttfttf 9  
+Spawn red fttfttff 12  shielded
+Spawn cyan ffffffft 11  shielded
+700
+Spawn red ftttfftt 3  
+Spawn cyan tffftfff 7  
+Spawn green fffttftf 9  shielded
+700
+Spawn red tfffffff 7 rotator 
+Spawn red ttffttff 12  
+700
+Spawn red tttffftf 1  
+Spawn red ftftttff 9  
+Spawn cyan ftffttft 4  
+700
+Spawn red ftffffff 8  
+Spawn green ftftftff 12  
+Spawn red ttfttftf 3  
+700
+Spawn green tfffffff 0 rotator 
+Spawn green fftffttf 9 rotator 
+700
+Spawn cyan fttfffff 0  
+Spawn red ffftfftf 5  
+Spawn magenta ftfffftt 12  
+Spawn cyan ttfffttf 6  
+700
+Spawn cyan fttffftf 9  
+Spawn red fffftftf 5  shielded
+Spawn cyan fftftfft 12  shielded
+700
+Spawn magenta tfffffff 6 rotator 
+Spawn green fftfttft 9  shielded
+Spawn green tfttftff 12  
+700
+Spawn red ffffffft 1 rotator 
+Spawn magenta fffffftf 9  
+Spawn cyan tfftffft 0 rotator 
+Spawn magenta fftttfft 11  shielded
+700
+Spawn magenta fttftfff 9  
+Spawn green ttfftfff 6  
+Spawn magenta ftffttff 7  shielded
+700
+Spawn green fffftttt 0  
+Spawn green tffttfft 11  
+Spawn magenta tfffffft 8  
+Spawn green tffftfff 6 rotator 
+700
+Spawn red tfffftff 9  
+Spawn green ffffftff 5 rotator 
+700
+Spawn red ftfffttf 10  
+Spawn cyan ttffffff 12  
+700
+Spawn magenta ffffftff 11  
+Spawn red ftffffft 10 rotator 
+Spawn cyan ftffttft 2 rotator 
+700
+Spawn asteroid ffffffff 11  
+Spawn cyan tffttttt 3  shielded
+700
+Spawn cyan ftftftff 12  
+Spawn magenta fftffttf 9  
+700
+Spawn red ftffftff 0  
+Spawn magenta ttfftttt 5 rotator 
+Spawn cyan ftfffftf 11 rotator 
+700
+Spawn red fftffftf 2  
+Spawn green ftftffff 11  
+700
+Spawn magenta tfffffft 11  
+Spawn red fffftftf 10  
+Spawn green tftfftft 7  
+700
+Spawn magenta tfffffft 5  
+Spawn cyan tttfffff 4  shielded
+Spawn cyan fftfftff 0  
+Spawn magenta tffffftf 12  
+700
+Spawn green ftffffff 5  
+Spawn magenta fffffftf 7  
+700
+Spawn green fffftfff 8  
+Spawn green fftffftf 11  
+Spawn red ffftttff 0 rotator 
+Spawn magenta tffttfft 10  
+700
+Spawn red tfftfftt 12  
+Spawn magenta tffftttf 6  
+Spawn magenta ffftffft 7  
+700
+Spawn red fftfttff 11  
+Spawn cyan fffftfff 9  shielded
+Spawn magenta fffftftf 10  shielded
+Spawn magenta fttftfff 8  shielded
+700
+Spawn green ftffftff 6 rotator 
+Spawn cyan tffttftf 7  
+Spawn cyan fftffftf 0  
+Spawn red ftfffftf 1  
+700
+Shift red
+700
+Spawn blue tfftfftf 8  
+Spawn green ffttfftf 5 rotator 
+Spawn magenta ftffffft 10  
+700
+Spawn green tfffffff 2 rotator 
+Spawn green tftftfff 10  
+Spawn blue fffftfff 11  
+Spawn yellow tftfffff 6  
+700
+Spawn blue fffftftt 3 rotator 
+Spawn green ftfttftf 4  shielded
+Spawn yellow fttftttf 0 rotator 
+700
+Spawn blue ftfffftt 0  
+Spawn yellow tftfftft 4  
+Spawn yellow fffffftf 5  
+700
+Spawn blue ftfffttf 3  
+Spawn yellow ffftffff 1  
+Spawn green ffftffff 0  
+700
+Spawn blue ffftffff 5  
+Spawn green tfttfttf 9  shielded
+Spawn yellow tffttftt 0  
+700
+Spawn magenta tfftffff 8  
+Spawn blue fftfffft 10  
+Spawn magenta tftfftff 3  
+700
+Spawn blue ttffftff 8 rotator 
+Spawn green fftffftf 1  shielded
+700
+Spawn green fffftfff 1  
+Spawn magenta ffftffft 8  
+Spawn yellow tfftftff 9  
+700
+Spawn yellow ftfttttf 9 rotator 
+Spawn yellow ffftttff 4 rotator 
+700
+Spawn blue tfffftft 2  
+Spawn green ftfftttf 9  
+700
+Spawn magenta tttftfff 5 rotator 
+Spawn yellow ftffffff 8  
+700
+Spawn blue fftftfff 7  
+Spawn blue tftftfft 1 rotator 
+Spawn blue ffttffff 10  
+700
+Spawn blue ffftffft 1  shielded
+Spawn green ffffttft 0  
+Spawn blue ffttfftf 8  shielded
+700
+Spawn yellow tfffffft 7 rotator 
+Spawn magenta ftttffff 2 rotator 
+Spawn green tftfffft 6 rotator 
+700
+Spawn magenta ttfffttt 10  
+Spawn yellow ttffffft 5  
+Spawn blue tftfftft 7  shielded
+700
+Spawn blue tftfftff 1  
+Spawn yellow tfffffft 10  
+Spawn yellow ftffffff 2  
+Spawn yellow ffttffff 6 rotator 
+700
+Spawn blue fttfftff 5  
+Spawn blue fttftfft 9 rotator 
+Spawn blue ffftfftt 6  
+700
+Spawn magenta ttttffff 3  
+Spawn magenta ftfttttf 0  
+Spawn yellow ffftffff 7  
+700
+Spawn magenta tftfftft 9  shielded
+Spawn green ffftftff 11 rotator 
+Spawn magenta ttttffff 3 rotator 
+700
+Spawn yellow ftftffff 12  shielded
+Spawn blue fftfffft 11  
+700
+Spawn magenta fftfffff 1  shielded
+Spawn yellow ftttffft 11  shielded
+700
+Spawn magenta tffftfff 9  shielded
+Spawn green fffftftf 12 rotator 
+700
+Spawn magenta tfftfttt 12  shielded
+Spawn green fftftftt 5  
+700
+Spawn yellow ftffffft 0 rotator 
+Spawn magenta tttfffff 11  
+Spawn yellow fffftftf 7  shielded
+Spawn magenta fffttftf 1 rotator 
+700
+Spawn green ffffffft 4 rotator 
+Spawn magenta tfffffff 5  
+700
+Spawn magenta ftffffff 10  
+Spawn magenta fftfffft 6  shielded
+700
+Spawn magenta ffftffff 11  
+Spawn green ffftffft 3  shielded
+Spawn magenta fttfffft 10  
+Spawn magenta ffffffft 0  
+700
+Spawn green ffffffft 1 rotator 
+Spawn yellow fffffftf 2  
+Spawn green fftfffft 12  shielded
+Spawn green tfffffff 4  
+700
+Spawn green tfttftft 9  
+Spawn green ftftffff 5  shielded
+700
+Spawn blue tftfffff 8  
+Spawn green ftftfttf 11  
+Spawn yellow ffffftff 9  
+Spawn blue ffffftft 3  shielded
+700
+Spawn magenta tffttttt 9  
+Spawn blue ffftfftt 0  
+Spawn green ffffftft 4 rotator 
+Spawn magenta fttftfff 3 rotator 
+700
+Spawn green ftffffff 6  
+Spawn blue tfffttff 0  
+Spawn magenta tffftfff 2  

@@ -1,26 +1,26 @@
 500
-Spawn red 0
-Spawn blue 1
-Spawn green 2
-Spawn red 3 shield
-Spawn blue 4 shield
-Spawn green 5 shield
-Spawn red 6 rotator
-Spawn blue 7 rotator
-Spawn green 8 rotator
-Spawn asteroid 9
-Spawn asteroid 10
-Spawn asteroid 11
+Spawn red ttttffff 0
+Spawn blue ttttffff 1
+Spawn green ttttffff 2
+Spawn red ttttffff 3 shield
+Spawn blue ttttffff 4 shield
+Spawn green ttttffff 5 shield
+Spawn red ttttffff 6 rotator
+Spawn blue ttttffff 7 rotator
+Spawn green ttttffff 8 rotator
+Spawn asteroid ttttffff 9
+Spawn asteroid ttttffff 10
+Spawn asteroid ttttffff 11
 1000
 Shift red
 800
-Spawn red 0
-Spawn blue 1
-Spawn green 2
+Spawn red ttttffff 0
+Spawn blue ttttffff 1
+Spawn green ttttffff 2
 1000
-Spawn red 9
-Spawn blue 10
-Spawn green 11
+Spawn red ttttffff 9
+Spawn blue ttttffff 10
+Spawn green ttttffff 11
 1000
 Shift player
 1500
