@@ -31,7 +31,7 @@ public class StageTimer : MonoBehaviour
     stages = new Stage[]{GenerateStage (20, 1000, false, false, false, false, true),
       GenerateStage (50, 800, true, true, false, true, true) };
     fireEvent = true;
-    stages = IOUtils.Load ("level-base-1");
+    //stages = IOUtils.Load ("level-base-1");
     setupStage (stages [0]);
 
     bgTimer.Elapsed += background_Elapsed;

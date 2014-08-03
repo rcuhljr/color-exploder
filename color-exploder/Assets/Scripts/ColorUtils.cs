@@ -73,7 +73,7 @@ public static class ColorUtils {
       case Colors.green:
         return Colors.yellow;
       default:
-        return Colors.white;
+        return baseColor;
       }
     } else if(bgColor == Colors.green) {
       switch(baseColor) {
@@ -82,7 +82,7 @@ public static class ColorUtils {
       case Colors.red:
         return Colors.yellow;
       default:
-        return Colors.white;
+        return baseColor;
       }
     } else if(bgColor == Colors.blue) {
       switch(baseColor) {
@@ -91,11 +91,11 @@ public static class ColorUtils {
       case Colors.red:
         return Colors.yellow;
       default:
-        return Colors.white;
+        return baseColor;
       }
     }
 
-    return Colors.white;
+    return baseColor;
   }
 
   public static Color ConvertToColor (Colors gameColor)
