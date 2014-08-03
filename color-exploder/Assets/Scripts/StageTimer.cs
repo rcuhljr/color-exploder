@@ -168,11 +168,12 @@ public class StageTimer : MonoBehaviour
         bossTimer.Stop ();
         spawnRandom = false;
         eventTimer.Start();
+        bossOut = false;
         return;
       }
       if(spawnRandom){
         spawnRandom = false;
-        spawner.SpawnRandomEnemy(false);
+        spawner.SpawnRandomEnemy(true);
       }
 
       return;

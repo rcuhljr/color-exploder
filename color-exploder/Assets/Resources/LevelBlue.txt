@@ -1,42 +1,46 @@
 1000
+Music 1
 Spawn blue tfftffff 3  
-Spawn red fffttfff 1 rotator 
+Spawn red fffttfff 1  
 Spawn green ftttftff 9  
 Spawn blue ttfftfff 5
+Spawn asteroid ttfftfff 6
 1000
-Spawn red fftfftff 4 rotator 
+Spawn red fftfftff 4  
 Spawn green tfttfftf 9  
 Spawn blue fftfftff 5  
 1000
-Spawn red ffftffft 1 rotator 
+Spawn red ffftffft 1  
 Spawn green ffftffff 12  
 1000
-Spawn red ftffftff 0 rotator 
+Spawn red ftffftff 0  
 Spawn green tfffffff 10  
 1000
-Spawn blue fftfttft 7 rotator 
+Spawn blue fftfttft 7 
 Spawn red tffttftf 5  
 1000
 Spawn green ffttffff 2  
 Spawn red ftfffttf 0  
-Spawn blue ttfttfff 1  
+Spawn blue ttfttfff 1 
+Spawn asteroid ttfftfff 6 
 1000
 Spawn blue ffffftff 1  
 Spawn blue ftfftfff 7  
 1000
 Spawn green ftfttfff 11  
-Spawn green tfftffft 6 rotator 
+Spawn green tfftffft 6 
 Spawn blue ffftfftt 3  
 Spawn blue ftttffff 5  
 1000
 Spawn green tfffffff 1  
 Spawn blue fftfffff 9  
-Spawn red fffffftf 12 rotator 
+Spawn red fffffftf 12  
 1000
 Spawn blue tfffttff 9  
 Spawn red ffttffft 10  
-Spawn green ftffftff 6 rotator 
-Spawn green fttftfff 11  
+Spawn green ftffftff 6 
+Spawn green fttftfff 11 
+Spawn asteroid ttfftfff 4 
 1000
 Spawn green fftffftt 3  
 Spawn red tftftfft 9  
@@ -50,14 +54,15 @@ Spawn red fttfffff 2
 Spawn red fttffftf 12  
 1000
 Spawn green tttfffft 4  
-Spawn green tfffffft 5 rotator 
+Spawn green tfffffft 5 
 1000
 Spawn blue ftttfttf 0  
 Spawn red ftftftff 6  
 Spawn green ftfftttf 7  
 1000
 Spawn blue ftfffttf 4  
-Spawn blue tfffffft 6 rotator 
+Spawn blue tfffffft 6 
+Spawn asteroid ttfftfff 10
 1000
 Spawn red tftftttf 7  
 Spawn red ftffffff 5  
@@ -66,9 +71,11 @@ Spawn blue ffttftft 8
 1000
 Spawn blue tffffftt 0  
 Spawn red ffftftft 11  
-Spawn blue ttftttft 5  
+Spawn blue ttftttft 5 
+Music 4
+Boss 1 
 1000
-Spawn green fttftttf 0 rotator 
+Spawn green fttftttf 0  
 Spawn red ffftffff 11  
 Spawn blue ffftffff 2  
 1000
@@ -76,6 +83,7 @@ Spawn red fffftfff 9
 Spawn blue ffftffff 7 rotator 
 Spawn green fftftfff 5  
 800
+Music 2
 Spawn red ttfftfff 11 rotator 
 Spawn green tttffftt 4  
 Spawn blue ftffffff 5 rotator 
@@ -264,7 +272,10 @@ Spawn magenta ttffttff 10
 800
 Spawn green ffffftff 3  
 Spawn green fffffftf 0  
+Music 4
+Boss 1
 700
+Music 3
 Spawn green tfffffff 0 rotator 
 Spawn red tfftffff 8  
 Spawn blue ffffftft 11  
@@ -941,3 +952,5 @@ Spawn magenta fttftfff 3 rotator
 Spawn green ftffffff 6  
 Spawn blue tfffttff 0  
 Spawn magenta tffftfff 2  
+Music 4
+Boss 2
