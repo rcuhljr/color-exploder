@@ -12,7 +12,7 @@ public class Boss1Script : MonoBehaviour {
 
   public static int[] BlockedColumns = new int[6]{4,5,6,7,8,9};
 
-	private const float shiftBounds = 3;
+	private const float shiftBounds = 2;
 	private float xShift = 0;
 	private bool xdirection = true;
 

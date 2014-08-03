@@ -114,6 +114,8 @@ public static class ColorUtils {
           return new Color(0.7F,0.7F,0.7F);
         case Colors.yellow:
           return new Color(0.4F,0.4F,0.4F);
+		case Colors.boss:
+			return Color.grey;
         default:
           return Color.white;
       }
@@ -133,7 +135,9 @@ public static class ColorUtils {
           return Color.magenta;
         case Colors.yellow:
           return Color.yellow;
-        default:
+		case Colors.boss:
+			return Color.grey;
+			default:
           return Color.white;
       }
     }

@@ -61,6 +61,18 @@ public class SpawnEnemiesScript : MonoBehaviour
   {
     var enemy = Instantiate (bossPrefab1) as Transform;
     enemy.position = boss.position;
+	
+		for (int i = 0; i<enemy.childCount; i++) 
+		{
+			if(enemy.GetChild(i).GetComponent<EnemyCollision>() != null)
+			{
+				enemy.GetChild(i).GetComponent<SpriteRenderer>().color = ColorUtils.ConvertToColor(enemy.GetChild(i).GetComponent<EnemyCollision>().EnemyColor);
+			}
+			if(enemy.GetChild(i).GetComponent<WeaponScript>() != null)
+			{
+				enemy.GetChild(i).GetComponent<SpriteRenderer>().color = ColorUtils.ConvertToColor(ColorUtils.Colors.boss);
+			}
+		}
 
     //var collider = enemy.GetComponentsInChildren<AsteroidCollision> ().First ();
     //collider.sound = sound;
