@@ -16,7 +16,6 @@ public static class ColorUtils {
   public static Colors GetRandomColorForBackground(Colors bgColor, System.Random randGen){
     var options = ColorMaps [bgColor];
     var index = (int)System.Math.Floor (options.Count * randGen.NextDouble ());
-    Debug.Log ("random:" + index);
     return options [index];
   }
 
@@ -25,6 +24,20 @@ public static class ColorUtils {
     options.Add (Colors.player);
     options.Remove (currentBgColor);
     return options [(int)System.Math.Floor (options.Count * randGen.NextDouble ())];    
+  }
+
+  public static Color ConvertToColor (Colors gameColor)
+  {
+    switch (gameColor) {
+    case Colors.blue:
+      return Color.blue;
+    case Colors.green:
+      return Color.green;
+    case Colors.red:
+      return Color.red;
+    default:
+      return Color.white;
+    }
   }
 
 }

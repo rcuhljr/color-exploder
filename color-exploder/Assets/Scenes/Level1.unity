@@ -663,6 +663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 400010, guid: 26b61bf35d3172c4e957c2db14d91808, type: 2}
+  bgScript: {fileID: 227971207}
   asteroidPrefab: {fileID: 400000, guid: 1d7813ebff5974e4eba0130671fbc0b4, type: 2}
   sound: {fileID: 2015853415}
 --- !u!114 &1277999994

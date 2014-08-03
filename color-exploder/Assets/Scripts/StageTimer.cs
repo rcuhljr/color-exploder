@@ -22,7 +22,7 @@ public class StageTimer : MonoBehaviour
   {
     eventTimer.Elapsed += timer_Elapsed;
     stages = new Stage[]{GenerateStage (50, 500, false, false, false, true, false),
-      GenerateStage (40, 300, false, false, false, false, false)};
+      GenerateStage (40, 300, false, false, false, true, false)};
     fireEvent = true;
     setupStage (stages [0]);
   }
@@ -38,12 +38,14 @@ public class StageTimer : MonoBehaviour
     var currentColor = Colors.player;
     System.Random randGen = new System.Random ();
     //Set seeds!
+    var firstShift = (int)eventCount / 3;
+    var secondShift = (int)(eventCount * 2.0 / 3.0);
     for (int i = 0; i < eventCount; i++) {
       if (i == eventCount - 1 && bosses) {
         stage.Add (((GameEvent)new Boss (new Vector3 (0, 0, 0), 1, timeStep)));
         continue;
       }
-      if (colorsShifts && (i == (eventCount / 3) || i == (eventCount * (2 / 3)))) {
+      if (colorsShifts && (i == firstShift || i == secondShift)) {
         currentColor = ColorUtils.GetRandomBackgroundColor (currentColor, randGen);
         stage.Add ((GameEvent)new BackgroundShift (currentColor, timeStep));
         continue;

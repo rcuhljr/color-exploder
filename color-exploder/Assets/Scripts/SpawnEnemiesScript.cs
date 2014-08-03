@@ -19,6 +19,8 @@ public class SpawnEnemiesScript : MonoBehaviour
   /// </summary>
   public Transform enemyPrefab;
 
+  public BackgroundScript bgScript;
+
     public Transform asteroidPrefab;
 
 		public SoundScript sound;
@@ -53,7 +55,13 @@ public class SpawnEnemiesScript : MonoBehaviour
 	
 	public void SpawnEnemy (Vector3 position, Colors color, bool isShielded, bool rotates)
 	  {
+    if (color == bgScript.color) {
+      Debug.Log("attempt to spawn blocked color");
+      //#TODO Fix with better pick
+      color = ColorUtils.GetRandomColorForBackground(color, randomzier);
+    }
 						var enemy = Instantiate (enemyPrefab) as Transform;
+    enemy.tag = "enemy_ship";
       enemy.position = position;
             List<Transform> disabledCannons = new List<Transform> ();
 
@@ -68,7 +76,7 @@ public class SpawnEnemiesScript : MonoBehaviour
 
 
 			var renderer = child.GetComponent<SpriteRenderer> ();
-			    renderer.color = ConvertToColor (color);
+			    renderer.color = ColorUtils.ConvertToColor (color);
 
 			if(!renderer.enabled )
 			{
@@ -101,20 +109,6 @@ public class SpawnEnemiesScript : MonoBehaviour
       var hull = (enemy as Transform).FindChild ("Hull");
       hull.GetComponent<SpriteRenderer> ().sprite =
         Resources.Load<Sprite> ("Textures/EnemyShip-Shielded");
-    }
-  }
-
-  public Color ConvertToColor (Colors gameColor)
-  {
-    switch (gameColor) {
-    case Colors.blue:
-      return Color.blue;
-    case Colors.green:
-      return Color.green;
-    case Colors.red:
-      return Color.red;
-    default:
-      return Color.white;
     }
   }
 }
