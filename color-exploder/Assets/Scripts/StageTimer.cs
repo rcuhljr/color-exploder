@@ -5,6 +5,7 @@ using System.Timers;
 using Colors = ColorUtils.Colors;
 using System.Linq;
 using Random = System.Random;
+using AssemblyCSharp;
 
 public class StageTimer : MonoBehaviour
 {
@@ -169,78 +170,6 @@ public class StageTimer : MonoBehaviour
 
     if(currentStage.Count == 0) {
       eventTimer.Stop();
-    }
-  }
-
-  
-  public class Stage
-  {
-   
-    public List<GameEvent> gameEvents;
-
-    public Stage (List<GameEvent> events)
-    {
-      gameEvents = events;
-    }
-    
-  }
-
-  public class GameEvent
-  {
-    public int delay;
-
-    public GameEvent (int delay)
-    {
-      this.delay = delay;
-    }
-  }
-
-  public class Spawn
-  {
-
-    public Vector3 position;
-    public Colors color;
-    public bool shielded;
-    public bool rotated;
-
-    public Spawn (Vector3 pos, Colors color, bool shielded, bool rotated)
-    {
-      this.position = pos;
-      this.color = color;      
-      this.shielded = shielded;
-      this.rotated = rotated;
-    }
-  }
-
-  public class SpawnSet : GameEvent
-  {
-    public List<Spawn> spawns;
-
-    public SpawnSet(List<Spawn> inSpawns, int delay):base(delay){
-      spawns = inSpawns;
-    }
-  }
-
-  public class Boss : GameEvent
-  {
-  
-    public Vector3 position;
-    public int bossId;
-  
-    public Boss (Vector3 pos, int bossId, int delay):base(delay)
-    {
-      this.position = pos;
-      this.bossId = bossId;
-    }
-  }
-
-  public class BackgroundShift : GameEvent
-  {    
-    public Colors color;
-    
-    public BackgroundShift (Colors color, int delay):base(delay)
-    {
-      this.color = color;
     }
   }
 }
