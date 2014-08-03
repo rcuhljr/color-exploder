@@ -2,7 +2,7 @@
 Spawn blue tfftffff 3  
 Spawn red fffttfff 1 rotator 
 Spawn green ftttftff 9  
-Spawn blue ttfftfff 5  
+Spawn blue ttfftfff 5
 1000
 Spawn red fftfftff 4 rotator 
 Spawn green tfttfftf 9  

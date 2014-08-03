@@ -44,6 +44,8 @@ public static class IOUtils
         currSpawnSet.spawns.Add (new Spawn (position, color, outCannons, line.Contains ("shield"), line.Contains ("rotat")));
       } else if (line.Contains ("Boss")){
         events.Add((GameEvent)new Boss(new Vector3(Constants.slots[6],3 ,1), int.Parse(line.Split(' ')[1]),currDelay));
+      } else if (line.Contains ("Music")) {
+        events.Add ((GameEvent)new MusicEvent (int.Parse(line.Split (' ') [1]), currDelay));
       }
     }
     if (currSpawnSet.spawns.Count > 0) {

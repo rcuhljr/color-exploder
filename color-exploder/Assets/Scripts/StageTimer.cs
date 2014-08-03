@@ -222,11 +222,30 @@ public class StageTimer : MonoBehaviour
       bgTimer.Start ();
       eventTimer.Interval = currEvent.delay;
     } else if (currEvent is Boss) {
-      eventTimer.Stop();
+      eventTimer.Stop ();
       bossOut = true;
-      bossTimer.Start();
-      spawner.SpawnBoss((Boss) currEvent);
+      bossTimer.Start ();
+      spawner.SpawnBoss ((Boss)currEvent);
       eventTimer.Interval = currEvent.delay;
+    } else if (currEvent is MusicEvent) {
+      var music = (MusicEvent)currEvent;
+      sounds.StopMusic();
+      switch(music.songID) {
+        case 1 :
+          sounds.PlayMusic(SoundScript.BackgroundSound.BlueSong);
+          break;
+        case 2 :
+          sounds.PlayMusic(SoundScript.BackgroundSound.GreenSong);
+          break;
+        case 3 :
+          sounds.PlayMusic(SoundScript.BackgroundSound.RedSong);
+          break;
+        case 4 :
+          sounds.PlayMusic(SoundScript.BackgroundSound.BossSong);
+          break;
+      }
+
+      eventTimer.Interval = music.delay;
     }
 
     if (currentStage.Count == 0) {
