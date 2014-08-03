@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public static class ColorUtils {
-  public enum Colors {red, blue, green, cyan, yellow, magenta, white, player };
+  public enum Colors {red, blue, green, cyan, yellow, magenta, white, player, boss };
 
   public static Dictionary<Colors, List<Colors>> ColorMaps =
   new Dictionary<Colors, List<Colors>> (){
