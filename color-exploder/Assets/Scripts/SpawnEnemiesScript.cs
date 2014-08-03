@@ -35,7 +35,7 @@ public class SpawnEnemiesScript : MonoBehaviour
   {
   }
 
-  public void SpawnRandomEnemy (bool bossOut = false)
+  public void SpawnRandomEnemy (bool bossOut)
   {
     //Drop the enemy into one of thirteen "slots"
     var position = randomzier.Next (0, 13);

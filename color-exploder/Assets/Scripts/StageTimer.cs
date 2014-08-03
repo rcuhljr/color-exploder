@@ -172,7 +172,7 @@ public class StageTimer : MonoBehaviour
       }
       if(spawnRandom){
         spawnRandom = false;
-        spawner.SpawnRandomEnemy();
+        spawner.SpawnRandomEnemy(false);
       }
 
       return;
