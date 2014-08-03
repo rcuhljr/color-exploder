@@ -22,16 +22,44 @@ public class BackgroundScript : MonoBehaviour {
     Debug.Log ("switching to " + color.ToString ());
     switch (color) {
     case Colors.red:
-      spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/red-background");
+			if(!Options.Entries["ColorBindMode"])
+			{
+      			spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/red-background");
+			}
+			else
+			{
+				spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/red-background-CB");
+			}
       break;
     case Colors.blue:
-      spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/blue-background");
+			if(!Options.Entries["ColorBlindMode"])
+			{
+				spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/blue-background");
+			}
+			else
+			{
+				spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/blue-background-CB");
+			}
       break;
     case Colors.green:
-      spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/green-background");
+			if(!Options.Entries["ColorBlindMode"])
+			{
+				spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/green-background");
+			}
+			else
+			{
+				spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/green-background-CB");
+			}
       break;
     default:
-      spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/grey-background");
+			if(!Options.Entries["ColorBlindMode"])
+			{
+				spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/grey-background");
+			}
+			else
+			{
+				spriteRenderer.sprite = Resources.Load<Sprite> ("Textures/grey-background-CB");
+			}
       break;
     }
     var ships = GameObject.FindGameObjectsWithTag ("enemy_ship");
