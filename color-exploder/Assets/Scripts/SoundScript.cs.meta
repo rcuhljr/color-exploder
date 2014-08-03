@@ -3,7 +3,11 @@ guid: a81f8616a4e4f8c478eeb553450c0b49
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
+  - bombSound: {fileID: 8300000, guid: ef2cbc820c4b1e342a7cc1413ba4cb0d, type: 3}
+  - explosionSound: {fileID: 8300000, guid: 10be0456a12fe9146852ec008dc2cb12, type: 3}
+  - gameOverSound: {fileID: 8300000, guid: caf6b36cf85ce304e83228cf2d7fea84, type: 3}
   - laserSound: {fileID: 8300000, guid: 9180421527ad30046a53902770bb9cf6, type: 3}
+  - transitionSound: {fileID: 8300000, guid: 210b216050ddab04ab0165ba843ca13a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
