@@ -56,7 +56,7 @@ public class SpawnEnemiesScript : MonoBehaviour
 	public void SpawnEnemy (Vector3 position, Colors color, bool isShielded, bool rotates)
 	  {
     if (color == bgScript.color) {
-      Debug.Log("attempt to spawn blocked color");
+      //Debug.Log("attempt to spawn blocked color:"+color+":"+bgScript.color);
       //#TODO Fix with better pick
       color = ColorUtils.GetRandomColorForBackground(color, randomzier);
     }

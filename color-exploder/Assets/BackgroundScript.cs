@@ -9,6 +9,7 @@ public class BackgroundScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+    color = Colors.player;
 	}
 	
 	// Update is called once per frame
