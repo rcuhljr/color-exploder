@@ -300,6 +300,14 @@ Prefab:
       propertyPath: m_FixedAngle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
+      propertyPath: bgScript
+      value: 
+      objectReference: {fileID: 1889397439}
+    - target: {fileID: 11400004, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 1926729368}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
   m_RootGameObject: {fileID: 1817640332}
@@ -611,8 +619,8 @@ GameObject:
   - 50: {fileID: 1817640336}
   - 114: {fileID: 1817640335}
   - 114: {fileID: 1817640334}
-  - 114: {fileID: 1817640339}
   - 114: {fileID: 1817640340}
+  - 114: {fileID: 1817640339}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -727,8 +735,9 @@ MonoBehaviour:
 --- !u!114 &1817640340
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400004, guid: 1c3bcdc42fda7074798d4ed087a0ab01,
+    type: 2}
+  m_PrefabInternal: {fileID: 860430906}
   m_GameObject: {fileID: 1817640332}
   m_Enabled: 1
   m_EditorHideFlags: 0
