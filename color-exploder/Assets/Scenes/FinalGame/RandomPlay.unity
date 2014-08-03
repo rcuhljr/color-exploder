@@ -195,6 +195,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cf90a940ebb327b4cbef4efea25e655b, type: 2}
+      propertyPath: m_TagString
+      value: BG-Color
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf90a940ebb327b4cbef4efea25e655b, type: 2}
   m_RootGameObject: {fileID: 1889397438}
@@ -279,6 +283,10 @@ Prefab:
     - target: {fileID: 6100000, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
       propertyPath: m_Center.y
       value: -.0700000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
+      propertyPath: maxSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
@@ -679,8 +687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f807b6bf5b21b845875d816543d6080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 275
-  maxSpeed: 4
+  moveForce: 200
+  maxSpeed: 3
   dragRate: .0125000002
 --- !u!114 &1817640335
 MonoBehaviour:
@@ -835,7 +843,7 @@ GameObject:
   - 114: {fileID: 1889397439}
   m_Layer: 0
   m_Name: BG-Color
-  m_TagString: Untagged
+  m_TagString: BG-Color
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

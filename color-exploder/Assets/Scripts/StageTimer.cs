@@ -21,8 +21,8 @@ public class StageTimer : MonoBehaviour
   void Start ()
   {
     eventTimer.Elapsed += timer_Elapsed;
-    stages = new Stage[]{GenerateStage (50, 500, false, false, false, true, false),
-      GenerateStage (40, 300, false, false, false, true, false) };
+    stages = new Stage[]{GenerateStage (50, 500, false, false, false, false, true),
+      GenerateStage (50, 300, true, true, false, true, true) };
     fireEvent = true;
     setupStage (stages [0]);
   }

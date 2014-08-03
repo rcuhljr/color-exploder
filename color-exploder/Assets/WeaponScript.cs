@@ -103,6 +103,12 @@ public class WeaponScript : MonoBehaviour {
       return Color.red;
     case Colors.player:
       return Color.black;
+    case Colors.cyan:
+      return Color.cyan;
+    case Colors.magenta:
+      return Color.magenta;
+    case Colors.yellow:
+      return Color.yellow;
     default:
       return Color.white;
     }

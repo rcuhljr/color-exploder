@@ -31,7 +31,7 @@ public class StraightEnemyScript : MonoBehaviour {
 			speed.x * direction.x,
 			speed.y * direction.y);
 		
-		Destroy(gameObject, 7);
+		Destroy(gameObject, 12);
 	}
 	
 	// Update is called once per frame

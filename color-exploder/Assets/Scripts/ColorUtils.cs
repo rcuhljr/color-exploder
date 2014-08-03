@@ -26,6 +26,78 @@ public static class ColorUtils {
     return options [(int)System.Math.Floor (options.Count * randGen.NextDouble ())];    
   }
 
+  public static bool IsAffectedByBullets(Colors bulletColor, Colors myColor, bool isShielded) {
+
+    if(!isShielded && bulletColor == Colors.player)
+      return true;
+
+    switch(myColor) {
+
+      case Colors.blue:
+        return bulletColor == Colors.blue || bulletColor == Colors.cyan ||
+        bulletColor == Colors.magenta || bulletColor == Colors.white;
+
+    case Colors.cyan:
+        return bulletColor == Colors.blue || bulletColor == Colors.cyan ||
+        bulletColor == Colors.green || bulletColor == Colors.white;
+
+      case Colors.green:
+        return bulletColor == Colors.cyan || bulletColor == Colors.green ||
+          bulletColor == Colors.yellow || bulletColor == Colors.white;
+
+    case Colors.magenta:
+        return bulletColor == Colors.blue || bulletColor == Colors.magenta ||
+        bulletColor == Colors.red || bulletColor == Colors.white;
+
+      case Colors.red:
+        return bulletColor == Colors.magenta || bulletColor == Colors.red ||
+        bulletColor == Colors.yellow || bulletColor == Colors.white;
+
+      case Colors.yellow:
+        return bulletColor == Colors.green || bulletColor == Colors.red ||
+        bulletColor == Colors.yellow || bulletColor == Colors.white;
+
+      default: return true;
+    }
+  }
+
+  public static Colors GetCompositeColor(Colors baseColor, Colors bgColor) {
+
+    if(bgColor == Colors.player)
+      return baseColor;
+
+    if(bgColor == Colors.red) {
+      switch(baseColor) {
+      case Colors.blue:
+        return Colors.magenta;
+      case Colors.green:
+        return Colors.yellow;
+      default:
+        return Colors.white;
+      }
+    } else if(bgColor == Colors.green) {
+      switch(baseColor) {
+      case Colors.blue:
+        return Colors.cyan;
+      case Colors.red:
+        return Colors.yellow;
+      default:
+        return Colors.white;
+      }
+    } else if(bgColor == Colors.blue) {
+      switch(baseColor) {
+      case Colors.green:
+        return Colors.cyan;
+      case Colors.red:
+        return Colors.yellow;
+      default:
+        return Colors.white;
+      }
+    }
+
+    return Colors.white;
+  }
+
   public static Color ConvertToColor (Colors gameColor)
   {
     switch (gameColor) {

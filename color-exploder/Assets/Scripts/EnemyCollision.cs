@@ -36,7 +36,7 @@ public class EnemyCollision : MonoBehaviour {
 		
 		Shot bullet = otherCollider.gameObject.GetComponent<Shot>();
 		if (bullet != null) {
-      if (bullet.ShotColor == (int)EnemyColor || (!isShielded && bullet.ShotColor == (int)ColorUtils.Colors.player) || bullet.ShotColor == (int)ColorUtils.Colors.white) {
+      if (ColorUtils.IsAffectedByBullets((Colors)bullet.ShotColor, (Colors)EnemyColor, isShielded)) {
 				if(sound != null)
 				{
 					sound.Play(SoundScript.SoundList.Explosions);
@@ -48,7 +48,7 @@ public class EnemyCollision : MonoBehaviour {
 				{
 					if(!DisabledCannons.Any(dis=>dis.GetComponent<WeaponScript>() == cannon))
 					{
-					cannon.Attack(EnemyColor, bullet.Magnitude+1, 0.4f);
+            cannon.Attack(GetCompositeColor((Colors)EnemyColor), bullet.Magnitude+1, 0.4f);
 					}
 				}
 			}
@@ -57,4 +57,19 @@ public class EnemyCollision : MonoBehaviour {
 		}
 		
 	}
+
+  Colors GetCompositeColor(Colors baseColor)
+  {
+    var bgManager = GameObject.FindGameObjectWithTag ("BG-Color");
+
+    var bgScript = bgManager.GetComponent<BackgroundScript>();
+
+    if(bgScript != null) {
+      var bgColor = bgScript.color;
+
+      return ColorUtils.GetCompositeColor(baseColor, bgColor);
+    }
+
+    return baseColor;
+  }
 }
