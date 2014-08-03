@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Timers;
 using Colors = ColorUtils.Colors;
 using System.Linq;
+using Random = System.Random;
 
 public class StageTimer : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class StageTimer : MonoBehaviour
   private bool fireEvent = false;
   private bool gameStopped = false;
   List<GameEvent> currentStage;
+  List<float> slots = new List<float>{-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6};
 
   // Use this for initialization
   void Start ()
@@ -50,25 +52,44 @@ public class StageTimer : MonoBehaviour
         stage.Add ((GameEvent)new BackgroundShift (currentColor, timeStep));
         continue;
       }
-      var chance = randGen.NextDouble ();
-      //Drop the enemy into one of thirteen "slots"
-      var position = new Vector3 ((float)((randGen.Next(0,13)) - 6), 5, 1);
-      var color = ColorUtils.GetRandomColorForBackground (currentColor, randGen);
-      if (shields && chance <= 0.1) {
-        stage.Add ((GameEvent)new Spawn (position, color, true, false, timeStep));        
-        continue;
+
+      var spawns = new List<Spawn>();
+
+      foreach(var slot in RandomSample(slots, randGen, randGen.Next(2,5))){
+        var chance = randGen.NextDouble ();
+        var position = new Vector3 (slot, 5, 1);
+        var color = ColorUtils.GetRandomColorForBackground (currentColor, randGen);
+        spawns.Add(BuildSingleSpawn (position, shields, asteroids, rotators, color, chance));
       }
-      if (asteroids && chance <= 0.12 && chance >= 0.1) {
-        stage.Add ((GameEvent)new Spawn (position, Colors.player, false, false, timeStep));        
-        continue;
-      }
-      if (rotators && chance <= 0.32 && chance >= 0.12) {
-        stage.Add ((GameEvent)new Spawn (position, color, false, true, timeStep));        
-        continue;
-      }
-      stage.Add ((GameEvent)new Spawn (position, color, false, false, timeStep));              
+      stage.Add((GameEvent)new SpawnSet(spawns, timeStep));
     }
     return new Stage (stage);
+  }
+
+  static Spawn BuildSingleSpawn (Vector3 position, bool shields, bool asteroids, bool rotators, Colors color, double chance)
+  {
+    if (shields && chance <= 0.1) {
+      return new Spawn (position, color, true, false);
+    }
+    if (asteroids && chance <= 0.12 && chance >= 0.1) {
+      return new Spawn (position, Colors.player, false, false);
+    }
+    if (rotators && chance <= 0.32 && chance >= 0.12) {
+      return new Spawn (position, color, false, true);
+    }
+    return new Spawn (position, color, false, false);
+  }
+
+  List<float> RandomSample (List<float> slots, Random randGen, int i)
+  {
+    var result = new List<float> ();
+    while (result.Count < i) {
+      var temp = slots[randGen.Next(slots.Count)];
+      if(!result.Contains(temp)){
+        result.Add(temp);
+      }
+    }
+    return result;
   }
 
   void setupStage (Stage stage)
@@ -107,15 +128,16 @@ public class StageTimer : MonoBehaviour
   {
     var currEvent = currentStage.First ();
     currentStage.RemoveAt (0);
-    if (currEvent is Spawn) {
-      var spawn = (Spawn)currEvent;
+    if (currEvent is SpawnSet) {
+      foreach(var spawn in ((SpawnSet)currEvent).spawns){
+ 
       if (spawn.color != Colors.player) {
         spawner.SpawnEnemy (spawn.position, spawn.color, spawn.shielded, spawn.rotated);
       } else {
         spawner.SpawnAsteroid (spawn.position);
       }
-
       eventTimer.Interval = currEvent.delay;
+      }
     } else if (currEvent is BackgroundShift) {
       var bg = (BackgroundShift)currEvent;
       bgScript.ChangeColor (bg.color);
@@ -150,7 +172,7 @@ public class StageTimer : MonoBehaviour
     }
   }
 
-  public class Spawn : GameEvent
+  public class Spawn
   {
 
     public Vector3 position;
@@ -158,12 +180,21 @@ public class StageTimer : MonoBehaviour
     public bool shielded;
     public bool rotated;
 
-    public Spawn (Vector3 pos, Colors color, bool shielded, bool rotated, int delay):base(delay)
+    public Spawn (Vector3 pos, Colors color, bool shielded, bool rotated)
     {
       this.position = pos;
       this.color = color;      
       this.shielded = shielded;
       this.rotated = rotated;
+    }
+  }
+
+  public class SpawnSet : GameEvent
+  {
+    public List<Spawn> spawns;
+
+    public SpawnSet(List<Spawn> inSpawns, int delay):base(delay){
+      spawns = inSpawns;
     }
   }
 
