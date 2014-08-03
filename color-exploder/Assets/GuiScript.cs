@@ -33,6 +33,13 @@ public class GuiScript : MonoBehaviour
       }
       return;
     }
+
+    if(Input.GetButtonDown("Escape")) {
+      Application.LoadLevel("MainMenu");
+      return;
+    }
+
+
       
 
     var player = GameObject.Find ("Player");

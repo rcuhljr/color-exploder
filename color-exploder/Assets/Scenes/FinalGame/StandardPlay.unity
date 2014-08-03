@@ -752,7 +752,6 @@ GameObject:
   - 50: {fileID: 1188526966}
   - 114: {fileID: 1188526965}
   - 114: {fileID: 1188526964}
-  - 114: {fileID: 1188526970}
   - 114: {fileID: 1188526963}
   - 114: {fileID: 1188526969}
   m_Layer: 0
@@ -880,21 +879,6 @@ MonoBehaviour:
   BombsLeft: 1
   bgScript: {fileID: 1931070120}
   sound: {fileID: 1000955580}
---- !u!114 &1188526970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: 1c3bcdc42fda7074798d4ed087a0ab01,
-    type: 2}
-  m_PrefabInternal: {fileID: 846153607}
-  m_GameObject: {fileID: 1188526961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c13dd75a20ec74fbcb2f3115bc4dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BombsLeft: 1
-  bgScript: {fileID: 0}
-  sound: {fileID: 0}
 --- !u!1 &1214294314
 GameObject:
   m_ObjectHideFlags: 0
