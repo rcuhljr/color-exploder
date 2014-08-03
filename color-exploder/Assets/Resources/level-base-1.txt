@@ -21,3 +21,7 @@ Spawn green 2
 Spawn red 9
 Spawn blue 10
 Spawn green 11
+1000
+Shift player
+1500
+Boss 1

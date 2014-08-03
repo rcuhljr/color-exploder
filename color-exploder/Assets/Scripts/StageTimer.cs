@@ -17,17 +17,21 @@ public class StageTimer : MonoBehaviour
   public int stageIndex = 0;
   private Timer eventTimer = new Timer ();
   private bool fireEvent = false;
-  private Timer bgTimer = new Timer(1750);
+  private Timer bgTimer = new Timer (1750);
   private bool fireBg = false;
   private Colors bgColor;
   private bool gameStopped = false;
+  private bool bossOut = false;
   List<GameEvent> currentStage;
+  private Timer bossTimer = new Timer(1000);
+  private bool spawnRandom = false;
 
 
   // Use this for initialization
   void Start ()
   {
     eventTimer.Elapsed += timer_Elapsed;
+    bossTimer.Elapsed += boss_Elapsed;
     stages = new Stage[]{GenerateStage (20, 1000, false, false, false, false, true),
       GenerateStage (50, 800, true, true, false, true, true) };
     fireEvent = true;
@@ -40,6 +44,11 @@ public class StageTimer : MonoBehaviour
   void background_Elapsed (object sender, ElapsedEventArgs e)
   {
     fireBg = true;
+  }
+
+  void boss_Elapsed (object sender, ElapsedEventArgs e)
+  {
+    spawnRandom = true;
   }
 
   private void timer_Elapsed (object sender, System.EventArgs a)
@@ -66,15 +75,15 @@ public class StageTimer : MonoBehaviour
         continue;
       }
 
-      var spawns = new List<Spawn>();
+      var spawns = new List<Spawn> ();
 
-      foreach(var slot in RandomSample(Constants.slots, randGen, randGen.Next(2,5))){
+      foreach (var slot in RandomSample(Constants.slots, randGen, randGen.Next(2,5))) {
         var chance = randGen.NextDouble ();
         var position = new Vector3 (slot, 5, 1);
         var color = ColorUtils.GetRandomColorForBackground (currentColor, randGen);
-        spawns.Add(BuildSingleSpawn (position, shields, asteroids, rotators, color, chance));
+        spawns.Add (BuildSingleSpawn (position, shields, asteroids, rotators, color, chance));
       }
-      stage.Add((GameEvent)new SpawnSet(spawns, timeStep));
+      stage.Add ((GameEvent)new SpawnSet (spawns, timeStep));
     }
     return new Stage (stage);
   }
@@ -97,9 +106,9 @@ public class StageTimer : MonoBehaviour
   {
     var result = new List<float> ();
     while (result.Count < i) {
-      var temp = slots[randGen.Next(slots.Count)];
-      if(!result.Contains(temp)){
-        result.Add(temp);
+      var temp = slots [randGen.Next (slots.Count)];
+      if (!result.Contains (temp)) {
+        result.Add (temp);
       }
     }
     return result;
@@ -111,9 +120,8 @@ public class StageTimer : MonoBehaviour
     eventTimer.Interval = 1000;
     eventTimer.Start ();
 
-    if(sounds != null)
-    {
-      sounds.PlayMusic(SoundScript.BackgroundSound.RandomSong);
+    if (sounds != null) {
+      sounds.PlayMusic (SoundScript.BackgroundSound.RandomSong);
     }
   }
 
@@ -133,6 +141,21 @@ public class StageTimer : MonoBehaviour
       bgScript.ChangeColor (bgColor);
       fireBg = false;
     }
+
+    if (bossOut) {
+      if(!BossExists()){
+        bossTimer.Stop ();
+        spawnRandom = false;
+        eventTimer.Start();
+        return;
+      }
+      if(spawnRandom){
+        spawnRandom = false;
+        spawner.SpawnRandomEnemy();
+      }
+
+      return;
+    }
       
     if (!fireEvent) {
       return;
@@ -149,34 +172,45 @@ public class StageTimer : MonoBehaviour
 
   }
 
+  bool BossExists ()
+  {
+    var result = GameObject.FindGameObjectWithTag ("bosses");
+    return result != null;
+  }
+
   public void consumeEvent ()
   {
     var currEvent = currentStage.First ();
     currentStage.RemoveAt (0);
     if (currEvent is SpawnSet) {
-      foreach(var spawn in ((SpawnSet)currEvent).spawns){
+      foreach (var spawn in ((SpawnSet)currEvent).spawns) {
  
-      if (spawn.color != Colors.player) {
-        spawner.SpawnEnemy (spawn.position, spawn.color, spawn.shielded, spawn.rotated);
-      } else {
-        spawner.SpawnAsteroid (spawn.position);
-      }
-      eventTimer.Interval = currEvent.delay;
+        if (spawn.color != Colors.player) {
+          spawner.SpawnEnemy (spawn.position, spawn.color, spawn.shielded, spawn.rotated);
+        } else {
+          spawner.SpawnAsteroid (spawn.position);
+        }
+        eventTimer.Interval = currEvent.delay;
       }
     } else if (currEvent is BackgroundShift) {
-      if(sounds != null)
-      {
+      if (sounds != null) {
         Debug.Log ("playing transition");
-        sounds.Play(SoundScript.SoundList.Transitions);
+        sounds.Play (SoundScript.SoundList.Transitions);
       }
       var bg = (BackgroundShift)currEvent;
       bgColor = bg.color;
-      bgTimer.Start();
+      bgTimer.Start ();
+      eventTimer.Interval = currEvent.delay;
+    } else if (currEvent is Boss) {
+      eventTimer.Stop();
+      bossOut = true;
+      bossTimer.Start();
+      spawner.SpawnBoss((Boss) currEvent);
       eventTimer.Interval = currEvent.delay;
     }
 
-    if(currentStage.Count == 0) {
-      eventTimer.Stop();
+    if (currentStage.Count == 0) {
+      eventTimer.Stop ();
     }
   }
 }

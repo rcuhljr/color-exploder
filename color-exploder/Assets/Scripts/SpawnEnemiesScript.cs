@@ -4,6 +4,7 @@ using System.Timers;
 using System.Collections.Generic;
 using System.Linq;
 using Colors = ColorUtils.Colors;
+using AssemblyCSharp;
 
 public class SpawnEnemiesScript : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class SpawnEnemiesScript : MonoBehaviour
   public Transform asteroidPrefab;
   public SoundScript sound;
   public System.Random randomzier = new System.Random ();
+  public Transform bossPrefab1;
 
   void Start ()
   {
@@ -37,6 +39,15 @@ public class SpawnEnemiesScript : MonoBehaviour
     var position = new Vector3 ((float)((randomzier.Next (0, 13)) - 6), 5, 1);
     var color = (Colors)(randomzier.Next () % 3);
     SpawnEnemy (position, color, (randomzier.Next () % 10) == 1, false);   
+  }
+
+  public void SpawnBoss (Boss boss)
+  {
+    var enemy = Instantiate (bossPrefab1) as Transform;
+    enemy.position = boss.position;
+
+    //var collider = enemy.GetComponentsInChildren<AsteroidCollision> ().First ();
+    //collider.sound = sound;
   }
 
   public void SpawnAsteroid (Vector3 position)

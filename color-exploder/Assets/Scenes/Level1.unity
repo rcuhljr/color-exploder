@@ -666,6 +666,7 @@ MonoBehaviour:
   bgScript: {fileID: 227971207}
   asteroidPrefab: {fileID: 400000, guid: 1d7813ebff5974e4eba0130671fbc0b4, type: 2}
   sound: {fileID: 2015853415}
+  bossPrefab1: {fileID: 400018, guid: 9f21a1b842755174c92de3e0dfd5664f, type: 2}
 --- !u!1 &1706027591
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +829,12 @@ MonoBehaviour:
   gameOverSound: {fileID: 0}
   laserSound: {fileID: 8300000, guid: 9180421527ad30046a53902770bb9cf6, type: 3}
   transitionSound: {fileID: 8300000, guid: 210b216050ddab04ab0165ba843ca13a, type: 3}
+  menuSound: {fileID: 0}
+  randomSound: {fileID: 0}
+  blueSound: {fileID: 0}
+  greenSound: {fileID: 0}
+  redSound: {fileID: 0}
+  bossSound: {fileID: 0}
 --- !u!82 &2015853416
 AudioSource:
   m_ObjectHideFlags: 0
