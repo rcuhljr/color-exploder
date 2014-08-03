@@ -100,21 +100,42 @@ public static class ColorUtils {
 
   public static Color ConvertToColor (Colors gameColor)
   {
-    switch (gameColor) {
-    case Colors.blue:
-      return Color.blue;
-    case Colors.green:
-      return Color.green;
-    case Colors.red:
-      return Color.red;
-    case Colors.cyan:
-      return Color.cyan;
-    case Colors.magenta:
-      return Color.magenta;
-    case Colors.yellow:
-      return Color.yellow;
-    default:
-      return Color.white;
+    if (Options.Entries ["ColorBlindMode"]) {
+      switch (gameColor) {
+        case Colors.blue:
+          return new Color(0.9F,0.9F,0.9F);
+        case Colors.green:
+          return new Color(0.8F,0.8F,0.8F);
+        case Colors.red:
+          return new Color(0.6F,0.6F,0.6F);
+        case Colors.cyan:
+          return new Color(0.5F,0.5F,0.5F);
+        case Colors.magenta:
+          return new Color(0.7F,0.7F,0.7F);
+        case Colors.yellow:
+          return new Color(0.4F,0.4F,0.4F);
+        default:
+          return Color.white;
+      }
+    } 
+    else 
+    {
+      switch (gameColor) {
+        case Colors.blue:
+          return Color.blue;
+        case Colors.green:
+          return Color.green;
+        case Colors.red:
+          return Color.red;
+        case Colors.cyan:
+          return Color.cyan;
+        case Colors.magenta:
+          return Color.magenta;
+        case Colors.yellow:
+          return Color.yellow;
+        default:
+          return Color.white;
+      }
     }
   }
 
