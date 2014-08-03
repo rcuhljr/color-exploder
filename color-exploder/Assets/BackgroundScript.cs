@@ -41,15 +41,13 @@ public class BackgroundScript : MonoBehaviour {
     foreach (var rawShip in ships) {
 
       var ship = rawShip.transform;
-      var topCollider = ship.gameObject.GetComponent<EnemyCollision>();
+      var topCollider = ship.GetComponentInChildren<EnemyCollision>();
       if(topCollider != null)
       {
         if(topCollider.EnemyColor != color) continue;
       }
 
       var newColor = newColors[convertedCount%newColors.Count];
-
-      topCollider.EnemyColor = newColor;
 
       for(int i=0; i<ship.childCount; i++)
       {
