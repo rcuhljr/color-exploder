@@ -543,6 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 400010, guid: 26b61bf35d3172c4e957c2db14d91808, type: 2}
+  bgScript: {fileID: 1889397439}
   asteroidPrefab: {fileID: 400000, guid: 1d7813ebff5974e4eba0130671fbc0b4, type: 2}
   sound: {fileID: 1926729368}
 --- !u!1001 &1657356481
@@ -592,6 +593,10 @@ Prefab:
       propertyPath: sound
       value: 
       objectReference: {fileID: 1926729368}
+    - target: {fileID: 11400000, guid: c1d34158b109ede4db40426ed51eb3fb, type: 2}
+      propertyPath: bgScript
+      value: 
+      objectReference: {fileID: 1889397439}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1d34158b109ede4db40426ed51eb3fb, type: 2}
   m_RootGameObject: {fileID: 1633774908}
