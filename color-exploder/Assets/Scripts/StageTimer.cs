@@ -22,7 +22,7 @@ public class StageTimer : MonoBehaviour
   {
     eventTimer.Elapsed += timer_Elapsed;
     stages = new Stage[]{GenerateStage (50, 500, false, false, false, true, false),
-      GenerateStage (40, 300, false, false, false, true, false)};
+      GenerateStage (40, 300, false, false, false, true, false) };
     fireEvent = true;
     setupStage (stages [0]);
   }
@@ -51,7 +51,8 @@ public class StageTimer : MonoBehaviour
         continue;
       }
       var chance = randGen.NextDouble ();
-      var position = new Vector3 ((float)((randGen.NextDouble () - 0.5) * 12), 5, 1);
+      //Drop the enemy into one of thirteen "slots"
+      var position = new Vector3 ((float)((randGen.Next(0,13)) - 6), 5, 1);
       var color = ColorUtils.GetRandomColorForBackground (currentColor, randGen);
       if (shields && chance <= 0.1) {
         stage.Add ((GameEvent)new Spawn (position, color, true, false, timeStep));        
@@ -94,9 +95,7 @@ public class StageTimer : MonoBehaviour
     }
 
     fireEvent = false;
-
     consumeEvent ();
-
     if (currentStage.Count == 0 && stageIndex < stages.Length - 1) {
       stageIndex += 1;
       setupStage (stages [stageIndex]);
@@ -116,19 +115,16 @@ public class StageTimer : MonoBehaviour
         spawner.SpawnAsteroid (spawn.position);
       }
 
-
       eventTimer.Interval = currEvent.delay;
     } else if (currEvent is BackgroundShift) {
       var bg = (BackgroundShift)currEvent;
       bgScript.ChangeColor (bg.color);
-            
       eventTimer.Interval = currEvent.delay;
     }
 
-    if (currentStage.Count == 0) {
+    if(currentStage.Count == 0) {
       eventTimer.Stop();
     }
-
   }
 
   

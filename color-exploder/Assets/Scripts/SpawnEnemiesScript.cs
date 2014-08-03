@@ -41,7 +41,8 @@ public class SpawnEnemiesScript : MonoBehaviour
   }
 
   public void SpawnRandomEnemy(){
-    var position = new Vector3 ((float)((randomzier.NextDouble () - 0.5) * 12), 5, 1);
+      //Drop the enemy into one of thirteen "slots"
+    var position = new Vector3 ((float)((randomzier.Next(0,13)) - 6), 5, 1);
     var color = (Colors)(randomzier.Next () % 3);
     SpawnEnemy (position, color, (randomzier.Next () % 10) == 1, false);   
     }
