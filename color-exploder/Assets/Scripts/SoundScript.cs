@@ -20,23 +20,25 @@ public class SoundScript : MonoBehaviour {
 
 	public void Play(SoundList sound)
 	{
-		switch(sound)
-		{
-			case SoundList.Bombs:
-				audio.PlayOneShot(bombSound, 0.7F);
-				break;
-			case SoundList.Explosions:
-				audio.PlayOneShot(explosionSound, 0.7F);
-				break;
-			case SoundList.GameOvers:
-				audio.PlayOneShot(gameOverSound, 0.7F);
-				break;
-			case SoundList.Lasers:
-				audio.PlayOneShot(laserSound, 0.7F);
-				break;
-			case SoundList.Transitions:
-				audio.PlayOneShot(transitionSound, 0.7F);
-				break;
+		if (Options.Entries["SoundEffects"]) {
+			switch(sound)
+			{
+				case SoundList.Bombs:
+					audio.PlayOneShot(bombSound, 0.7F);
+					break;
+				case SoundList.Explosions:
+					audio.PlayOneShot(explosionSound, 0.7F);
+					break;
+				case SoundList.GameOvers:
+					audio.PlayOneShot(gameOverSound, 0.7F);
+					break;
+				case SoundList.Lasers:
+					audio.PlayOneShot(laserSound, 0.7F);
+					break;
+				case SoundList.Transitions:
+					audio.PlayOneShot(transitionSound, 0.7F);
+					break;
+			}
 		}
 	}
 
