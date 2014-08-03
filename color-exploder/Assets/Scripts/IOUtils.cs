@@ -47,4 +47,35 @@ public static class IOUtils
     }
     return new[]{new Stage (events)};
   }
+
+  public static string Dump(Stage[] stages)
+  {
+    StringBuilder builder = new StringBuilder ();
+    foreach(var stage in stages)
+      foreach(var evt in stage.gameEvents) {
+        builder.AppendLine(evt.delay.ToString());
+        if(evt is SpawnSet)
+        {
+          var set = (SpawnSet)evt;
+
+          foreach(var spawn in set.spawns) {
+
+            if(spawn.color != Colors.player) {
+              const string format = "Spawn {0} {1} {2} {3}";
+            builder.AppendLine(string.Format(format, spawn.color, Constants.slots.FindIndex(d=>d==spawn.position.x),
+                                             spawn.rotated ? "rotator":"", spawn.shielded ? "shielded":""));
+            }
+            else {
+              const string format = "Spawn {0} {1} {2} {3}";
+              builder.AppendLine(string.Format(format, "asteroid", Constants.slots.FindIndex(d=>d==spawn.position.x),
+                                               spawn.rotated ? "rotator":"", spawn.shielded ? "shielded":""));
+            }
+          }
+        } else if(evt is BackgroundShift) {
+          builder.AppendLine("Shift " + ((BackgroundShift)evt).color);
+        }
+      }
+
+    return builder.ToString();
+  }
 }
