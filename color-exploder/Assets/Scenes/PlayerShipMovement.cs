@@ -12,6 +12,7 @@ public class PlayerShipMovement : MonoBehaviour {
 	private const float MinX = -6.5f;
 	private const float MaxY = 4.5f;
 	private const float MinY = -4.5f;
+  
 	// Use this for initialization
 	void Start () {
 	
@@ -31,6 +32,13 @@ public class PlayerShipMovement : MonoBehaviour {
 				weapon.Attack(Colors.player, 1, 1f);
 			}
 		}
+
+    bool bomb = Input.GetButtonDown ("Jump");
+
+    if(bomb){
+      ColorBombScript weapon = GetComponent<ColorBombScript>();
+      weapon.DropBomb();
+    };
 		
 		if(rigidbody2D.velocity.magnitude > maxSpeed)
 		{

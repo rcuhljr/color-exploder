@@ -192,6 +192,7 @@ GameObject:
   - 114: {fileID: 299889734}
   - 114: {fileID: 299889735}
   - 114: {fileID: 299889736}
+  - 114: {fileID: 299889737}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -303,6 +304,19 @@ MonoBehaviour:
   shotPrefab: {fileID: 400000, guid: 51b4419f8da354f43b4c1ae0d549e0fc, type: 2}
   sound: {fileID: 2015853415}
   shootingRate: .25
+--- !u!114 &299889737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 299889729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c13dd75a20ec74fbcb2f3115bc4dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BombsLeft: 1
+  bgScript: {fileID: 0}
 --- !u!1 &559017495
 GameObject:
   m_ObjectHideFlags: 0
