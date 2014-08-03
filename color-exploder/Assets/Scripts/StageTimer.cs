@@ -52,6 +52,7 @@ public class StageTimer : MonoBehaviour
   void background_Elapsed (object sender, ElapsedEventArgs e)
   {
     fireBg = true;
+    bgTimer.Stop ();
   }
 
   void boss_Elapsed (object sender, ElapsedEventArgs e)
