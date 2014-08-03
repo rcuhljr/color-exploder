@@ -641,6 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 1633774911}
   bgScript: {fileID: 1889397439}
+  sounds: {fileID: 0}
   stageIndex: 0
 --- !u!1 &1817640332
 GameObject:
