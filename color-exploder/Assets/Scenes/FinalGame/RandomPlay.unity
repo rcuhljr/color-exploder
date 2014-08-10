@@ -500,6 +500,8 @@ MonoBehaviour:
   asteroidPrefab: {fileID: 400000, guid: 1d7813ebff5974e4eba0130671fbc0b4, type: 2}
   sound: {fileID: 1926729368}
   bossPrefab1: {fileID: 0}
+  bossPrefab2: {fileID: 0}
+  bossPrefab3: {fileID: 0}
 --- !u!1001 &1657356481
 Prefab:
   m_ObjectHideFlags: 0
@@ -674,7 +676,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 860430906}
   m_GameObject: {fileID: 1817640332}
-  m_Mass: 1
+  m_Mass: 1.5
   m_LinearDrag: 0
   m_AngularDrag: .5
   m_GravityScale: 0

@@ -245,11 +245,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6100000, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
       propertyPath: m_Size.x
-      value: .5
+      value: .349999994
       objectReference: {fileID: 0}
     - target: {fileID: 6100000, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
       propertyPath: m_Size.y
-      value: .400000006
+      value: .349999994
       objectReference: {fileID: 0}
     - target: {fileID: 6100000, guid: 1c3bcdc42fda7074798d4ed087a0ab01, type: 2}
       propertyPath: m_Center.y
@@ -821,7 +821,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 846153607}
   m_GameObject: {fileID: 1188526961}
-  m_Mass: 1
+  m_Mass: 1.5
   m_LinearDrag: 0
   m_AngularDrag: .5
   m_GravityScale: 0
@@ -840,7 +840,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .400000006}
+  m_Size: {x: .349999994, y: .349999994}
   m_Center: {x: 0, y: -.0700000003}
 --- !u!212 &1188526968
 SpriteRenderer:
