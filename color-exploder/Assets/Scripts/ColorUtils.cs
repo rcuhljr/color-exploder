@@ -14,6 +14,10 @@ public static class ColorUtils {
   };
 
   public static Colors GetRandomColorForBackground(Colors bgColor, System.Random randGen){
+    if(!ColorMaps.ContainsKey(bgColor))
+    {
+        Debug.Log("Could not find color map for " + bgColor.ToString());        
+    }
     var options = ColorMaps [bgColor];
     var index = (int)System.Math.Floor (options.Count * randGen.NextDouble ());
     return options [index];
@@ -96,6 +100,17 @@ public static class ColorUtils {
     }
 
     return baseColor;
+  }
+
+  public static bool IsAllowedForBackground(Colors shipColor, Colors bgColor)
+  {
+      if(ColorMaps.ContainsKey(bgColor))
+      {
+          return ColorMaps[bgColor].Contains(shipColor);
+      }
+      
+      Debug.Log("Could not find Color Map for " + bgColor.ToString());
+      return ColorMaps[Colors.player].Contains(shipColor);
   }
 
   public static Color ConvertToColor (Colors gameColor)

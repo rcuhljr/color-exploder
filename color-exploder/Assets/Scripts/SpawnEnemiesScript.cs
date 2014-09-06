@@ -22,7 +22,7 @@ public class SpawnEnemiesScript : MonoBehaviour
   public BackgroundScript bgScript;
   public Transform asteroidPrefab;
   public SoundScript sound;
-  public System.Random randomzier = new System.Random ();
+  public System.Random randomizer = new System.Random ();
   public Transform bossPrefab1;
 	public Transform bossPrefab2;
 	public Transform bossPrefab3;
@@ -38,25 +38,25 @@ public class SpawnEnemiesScript : MonoBehaviour
   public void SpawnRandomEnemy (bool bossout)
   {
     //Drop the enemy into one of thirteen "slots"
-    var position = randomzier.Next (0, 13);
+    var position = randomizer.Next (0, 13);
     while (Boss1Script.BlockedColumns.Contains(position)) {
-      position = randomzier.Next (0, 13);
+      position = randomizer.Next (0, 13);
     };
-    var color = (Colors)(randomzier.Next () % 3);
+    var color = (Colors)(randomizer.Next () % 3);
     var cannons = new List<bool>();
 
     for(int i=0; i<8; i++) {
-      if((randomzier.Next() % 3) == 0)
+      if((randomizer.Next() % 3) == 0)
         cannons.Add(true);
       else
         cannons.Add(false);
     }
 
     if (cannons.All(f=>!f)) {
-      var luckyCannon = randomzier.Next () % 8;
+      var luckyCannon = randomizer.Next () % 8;
       cannons [luckyCannon] = true;
     }
-    SpawnEnemy (new Vector3(Constants.slots[position],5,1), color, cannons.ToArray(), (randomzier.Next () % 10) == 1, false);   
+    SpawnEnemy (new Vector3(Constants.slots[position],5,1), color, cannons.ToArray(), (randomizer.Next () % 10) == 1, false);   
   }
 
   public void SpawnBoss (Boss boss)
@@ -109,10 +109,10 @@ public class SpawnEnemiesScript : MonoBehaviour
   
   public void SpawnEnemy (Vector3 position, Colors color, bool[] cannons, bool isShielded, bool rotates)
   {
-    if (color == bgScript.color) {
+    if (color == bgScript.color || !ColorUtils.IsAllowedForBackground(color, bgScript.color)) {
       //Debug.Log("attempt to spawn blocked color:"+color+":"+bgScript.color);
       //#TODO Fix with better pick
-      color = ColorUtils.GetRandomColorForBackground (color, randomzier);
+      color = ColorUtils.GetRandomColorForBackground (bgScript.color, randomizer);
     }
     var enemy = Instantiate (enemyPrefab) as Transform;
     enemy.tag = "enemy_ship";

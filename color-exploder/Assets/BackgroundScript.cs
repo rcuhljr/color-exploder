@@ -5,11 +5,13 @@ using Colors = ColorUtils.Colors;
 public class BackgroundScript : MonoBehaviour {
 
   public Colors color;
+  public Colors previousColor;
   private bool changeColor = false;
 
 	// Use this for initialization
 	void Start () {
     color = Colors.player;
+		previousColor = Colors.player;
 	}
 	
 	// Update is called once per frame
@@ -72,9 +74,14 @@ public class BackgroundScript : MonoBehaviour {
       var topCollider = ship.GetComponentInChildren<EnemyCollision>();
       if(topCollider != null)
       {
+		//Exclude ships of the other primary colors
         if(topCollider.EnemyColor != color) continue;
       }
-
+	  if(color == Colors.player)
+			{
+				Destroy (rawShip.gameObject);
+				continue;
+			}
       var newColor = newColors[convertedCount%newColors.Count];
 
       for(int i=0; i<ship.childCount; i++)
@@ -96,6 +103,23 @@ public class BackgroundScript : MonoBehaviour {
 
         
     }
+    
+    if(previousColor != Colors.player)
+    {
+      var allowedColors = ColorUtils.ColorMaps[color];
+      foreach (var rawShip in ships) {
+        
+        var ship = rawShip.transform;
+        var topCollider = ship.GetComponentInChildren<EnemyCollision>();
+        if(topCollider != null)
+        {
+          //If a ship isn't allowed, destroy it.
+          if(!allowedColors.Contains (topCollider.EnemyColor)) Destroy(rawShip.gameObject);
+        }
+      }
+    }
+    
+    previousColor = color;
 	}
 
   public void ChangeColor(Colors newColor){
