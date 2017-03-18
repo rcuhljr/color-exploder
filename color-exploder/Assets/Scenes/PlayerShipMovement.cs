@@ -4,14 +4,12 @@ using Colors = ColorUtils.Colors;
 
 public class PlayerShipMovement : MonoBehaviour {
 
-	public float moveForce = 275f;			
-	public float maxSpeed = 4f;		
-	public float dragRate = .0125f;
-
 	private const float MaxX = 6.5f;
 	private const float MinX = -6.5f;
 	private const float MaxY = 4.5f;
 	private const float MinY = -4.5f;
+
+    private const float MoveSpeed = 5f;
   
 	// Use this for initialization
 	void Start () {
@@ -35,71 +33,83 @@ public class PlayerShipMovement : MonoBehaviour {
 
     bool bomb = Input.GetButtonDown ("Jump");
 
-    if(bomb){
-      ColorBombScript weapon = GetComponent<ColorBombScript>();
-      weapon.DropBomb();
+    if (bomb)
+    {
+        ColorBombScript weapon = GetComponent<ColorBombScript>();
+        weapon.DropBomb();
     };
-		
-		if(rigidbody2D.velocity.magnitude > maxSpeed)
-		{
-			var scale = maxSpeed / rigidbody2D.velocity.magnitude;
-			rigidbody2D.velocity.Scale( new Vector3(scale, scale, 0));
- 		}
+    var rigidbody2D = GetComponent<Rigidbody2D>();
+    //if (rigidbody2D.velocity.magnitude > maxSpeed)
+    //{
+    //    var scale = maxSpeed / rigidbody2D.velocity.magnitude;
+    //    rigidbody2D.velocity.Scale(new Vector3(scale, scale, 0));
+    //}
 
-		// Cache the horizontal input.
-		float h = Input.GetAxis("Horizontal");
+    // Cache the horizontal input.
+    float h = Input.GetAxis("Horizontal");
 
-		//if ( && rigidbody2D.velocity.x > 0) {
-		//	rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
-		//	rigidbody2D.position = new Vector2 (6.5f, rigidbody2D.position.y);
-		//}
-		//if (rigidbody2D.position.x <= -6.5 && rigidbody2D.velocity.x < 0) {
-		//	rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);
-		//	rigidbody2D.position = new Vector2 (-6.5f, rigidbody2D.position.y);
-		//}
+    //if ( && rigidbody2D.velocity.x > 0) {
+    //	rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
+    //	rigidbody2D.position = new Vector2 (6.5f, rigidbody2D.position.y);
+    //}
+    //if (rigidbody2D.position.x <= -6.5 && rigidbody2D.velocity.x < 0) {
+    //	rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);
+    //	rigidbody2D.position = new Vector2 (-6.5f, rigidbody2D.position.y);
+    //}
 
-		if (h != 0f) {
-			if (h * rigidbody2D.velocity.x < maxSpeed)
-			{
-				if((rigidbody2D.position.x < MaxX && h > 0) || (rigidbody2D.position.x > MinX && h < 0))
-					rigidbody2D.AddForce (Vector2.right * h * moveForce);
-			}
-								
-			if (Mathf.Abs (rigidbody2D.velocity.x) > maxSpeed)
-				rigidbody2D.velocity = new Vector2 (Mathf.Sign (rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
-				} else {
-			rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x * dragRate, rigidbody2D.velocity.y);
-		}
+    if (h != 0f)
+    {
+        //if (h * rigidbody2D.velocity.x < maxSpeed)
+        //{
+        //    if ((rigidbody2D.position.x < MaxX && h > 0) || (rigidbody2D.position.x > MinX && h < 0))
+
+        //        rigidbody2D.AddForce(Vector2.right * h * moveForce);
+        //}
+
+        rigidbody2D.velocity = new Vector2(MoveSpeed * h, rigidbody2D.velocity.y);
+
+        //if (Mathf.Abs(rigidbody2D.velocity.x) > maxSpeed)
+        //    rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
+    }
+    else
+    {
+        rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
+    }
 
 
-		float v = Input.GetAxis("Vertical");
+    float v = Input.GetAxis("Vertical");
 
-		if (v != 0f) {
-						if (v * rigidbody2D.velocity.y < maxSpeed) 	
-							if((rigidbody2D.position.y < MaxY && v > 0) || (rigidbody2D.position.y > MinY && v < 0))
-								rigidbody2D.AddForce (Vector2.up * v * moveForce); 		 		
-						if (Mathf.Abs (rigidbody2D.velocity.y) > maxSpeed)
-								rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, Mathf.Sign (rigidbody2D.velocity.y) * maxSpeed);
+    if (v != 0f)
+    {
+        rigidbody2D.velocity = new Vector2(MoveSpeed * h, MoveSpeed * v);
+        //if (v * rigidbody2D.velocity.y < maxSpeed)
+        //    if ((rigidbody2D.position.y < MaxY && v > 0) || (rigidbody2D.position.y > MinY && v < 0))
+        //        rigidbody2D.AddForce(Vector2.up * v * moveForce);
+        //if (Mathf.Abs(rigidbody2D.velocity.y) > maxSpeed)
+        //    rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, Mathf.Sign(rigidbody2D.velocity.y) * maxSpeed);
 
-		} else {
-			rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, rigidbody2D.velocity.y * dragRate);
-		}
+    }
+    else
+    {
+        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
+    }
 
-		if (rigidbody2D.position.x < MinX || rigidbody2D.position.x > MaxX)
-		{
-			rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
-			if(rigidbody2D.position.x > 0)
-				rigidbody2D.position = new Vector2(MaxX, rigidbody2D.position.y);
-			else
-				rigidbody2D.position = new Vector2(MinX, rigidbody2D.position.y);
-		}
+    if (rigidbody2D.position.x < MinX || rigidbody2D.position.x > MaxX)
+    {
+        rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
+        if (rigidbody2D.position.x > 0)
+            rigidbody2D.position = new Vector2(MaxX, rigidbody2D.position.y);
+        else
+            rigidbody2D.position = new Vector2(MinX, rigidbody2D.position.y);
+    }
 
-		if (rigidbody2D.position.y < MinY || rigidbody2D.position.y > MaxY) {
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
-			if(rigidbody2D.position.y > 0)
-				rigidbody2D.position = new Vector2(rigidbody2D.position.x, MaxY);
-			else
-				rigidbody2D.position = new Vector2(rigidbody2D.position.x, MinY);
-				}
+    if (rigidbody2D.position.y < MinY || rigidbody2D.position.y > MaxY)
+    {
+        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
+        if (rigidbody2D.position.y > 0)
+            rigidbody2D.position = new Vector2(rigidbody2D.position.x, MaxY);
+        else
+            rigidbody2D.position = new Vector2(rigidbody2D.position.x, MinY);
+    }
 	}
 }

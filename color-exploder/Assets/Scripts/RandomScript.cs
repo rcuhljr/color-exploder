@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class RandomScript : MonoBehaviour {
@@ -14,6 +15,6 @@ public class RandomScript : MonoBehaviour {
 	}
 
 	void OnMouseDown () {
-		Application.LoadLevel ("RandomPlay");
+		SceneManager.LoadScene ("RandomPlay");
 	}
 }

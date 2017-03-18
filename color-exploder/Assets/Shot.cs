@@ -31,6 +31,6 @@ public class Shot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		rigidbody2D.velocity = movement;
+        GetComponent<Rigidbody2D>().velocity = movement;
 	}
 }

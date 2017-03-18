@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System;
 
@@ -29,13 +30,13 @@ public class GuiScript : MonoBehaviour
       if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
       {
         _score = 0;
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
       }
       return;
     }
 
     if(Input.GetButtonDown("Escape")) {
-      Application.LoadLevel("MainMenu");
+      SceneManager.LoadScene("MainMenu");
       return;
     }
 

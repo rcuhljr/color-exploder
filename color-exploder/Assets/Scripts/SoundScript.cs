@@ -21,6 +21,7 @@ public class SoundScript : MonoBehaviour {
 	public void Play(SoundList sound)
 	{
 		if (Options.Entries["SoundEffects"]) {
+            AudioSource audio = GetComponent<AudioSource>();
 			switch(sound)
 			{
 			case SoundList.Bombs:
@@ -62,31 +63,32 @@ public class SoundScript : MonoBehaviour {
 	public void PlayMusic(BackgroundSound song)
 	{
 		if (Options.Entries["Music"]) {
+            AudioSource audio = GetComponent<AudioSource>();
 			switch(song)
 			{
 			case BackgroundSound.MenuSong:
-				audio.clip = menuSound;
-				audio.Play();
+                audio.clip = menuSound;
+                audio.Play();
 				break;
 			case BackgroundSound.RandomSong:
-				audio.clip = randomSound;
-				audio.Play();
+                audio.clip = randomSound;
+                audio.Play();
 				break;
 			case BackgroundSound.BlueSong:
-				audio.clip = blueSound;
-				audio.Play();
+                audio.clip = blueSound;
+                audio.Play();
 				break;
 			case BackgroundSound.GreenSong:
-				audio.clip = greenSound;
-				audio.Play();
+                audio.clip = greenSound;
+                audio.Play();
 				break;
 			case BackgroundSound.RedSong:
-				audio.clip = redSound;
-				audio.Play();
+                audio.clip = redSound;
+                audio.Play();
 				break;
 			case BackgroundSound.BossSong:
-				audio.clip = bossSound;
-				audio.Play();
+                audio.clip = bossSound;
+                audio.Play();
 				break;
 			}
 			audio.loop = true;
@@ -96,11 +98,11 @@ public class SoundScript : MonoBehaviour {
 	public void StopMusic()
 	{
 		if (!Options.Entries["Music"]) {
-			audio.Stop ();
+            GetComponent<AudioSource>().Stop();
 		}
 	}
 
 	public void MuteMusic(bool state) {
-		audio.mute = state;
+        GetComponent<AudioSource>().mute = state;
 	}
 }

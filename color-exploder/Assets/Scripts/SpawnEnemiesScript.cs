@@ -15,15 +15,15 @@ public class SpawnEnemiesScript : MonoBehaviour
   // 1 - Designer variables
   //--------------------------------
 
-  /// <summary>
-  /// Projectile prefab for shooting
-  /// </summary>
-  public Transform enemyPrefab;
-  public BackgroundScript bgScript;
-  public Transform asteroidPrefab;
-  public SoundScript sound;
-  public System.Random randomizer = new System.Random ();
-  public Transform bossPrefab1;
+    /// <summary>
+    /// Projectile prefab for shooting
+    /// </summary>
+    public Transform enemyPrefab;
+    public BackgroundScript bgScript;
+    public Transform asteroidPrefab;
+    public SoundScript sound;
+    public System.Random randomizer = new System.Random ();
+    public Transform bossPrefab1;
 	public Transform bossPrefab2;
 	public Transform bossPrefab3;
 
@@ -56,7 +56,9 @@ public class SpawnEnemiesScript : MonoBehaviour
       var luckyCannon = randomizer.Next () % 8;
       cannons [luckyCannon] = true;
     }
-    SpawnEnemy (new Vector3(Constants.slots[position],5,1), color, cannons.ToArray(), (randomizer.Next () % 10) == 1, false);   
+
+    var spawn = new Spawn(new Vector3(Constants.slots[position], 5, 1), color, cannons.ToArray(), (randomizer.Next() % 10) == 1, false);
+    SpawnEnemy(spawn);
   }
 
   public void SpawnBoss (Boss boss)
@@ -79,7 +81,7 @@ public class SpawnEnemiesScript : MonoBehaviour
 	     enemy = Instantiate (bossPrefab1) as Transform;
 	     break;
      	}
-    enemy.position = boss.position;
+        enemy.position = boss.position;
 	
 		for (int i = 0; i<enemy.childCount; i++) 
 		{
@@ -101,10 +103,15 @@ public class SpawnEnemiesScript : MonoBehaviour
 
   public void SpawnAsteroid (Vector3 position)
   {
-    var enemy = Instantiate (asteroidPrefab) as Transform;
+      var enemy = Instantiate(asteroidPrefab) as Transform;
     enemy.position = position;
     var collider = enemy.GetComponentsInChildren<AsteroidCollision> ().First ();
     collider.sound = sound;
+  }
+
+  public void SpawnEnemy(Spawn spawn)
+  {
+      SpawnEnemy(spawn.position, spawn.color, spawn.cannons, spawn.shielded, spawn.rotated);
   }
   
   public void SpawnEnemy (Vector3 position, Colors color, bool[] cannons, bool isShielded, bool rotates)
@@ -114,7 +121,7 @@ public class SpawnEnemiesScript : MonoBehaviour
       //#TODO Fix with better pick
       color = ColorUtils.GetRandomColorForBackground (bgScript.color, randomizer);
     }
-    var enemy = Instantiate (enemyPrefab) as Transform;
+    var enemy = Instantiate(enemyPrefab) as Transform;
     enemy.tag = "enemy_ship";
     enemy.position = position;
     List<Transform> disabledCannons = new List<Transform> ();
