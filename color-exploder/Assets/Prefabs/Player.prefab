@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5000000}
   - component: {fileID: 11400000}
   - component: {fileID: 11400002}
+  - component: {fileID: 114919048369567750}
+  - component: {fileID: 114016655521238158}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -40,7 +42,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -89,9 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f807b6bf5b21b845875d816543d6080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 3
-  maxSpeed: 3
-  dragRate: 0.5
+  PlayerNumber: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -138,3 +138,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
+--- !u!114 &114016655521238158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c13dd75a20ec74fbcb2f3115bc4dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BombsLeft: 0
+  bgScript: {fileID: 0}
+  sound: {fileID: 11400000, guid: 31621d42902784c4f9742f45a70a3191, type: 2}
+--- !u!114 &114919048369567750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf60c13dc8116c459a7cceda0d37e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotPrefab: {fileID: 400000, guid: 51b4419f8da354f43b4c1ae0d549e0fc, type: 2}
+  sound: {fileID: 11400000, guid: 31621d42902784c4f9742f45a70a3191, type: 2}
+  shootingRate: 0.25

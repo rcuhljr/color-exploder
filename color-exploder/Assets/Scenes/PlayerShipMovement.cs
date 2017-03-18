@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Colors = ColorUtils.Colors;
 
 public class PlayerShipMovement : MonoBehaviour {
@@ -10,6 +11,40 @@ public class PlayerShipMovement : MonoBehaviour {
 	private const float MinY = -4.5f;
 
     private const float MoveSpeed = 5f;
+
+    public int PlayerNumber;
+
+    private class PlayerInputs
+    {
+        public string Horizontal;
+        public string Vertical;
+        public string Fire1;
+        public string Fire2;
+        public string Jump;
+    }
+
+    private class Inputs
+    {
+        public const string Player1Horizontal = "Horizontal";
+        public const string Player1Vertical = "Vertical";
+        public const string Player1Fire1 = "Fire1";
+        public const string Player1Fire2 = "Fire2";
+        public const string Player1Jump = "Jump";
+
+        public const string Player2Horizontal = "P2Horizontal";
+        public const string Player2Vertical = "P2Vertical";
+        public const string Player2Fire1 = "P2Fire1";
+        public const string Player2Fire2 = "P2Fire2";
+        public const string Player2Jump = "P2Jump";
+    }
+
+    
+
+    private List<PlayerInputs> inputs = new List<PlayerInputs>
+    {
+        new PlayerInputs { Horizontal = "Horizontal", Vertical = "Vertical", Fire1 = "Fire1", Fire2 = "Fire2", Jump = "Jump" },
+        new PlayerInputs { Horizontal = "P2Horizontal", Vertical = "P2Vertical", Fire1 = "P2Fire1", Fire2 = "P2Fire2", Jump = "P2Jump" },
+    };
   
 	// Use this for initialization
 	void Start () {
@@ -18,9 +53,9 @@ public class PlayerShipMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		bool shoot = Input.GetButtonDown("Fire1");
-		shoot |= Input.GetButtonDown("Fire2");
+        int index = PlayerNumber - 1;
+        bool shoot = Input.GetButtonDown(inputs[index].Fire1);
+        shoot |= Input.GetButtonDown(inputs[index].Fire2);
 		
 		if (shoot)
 		{
@@ -31,12 +66,15 @@ public class PlayerShipMovement : MonoBehaviour {
 			}
 		}
 
-    bool bomb = Input.GetButtonDown ("Jump");
+        bool bomb = Input.GetButtonDown(inputs[index].Jump);
 
     if (bomb)
     {
         ColorBombScript weapon = GetComponent<ColorBombScript>();
-        weapon.DropBomb();
+        if (weapon != null)
+        {
+            weapon.DropBomb();
+        }
     };
     var rigidbody2D = GetComponent<Rigidbody2D>();
     //if (rigidbody2D.velocity.magnitude > maxSpeed)
@@ -46,7 +84,7 @@ public class PlayerShipMovement : MonoBehaviour {
     //}
 
     // Cache the horizontal input.
-    float h = Input.GetAxis("Horizontal");
+    float h = Input.GetAxis(inputs[index].Horizontal);
 
     //if ( && rigidbody2D.velocity.x > 0) {
     //	rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
@@ -77,7 +115,7 @@ public class PlayerShipMovement : MonoBehaviour {
     }
 
 
-    float v = Input.GetAxis("Vertical");
+    float v = Input.GetAxis(inputs[index].Vertical);
 
     if (v != 0f)
     {

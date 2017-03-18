@@ -39,7 +39,7 @@ public class StageTimer : MonoBehaviour
       GenerateStage (100, 500, true, true, false, true, true)};
     fireEvent = true;
 
-    var outString = IOUtils.Dump(stages);
+    //var outString = IOUtils.Dump(stages);
     if(!string.IsNullOrEmpty(StageResourceToLoad)) {
 
       stages = IOUtils.Load(StageResourceToLoad);

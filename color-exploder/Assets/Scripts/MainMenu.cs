@@ -4,7 +4,7 @@ using System;
 
 public class MainMenu : MonoBehaviour {
 
-	private static Uri url = new Uri(@"http://www.sep.com/labs/");
+	//private static Uri url = new Uri(@"http://www.sep.com/labs/");
 	// Use this for initialization
 	void Start () {
 	
