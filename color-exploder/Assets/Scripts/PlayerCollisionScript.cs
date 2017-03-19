@@ -20,6 +20,15 @@ public class PlayerCollisionScript : MonoBehaviour
         {
             invulnerabilityTime -= Time.deltaTime;
         }
+        else
+        {
+            var renderer = gameObject.GetComponent<SpriteRenderer>();
+            var color = renderer.color;
+            if (color.a < 1.0)
+            {
+                renderer.color = new Color(color.r, color.g, color.b, 1.0f);
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D otherCollider)

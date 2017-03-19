@@ -23,27 +23,12 @@ public class PlayerShipMovement : MonoBehaviour {
         public string Jump;
     }
 
-    private class Inputs
-    {
-        public const string Player1Horizontal = "Horizontal";
-        public const string Player1Vertical = "Vertical";
-        public const string Player1Fire1 = "Fire1";
-        public const string Player1Fire2 = "Fire2";
-        public const string Player1Jump = "Jump";
-
-        public const string Player2Horizontal = "P2Horizontal";
-        public const string Player2Vertical = "P2Vertical";
-        public const string Player2Fire1 = "P2Fire1";
-        public const string Player2Fire2 = "P2Fire2";
-        public const string Player2Jump = "P2Jump";
-    }
-
-    
-
     private List<PlayerInputs> inputs = new List<PlayerInputs>
     {
         new PlayerInputs { Horizontal = "Horizontal", Vertical = "Vertical", Fire1 = "Fire1", Fire2 = "Fire2", Jump = "Jump" },
         new PlayerInputs { Horizontal = "P2Horizontal", Vertical = "P2Vertical", Fire1 = "P2Fire1", Fire2 = "P2Fire2", Jump = "P2Jump" },
+        new PlayerInputs { Horizontal = "P3Horizontal", Vertical = "P3Vertical", Fire1 = "P3Fire1", Fire2 = "P3Fire2", Jump = "P3Jump" },
+        new PlayerInputs { Horizontal = "P4Horizontal", Vertical = "P4Vertical", Fire1 = "P4Fire1", Fire2 = "P4Fire2", Jump = "P4Jump" },
     };
   
 	// Use this for initialization
@@ -54,8 +39,8 @@ public class PlayerShipMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         int index = PlayerNumber - 1;
-        bool shoot = Input.GetButtonDown(inputs[index].Fire1);
-        shoot |= Input.GetButtonDown(inputs[index].Fire2);
+        bool shoot = Input.GetButton(inputs[index].Fire1);
+        shoot |= Input.GetButton(inputs[index].Fire2);
 		
 		if (shoot)
 		{
